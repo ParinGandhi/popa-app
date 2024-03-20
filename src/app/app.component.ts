@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from './services/supabase.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  ButtonSize,
+  ButtonRounded,
+  ButtonFillMode,
+  ButtonThemeColor,
+} from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +20,11 @@ export class AppComponent implements OnInit {
   cleanedData: any;
   testForm: any;
   formFields: Array<any> = new Array<any>();
+
+  public size: ButtonSize = 'large';
+  public rounded: ButtonRounded = 'medium';
+  public fillMode: ButtonFillMode = 'outline';
+  public themeColor: ButtonThemeColor = 'info';
 
   constructor(
     private supabaseService: SupabaseService,

@@ -1,20 +1,120 @@
-<div [innerHTML]="myData"></div>
-<button (click)="submitForm()">Log Form</button>
-<!-- <div [innerHTML]="cleanedData"></div> -->
+<div class="container mt-5">
+  <!-- <div [innerHTML]="myData"></div> -->
+  <div class="k-block">
+    <button
+      kendoButton
+      [size]="size"
+      [rounded]="rounded"
+      [fillMode]="fillMode"
+      [themeColor]="themeColor"
+      (click)="submitForm()"
+    >
+      Log Form
+    </button>
+  </div>
+  <!-- <div [innerHTML]="cleanedData"></div> -->
 
-<form [formGroup]="testForm" *ngIf="testForm">
-  <section *ngFor="let formField of formFields">
-    <label [for]="formField.id"
-      >{{ formField.label }}
-      <input
-        [checked]="formField.value"
-        [type]="formField.type"
-        [id]="formField.id"
-        [formControlName]="formField.formControlName"
-        [name]="formField.name"
-      />
-    </label>
-  </section>
-</form>
+  <div class="row">
+    <form class="k-form k-form-md mt-5" [formGroup]="testForm" *ngIf="testForm">
+      <fieldset class="k-form-fieldset">
+        <legend class="k-form-legend">
+          POPA Part-time program request form
+        </legend>
+        <br />
+        <span *ngFor="let formField of formFields">
+          <div class="col-md-12">
+            <kendo-formfield *ngIf="formField.type === 'text'">
+              <kendo-label
+                labelCssClass="k-form-label"
+                [for]="formField.id"
+                [text]="formField.label"
+              ></kendo-label>
+              <kendo-textbox
+                [formControlName]="formField.formControlName"
+                [id]="formField.id"
+                required
+              ></kendo-textbox>
+              <kendo-formhint>Your first name</kendo-formhint>
+              <kendo-formerror>Error: First name is required</kendo-formerror>
+            </kendo-formfield>
 
-<router-outlet></router-outlet>
+            <kendo-formfield *ngIf="formField.type === 'number'">
+              <kendo-label
+                labelCssClass="k-form-label"
+                [for]="formField.id"
+                [text]="formField.label"
+              ></kendo-label>
+              <kendo-numerictextbox
+                format="# years old"
+                [step]="1"
+                [value]="formField.value"
+                [formControlName]="formField.formControlName"
+              ></kendo-numerictextbox>
+            </kendo-formfield>
+
+            <kendo-formfield *ngIf="formField.type === 'checkbox'">
+              <kendo-label
+                class="k-checkbox-label"
+                [for]="formField.id"
+                [text]="formField.label"
+              ></kendo-label>
+              <input
+                type="checkbox"
+                [id]="formField.id"
+                [formControlName]="formField.formControlName"
+                kendoCheckBox
+              />
+            </kendo-formfield>
+
+            <kendo-formfield *ngIf="formField.type === 'textarea'">
+              <kendo-label [text]="formField.label"></kendo-label>
+              <kendo-textarea
+                placeholder="Tell us a little bit about yourself..."
+                [rows]="3"
+                resizable="vertical"
+                [formControlName]="formField.formControlName"
+              ></kendo-textarea>
+            </kendo-formfield>
+
+            <kendo-formfield *ngIf="formField.type === 'radio'">
+              <div class="form-check form-check-inline">
+                <kendo-label
+                  class="form-check-label"
+                  [for]="formField.id"
+                  [text]="formField.label"
+                ></kendo-label>
+
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  [formControlName]="formField.formControlName"
+                  [id]="formField.id"
+                  [name]="formField.name"
+                  kendoRadioButton
+                />
+              </div>
+            </kendo-formfield>
+          </div>
+
+          <!-- <kendo-label *ngIf="formField.type === 'text'" [text]="formField.label">
+              <kendo-textbox
+                [formControlName]="formField.formControlName"
+              ></kendo-textbox>
+            </kendo-label> -->
+        </span>
+      </fieldset>
+      <!-- <label [for]="formField.id"
+            >{{ formField.label }}
+            <input
+              [checked]="formField.value"
+              [type]="formField.type"
+              [id]="formField.id"
+              [formControlName]="formField.formControlName"
+              [name]="formField.name"
+            />
+          </label> -->
+    </form>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
