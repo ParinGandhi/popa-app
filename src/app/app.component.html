@@ -2,6 +2,19 @@
 <button (click)="submitForm()">Log Form</button>
 <!-- <div [innerHTML]="cleanedData"></div> -->
 
-<!-- <form [formGroup]="testForm"><h2 formControlName="heading"></h2><h3 formControlName="secondHeading"></h3></form> -->
+<form [formGroup]="testForm" *ngIf="testForm">
+  <section *ngFor="let formField of formFields">
+    <label [for]="formField.id"
+      >{{ formField.label }}
+      <input
+        [checked]="formField.value"
+        [type]="formField.type"
+        [id]="formField.id"
+        [formControlName]="formField.formControlName"
+        [name]="formField.name"
+      />
+    </label>
+  </section>
+</form>
 
 <router-outlet></router-outlet>

@@ -1,0 +1,68 @@
+{
+  "formName": "testForm",
+  "fields": [
+    {
+      "type": "text",
+      "formControlName": "firstName",
+      "label": "First name",
+      "id": "firstName",
+      "value": "John",
+      "required": true,
+      "name": ""
+    },
+    {
+      "type": "number",
+      "formControlName": "age",
+      "label": "Age",
+      "id": "age",
+      "value": 40,
+      "required": false,
+      "name": ""
+    },
+    {
+      "type": "checkbox",
+      "formControlName": "isMember",
+      "label": "Is user a member?",
+      "id": "member",
+      "value": true,
+      "required": false,
+      "name": ""
+    },
+    {
+      "type": "textarea",
+      "formControlName": "comments",
+      "label": "Comments",
+      "id": "comments",
+      "value": "I have read all of the terms and conditions",
+      "required": false,
+      "name": ""
+    },
+    {
+      "type": "radio",
+      "formControlName": "gender",
+      "label": "Male",
+      "id": "male",
+      "value": false,
+      "required": false,
+      "name": "gender"
+    },
+    {
+      "type": "radio",
+      "formControlName": "gender",
+      "label": "Female",
+      "id": "female",
+      "value": false,
+      "required": false,
+      "name": "gender"
+    },
+    {
+      "type": "radio",
+      "formControlName": "gender",
+      "label": "Prefer not to say",
+      "id": "neither",
+      "value": false,
+      "required": false,
+      "name": "gender"
+    }
+  ]
+}
