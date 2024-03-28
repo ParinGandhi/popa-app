@@ -25,6 +25,10 @@ export class AppComponent implements OnInit {
   public rounded: ButtonRounded = 'medium';
   public fillMode: ButtonFillMode = 'outline';
   public themeColor: ButtonThemeColor = 'info';
+  public testclass='col-md-6';
+  value: any;
+  dirSignValue: any;
+  supValue: any;
 
   constructor(
     private supabaseService: SupabaseService,
@@ -45,7 +49,7 @@ export class AppComponent implements OnInit {
       //   (el: { formControlName: string }) => el.formControlName
       // );
       // console.log('FormControlNames: ', formFields);
-
+      console.log(dataFromService.data[0].html_data);
       let formGroupObj: any = {};
       for (const key of dataFromService.data[0].html_value.fields) {
         console.log('Key: ', key);
@@ -58,42 +62,82 @@ export class AppComponent implements OnInit {
       this.formFields = dataFromService.data[0].html_value.fields;
     }
 
-    // if (dataFromService && dataFromService.data) {
-    //   this.myData = this.sanitizer.bypassSecurityTrustHtml(
-    //     dataFromService.data[0].html_data
-    //   );
-    //   setTimeout(() => {
-    //     this.testForm
-    //       .get('heading')
-    //       .setValue(dataFromService.data[0].html_value.heading);
-    //     this.testForm
-    //       .get('secondHeading')
-    //       .setValue(dataFromService.data[0].html_value.secondHeading);
-    //     this.testForm.updateValueAndValidity();
+    if (dataFromService && dataFromService.data) {
+      this.myData = this.sanitizer.bypassSecurityTrustHtml(
+        dataFromService.data[0].html_data
+      );
+      console.log(this.myData);
+      var ele = (<HTMLInputElement>document.getElementById("sigDiv"));
+      ele.innerHTML += "<p>test</p>";
+      
+      // setTimeout(() => {
+      //   this.testForm
+      //     .get('heading')
+      //     .setValue(dataFromService.data[0].html_value.heading);
+      //   this.testForm
+      //     .get('secondHeading')
+      //     .setValue(dataFromService.data[0].html_value.secondHeading);
+      //   this.testForm.updateValueAndValidity();
 
-    //     // this.testForm
-    //     //   .get('heading')
-    //     //   ?.patchValue(dataFromService.data[0].html_value.heading);
-    //     // this.testForm
-    //     //   .get('secondHeading')
-    //     //   ?.patchValue(dataFromService.data[0].html_value.secondHeading);
-    //   }, 2000);
-    //   // console.log('Data: ', this.myData);
+        // this.testForm
+        //   .get('heading')
+        //   ?.patchValue(dataFromService.data[0].html_value.heading);
+        // this.testForm
+        //   .get('secondHeading')
+        //   ?.patchValue(dataFromService.data[0].html_value.secondHeading);
+      // }, 2000);
+      // console.log('Data: ', this.myData);
 
-    //   // setTimeout(() => {
-    //   //   const h3Tag = document.getElementById('h3_text');
-    //   //   if (h3Tag) {
-    //   //     h3Tag.innerHTML = dataFromService.data[0].html_value.inputValue;
-    //   //   }
-    //   // }, 500);
-    // }
+      // setTimeout(() => {
+      //   const h3Tag = document.getElementById('h3_text');
+      //   if (h3Tag) {
+      //     h3Tag.innerHTML = dataFromService.data[0].html_value.inputValue;
+      //   }
+      // }, 500);
+    }
   }
 
-  submitForm() {
+  
+
+  submitForm() { 
+    let obj = {
+      empName:"",
+      empNumber:"",
+      oagUnit: "",
+      phoneNumb: "",
+      currentPTPP:false,
+      renewPP:false,
+      changeHours:false,
+      currentReqStartDt:"",
+      empSign:""
+    };
+    obj.empName = ((<HTMLInputElement>document.getElementById("empName")).value).toString();
+    obj.empNumber = ((<HTMLInputElement>document.getElementById("empNum")).value).toString();
+    obj.oagUnit = ((<HTMLInputElement>document.getElementById("oagArt")).value).toString();
+    obj.phoneNumb = ((<HTMLInputElement>document.getElementById("phoneNum")).value).toString();
+    obj.currentPTPP = (<HTMLInputElement>document.getElementById("partProg")).checked;
+    obj.renewPP = (<HTMLInputElement>document.getElementById("renProg")).checked;
+    obj.changeHours = (<HTMLInputElement>document.getElementById("reqHours")).checked;
+    obj.currentReqStartDt = ((<HTMLInputElement>document.getElementById("reqStartDt")).value).toString();
+    obj.empSign = this.value;
+    console.log(obj);
+
+    // (<HTMLInputElement>document.getElementById("empName")).value = "test";
+    
     console.log(this.testForm);
-    console.log(this.testForm.get('firstName').value);
-    console.log(this.testForm.get('age').value);
-    console.log(this.testForm.get('isMember').value);
-    console.log(this.testForm.get('comments').value);
+    // console.log(this.testForm.get('employeeName').value);
+    // console.log(this.testForm.get('employeeNumber').value);
+    // console.log(this.testForm.get('isMember').value);
+    // console.log(this.testForm.get('comments').value);
+    // console.log(this.testForm.get('gender').value);
+  }
+
+  public onSave() {
+    console.log(this.value, "signature.png");
+  }
+
+  public onClear() {
+    this.value = "";
+    // this.cleanupImage();
   }
 }
