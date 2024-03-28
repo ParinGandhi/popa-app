@@ -8,6 +8,7 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LabelModule } from '@progress/kendo-angular-label';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 
 
 
@@ -15,7 +16,7 @@ import { LabelModule } from '@progress/kendo-angular-label';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, InputsModule, BrowserAnimationsModule, ButtonsModule, LabelModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, InputsModule, BrowserAnimationsModule, ButtonsModule, LabelModule, DateInputsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
