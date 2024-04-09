@@ -8,6 +8,7 @@ import {
   ButtonFillMode,
   ButtonThemeColor,
 } from '@progress/kendo-angular-buttons';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -29,34 +30,41 @@ export class AppComponent implements OnInit {
   value: any;
   dirSignValue: any;
   supValue: any;
+  jsonData: any;
 
   constructor(
     private supabaseService: SupabaseService,
     private sanitizer: DomSanitizer,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private httpClient: HttpClient
   ) {}
 
   async ngOnInit() {
+    this.httpClient.get("assets/payload.json").subscribe(buttonsData =>{
+      console.log(buttonsData);
+      this.jsonData = buttonsData;
+    })
+    console.log(this.jsonData);
     // this.testForm = this.fb.group({
     //   heading: [''],
     //   secondHeading: [''],
     // });
     // this.testForm = this.fb.group({});
     const dataFromService = await this.supabaseService.getFormsData();
-    console.log(dataFromService);
+    // console.log(dataFromService);
     if (dataFromService && dataFromService.data) {
       // const formFields = dataFromService.data[0].html_value.fields.map(
       //   (el: { formControlName: string }) => el.formControlName
       // );
       // console.log('FormControlNames: ', formFields);
-      console.log(dataFromService.data[0].html_data);
+      // console.log(dataFromService.data[0].html_data);
       let formGroupObj: any = {};
       for (const key of dataFromService.data[0].html_value.fields) {
-        console.log('Key: ', key);
+        // console.log('Key: ', key);
         formGroupObj[key.formControlName] = key.value;
       }
 
-      console.log(formGroupObj);
+      // console.log(formGroupObj);
       this.testForm = this.fb.group(formGroupObj);
 
       this.formFields = dataFromService.data[0].html_value.fields;
@@ -66,7 +74,7 @@ export class AppComponent implements OnInit {
       this.myData = this.sanitizer.bypassSecurityTrustHtml(
         dataFromService.data[0].html_data
       );
-      console.log(this.myData);
+      // console.log(this.myData);
       var ele = (<HTMLInputElement>document.getElementById("sigDiv"));
       ele.innerHTML += "<p>test</p>";
       
@@ -140,4 +148,10 @@ export class AppComponent implements OnInit {
     this.value = "";
     // this.cleanupImage();
   }
+  onButtonClick(buttondata: any,index: any){
+    buttondata.value="newValue";
+    console.log(buttondata);
+    console.log(index);
+  }
+  
 }
