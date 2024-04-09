@@ -362,6 +362,17 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-2" *ngFor="let data of jsonData?.listOfAction;let i=index;"style="padding-right: 20px;">
+        <button
+            kendoButton
+            (click)="onButtonClick(data,i)"
+            themeColor="primary"            
+          >
+            {{data.label}}
+          </button>
+      </div>
+    </div>
   </form>
 </div>
 
