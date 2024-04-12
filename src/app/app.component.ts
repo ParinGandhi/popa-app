@@ -20,7 +20,9 @@ export class AppComponent implements OnInit {
   myData: any;
   cleanedData: any;
   testForm: any;
+  PAPCoverForm: any;
   formFields: Array<any> = new Array<any>();
+  papFormFields: Array<any> = new Array<any>();
 
   public size: ButtonSize = 'large';
   public rounded: ButtonRounded = 'medium';
@@ -31,6 +33,7 @@ export class AppComponent implements OnInit {
   dirSignValue: any;
   supValue: any;
   jsonData: any;
+  papCoverData: any;
 
   constructor(
     private supabaseService: SupabaseService,
@@ -44,7 +47,12 @@ export class AppComponent implements OnInit {
       console.log(buttonsData);
       this.jsonData = buttonsData;
     })
-    console.log(this.jsonData);
+    this.httpClient.get("assets/papCoverData.json").subscribe(eData =>{
+      console.log(eData);
+      this.papCoverData = eData;
+      this.papFormFields = this.papCoverData?.fields;
+    })
+    console.log(this.papCoverData);
     // this.testForm = this.fb.group({
     //   heading: [''],
     //   secondHeading: [''],
@@ -75,8 +83,8 @@ export class AppComponent implements OnInit {
         dataFromService.data[0].html_data
       );
       // console.log(this.myData);
-      var ele = (<HTMLInputElement>document.getElementById("sigDiv"));
-      ele.innerHTML += "<p>test</p>";
+      // var ele = (<HTMLInputElement>document.getElementById("sigDiv"));
+      // ele.innerHTML += "<p>test</p>";
       
       // setTimeout(() => {
       //   this.testForm
