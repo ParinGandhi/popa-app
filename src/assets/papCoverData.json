@@ -1,0 +1,535 @@
+{
+  "fields": [
+    {
+      "id": "papCoverTitle1",
+      "name": "papCoverTitle1",
+      "type": "label",
+      "label": "US PATENT AND TRADEMARK OFFICE\nCLASSIFICATION AND PERFORMANCE MANAGEMENT RECORD",
+      "section": "header",
+      "formControlName": "papCoverTitle1"
+    },
+    {
+      "id": "new",
+      "name": "new",
+      "type": "text",
+      "label": "NEW",
+      "value": "",
+      "section": "headerRight",
+      "required": false,
+      "formControlName": "new"
+    },
+	{
+      "id": "ia",
+      "name": "ia",
+      "type": "text",
+      "label": "I/A:",
+      "value": "",
+      "section": "headerRight",
+      "required": false,
+      "formControlName": "ia"
+    },
+	{
+      "id": "mr",
+      "name": "mr",
+      "type": "text",
+      "label": "MR#:",
+      "value": "",
+      "section": "headerRight",
+      "required": false,
+      "formControlName": "mr"
+    },
+	{
+      "id": "ip",
+      "name": "ip",
+      "type": "text",
+      "label": "IP#:",
+      "value": "",
+      "section": "headerRight",
+      "required": false,
+      "formControlName": "ip"
+    },
+	{
+      "id": "note",
+      "name": "note",
+      "type": "label",
+      "label": "*Performance Plan *Performance Appraisal *Performance Recognition *Progress Review *Position Description",
+      "section": "section1",
+      "formControlName": "note",
+      "colclass": "col-md-12"
+    },
+    {
+      "id": "empNm",
+      "name": "empNm",
+      "type": "text",
+      "label": "Employee Name:",
+      "value": "Akhavannik, Hadi",
+      "section": "section1",
+      "required": true,
+      "formControlName": "empNm"
+    },
+	{
+      "id": "posTl",
+      "name": "posTl",
+      "type": "text",
+      "label": "Position Title:",
+      "value": "PEXMR",
+      "section": "section1",
+      "required": true,
+      "formControlName": "posTl"
+    },
+	{
+      "id": "step",
+      "name": "step",
+      "type": "text",
+      "label": "Pay Plan, Series, Grade/Step:",
+      "value": "GS-1224, Grades 5-15",
+      "section": "section1",
+      "required": true,
+      "formControlName": "step"
+    },
+	{
+      "id": "org",
+      "name": "org",
+      "type": "label",
+      "label": "Organization",
+      "section": "section2-1",
+      "formControlName": "org"
+    },
+    {
+      "id": "dptComm",
+      "name": "",
+      "type": "checkbox",
+      "label": "1. Department of Commerce",
+      "value": true,
+      "required": false,
+      "formControlName": "dptComm",
+      "section": "section2-2"
+    },
+	{
+      "id": "pto",
+      "name": "",
+      "type": "checkbox",
+      "label": "2. Patent & Trademark Office",
+      "value": true,
+      "required": false,
+      "formControlName": "pto",
+      "section": "section2-2"
+    },
+	{
+      "id": "dcp",
+      "name": "",
+      "type": "checkbox",
+      "label": "3. Deputy Commissioner for Patents",
+      "value": true,
+      "required": false,
+      "formControlName": "dcp",
+      "section": "section2-2"
+    },
+	{
+      "id": "peg",
+      "name": "",
+      "type": "checkbox",
+      "label": "4. Patent Examining Groups",
+      "value": true,
+      "required": false,
+      "formControlName": "peg",
+      "section": "section2-3"
+    },
+	{
+      "id": "tc",
+      "name": "",
+      "type": "checkbox",
+      "label": "5. Technology Center 2600",
+      "value": true,
+      "required": false,
+      "formControlName": "tc",
+      "section": "section2-3"
+    },
+	{
+      "id": "au",
+      "name": "",
+      "type": "checkbox",
+      "label": "6. Art Unit 2662",
+      "value": true,
+      "required": false,
+      "formControlName": "au",
+      "section": "section2-3"
+    },
+	{
+      "id": "period",
+      "name": "",
+      "type": "text",
+      "label": "Rating Period:",
+      "value": "",
+      "required": false,
+      "formControlName": "period",
+      "section": "sectionIII"
+    },
+    {
+      "id": "Coveredby",
+      "name": "",
+      "type": "label",
+      "label": "Covered by:",
+      "value": "",
+      "required": false,
+      "formControlName": "Coveredby",
+      "section": "section3-1"
+    },
+    {
+      "id": "ses",
+      "name": "",
+      "type": "radio",
+      "label": "Senior Executive Service",
+      "value": false,
+      "required": false,
+      "formControlName": "ses",
+      "section": "section3-2"
+    },
+    {
+      "id": "gw",
+      "name": "",
+      "type": "radio",
+      "label": "General Workforce",
+      "value": true,
+      "required": false,
+      "formControlName": "gw",
+      "section": "section3-2"
+    },
+	{
+      "id": "dp",
+      "name": "",
+      "type": "radio",
+      "label": "Demonstration Project",
+      "value": false,
+      "required": false,
+      "formControlName": "dp",
+      "section": "section3-3"
+    },
+    {
+      "id": "oth",
+      "name": "",
+      "type": "radio",
+      "label": "Other",
+      "value": false,
+      "required": false,
+      "formControlName": "oth",
+      "section": "section3-3"
+    },
+	{
+      "id": "prtAtitle",
+      "name": "",
+      "type": "label",
+      "label": "PART A - POSITION DESCRIPTION",
+      "formControlName": "prtAtitle",
+      "section": "section3lbl"
+    },
+	{
+      "id": "prtADesc",
+      "name": "",
+      "type": "label",
+      "label": "POSITION CERTIFICATION - I certify that this is an accurate statement of the major duties and responsibilities of the position and itsorganization relationships and that the position is necessary to carry out Government functions for which I am responsible. Thiscertification is made with the knowledge that this information is to be used for statutory purposes relating to appointment and paymentof public funds and that false or misleading statements may constitute violation of such statute or their implementing regulations.",
+      "formControlName": "prtADesc",
+      "section": "section3lbl"
+    },
+    {
+      "id": "suvSign",
+      "name": "",
+      "type": "sign",
+      "label": "SUPERVISOR'S SIGNATURE",
+      "value": "",
+      "required": false,
+      "formControlName": "suvSign",
+	  "section": "section4"
+    },
+	{
+      "id": "suvDt",
+      "name": "",
+      "type": "date",
+      "label": "DATE",
+      "value": "",
+      "required": false,
+      "formControlName": "suvDt",
+	  "section": "section4"
+    },
+	{
+      "id": "sndsuvSign",
+      "name": "",
+      "type": "sign",
+      "label": "SECOND LEVEL SUPERVISOR",
+      "value": "",
+      "required": false,
+      "formControlName": "sndsuvSign",
+	  "section": "section4"
+    },
+	{
+      "id": "sndsuvDt",
+      "name": "",
+      "type": "date",
+      "label": "DATE",
+      "value": "",
+      "required": false,
+      "formControlName": "sndsuvDt",
+	  "section": "section4"
+    },
+	{
+      "id": "offttl",
+      "name": "",
+      "type": "text",
+      "label": "OFFICIAL TITLE:",
+      "value": "",
+      "required": false,
+      "formControlName": "offttl",
+	  "section": "section5"
+    },
+	{
+      "id": "pp",
+      "name": "",
+      "type": "text",
+      "label": "PP:",
+      "value": "",
+      "required": false,
+      "formControlName": "pp",
+	  "section": "section6"
+    },
+	{
+      "id": "series",
+      "name": "",
+      "type": "text",
+      "label": "SERIES:",
+      "value": "",
+      "required": false,
+      "formControlName": "series",
+	  "section": "section6"
+    },
+	{
+      "id": "func",
+      "name": "",
+      "type": "text",
+      "label": "FUNC:",
+      "value": "",
+      "required": false,
+      "formControlName": "func",
+	  "section": "section6"
+    },
+	{
+      "id": "grade",
+      "name": "",
+      "type": "text",
+      "label": "GRADE:",
+      "value": "",
+      "required": false,
+      "formControlName": "grade",
+	  "section": "section6"
+    },
+	{
+      "id": "ia",
+      "name": "",
+      "type": "text",
+      "label": "I/A:",
+      "value": "",
+      "required": false,
+      "formControlName": "ia",
+	  "section": "section6"
+    },
+	{
+      "id": "yes",
+      "name": "",
+      "type": "radio",
+      "label": "YES:",
+      "value": "",
+      "required": false,
+      "formControlName": "yes",
+	  "section": "section6"
+    },
+	{
+      "id": "no",
+      "name": "",
+      "type": "radio",
+      "label": "NO:",
+      "value": "",
+      "required": false,
+      "formControlName": "yes",
+	  "section": "section6"
+    },
+	{
+      "id": "descp",
+      "name": "",
+      "type": "label",
+      "label": "I certify that this position has been classified as required by Title 5, US Code, in conformance with standards published by the OPM or, if nopublished standard applies directly, consistently with the most applicable published standards.",
+      "formControlName": "prtADesc",
+      "section": "section7",
+	  "colclass": "col-md-12"
+    },
+	{
+      "id": "name",
+      "name": "",
+      "type": "text",
+      "label": "NAME & TITLE OF CLASSIFIER:",
+      "value": "",
+      "required": false,
+      "formControlName": "name",
+	  "section": "section8",
+	  "colclass": "col-md-5"
+    },
+	{
+      "id": "sec8Sign",
+      "name": "",
+      "type": "text",
+      "label": "SIGNATURE:",
+      "value": "",
+      "required": false,
+      "formControlName": "sec8Sign",
+	  "section": "section8",
+	  "colclass": "col-md-4"
+    },
+	{
+      "id": "sec8Dt",
+      "name": "",
+      "type": "date",
+      "label": "DATE",
+      "value": "",
+      "required": false,
+      "formControlName": "sec8Dt",
+	  "section": "section8",
+	  "colclass": "col-md-3"
+    },
+	{
+      "id": "sec9lbl",
+      "name": "",
+      "type": "label",
+      "label": "PART B - PERFORMANCE PLAN",
+      "formControlName": "sec9lbl",
+      "section": "section9",
+	  "colclass": "col-md-12"
+    },
+	{
+      "id": "sec9lbl2",
+      "name": "",
+      "type": "label",
+      "label": "This plan is an accurate statement of the work that will be the basis of the employee's performance appraisal.",
+      "formControlName": "sec9lbl2",
+      "section": "section9",
+	  "colclass": "col-md-12"
+    },
+	{
+      "id": "name",
+      "name": "",
+      "type": "text",
+      "label": "NAME & TITLE OF FIRST LINE SUPERVISOR/RATING OFFICIAL:",
+      "value": "",
+      "required": false,
+      "formControlName": "name",
+	  "section": "section10",
+	  "colclass": "col-md-5"
+    },
+	{
+      "id": "sec10Sign",
+      "name": "",
+      "type": "text",
+      "label": "SIGNATURE:",
+      "value": "",
+      "required": false,
+      "formControlName": "sec10Sign",
+	  "section": "section10",
+	  "colclass": "col-md-4"
+    },
+	{
+      "id": "sec10Dt",
+      "name": "",
+      "type": "date",
+      "label": "DATE",
+      "value": "",
+      "required": false,
+      "formControlName": "sec10Dt",
+	  "section": "section10",
+	  "colclass": "col-md-3"
+    },
+	{
+      "id": "sec11lbl",
+      "name": "",
+      "type": "label",
+      "label": "APPROVAL - I agree with the certification of the position description and approve the performance plan.",
+      "formControlName": "sec11lbl",
+      "section": "section11",
+	  "colclass": "col-md-12"
+    },
+	{
+      "id": "name",
+      "name": "",
+      "type": "text",
+      "label": "NAME & TITLE OF APPROVING OFFICIAL OR SES APPOINTING AUTHORITY",
+      "value": "",
+      "required": false,
+      "formControlName": "name",
+	  "section": "section12",
+	  "colclass": "col-md-5"
+    },
+	{
+      "id": "sec12Sign",
+      "name": "",
+      "type": "text",
+      "label": "SIGNATURE:",
+      "value": "",
+      "required": false,
+      "formControlName": "sec12Sign",
+	  "section": "section12",
+	  "colclass": "col-md-4"
+    },
+	{
+      "id": "sec12Dt",
+      "name": "",
+      "type": "date",
+      "label": "DATE",
+      "value": "",
+      "required": false,
+      "formControlName": "sec12Dt",
+	  "section": "section12",
+	  "colclass": "col-md-3"
+    },
+	{
+      "id": "name",
+      "name": "",
+      "type": "label",
+      "label": "EMPLOYEE ACKNOWLEDGMENT - My signature acknowledges dicussion of the position description and receipt of the plan, and does notnecessarily signify agreement.",
+      "value": "",
+      "required": false,
+      "formControlName": "name",
+	  "section": "section13",
+	  "colclass": "col-md-5"
+    },
+	{
+      "id": "sec13Sign",
+      "name": "",
+      "type": "sign",
+      "label": "SIGNATURE:",
+      "value": "",
+      "required": false,
+      "formControlName": "sec13Sign",
+	  "section": "section13",
+	  "colclass": "col-md-4"
+    },
+	{
+      "id": "sec13Dt",
+      "name": "",
+      "type": "date",
+      "label": "DATE",
+      "value": "",
+      "required": false,
+      "formControlName": "sec13Dt",
+	  "section": "section13",
+	  "colclass": "col-md-3"
+    },
+	{
+      "id": "name",
+      "name": "",
+      "type": "label",
+      "label": "PRIVACY ACT STATEMENT - Disclosure of your social security number on this form is voluntary. The number is linked with your name in theofficial personnel records system to ensure unique identification of your records. The social security number will be used solely to ensureaccurate entry of your performance rating into the automated record system.",
+      "value": "",
+      "required": false,
+      "formControlName": "name",
+	  "section": "section14",
+	  "colclass": "col-md-12"
+    }
+  ],
+  "formName": "PAPCoverForm"
+}
