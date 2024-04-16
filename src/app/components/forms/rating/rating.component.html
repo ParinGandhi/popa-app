@@ -1,1 +1,46 @@
-<p>rating works!</p>
+<div class="container" style="margin-bottom: 10px">
+  <form class="k-form k-form-md mt-5" [formGroup]="ratingForm" id="ratingForm">
+    <div>
+      <div class="row"  *ngFor="let field of ratingFormFields">
+        <div [ngClass]="field.class" *ngIf="field.type == 'heading'">
+            {{ field.label }}
+          </div>
+        <ng-container  *ngFor="let child of field.children">
+          <div [ngClass]="child.class" *ngIf="child.type == 'heading'">
+            {{ child.label }}
+          </div>
+          <div [ngClass]="child.class" *ngIf="child.type == 'text'">
+            <kendo-label
+              class="k-checkbox-label"
+              [for]="child.id"
+              [text]="child.label"
+            ></kendo-label>
+            <kendo-textbox
+              [formControlName]="child.formControlName"
+              [id]="child.id"
+              required
+            ></kendo-textbox>
+          </div>
+          <div [ngClass]="child.class" *ngIf="child.type == 'list'">
+            <p style="margin-bottom: 0;">{{child.label}}</p>
+          </div>
+          <div class="row" *ngIf="child.type == 'grid'">
+            <ng-container *ngFor="let eachRow of child.children">
+              <div [ngClass]="eachRow.class" *ngIf="eachRow.type === 'grid'">{{eachRow.label}}</div>
+               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'text'">
+            <kendo-textbox
+              [formControlName]="eachRow.formControlName"
+              [id]="eachRow.id"
+              required
+            ></kendo-textbox>
+          </div>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+

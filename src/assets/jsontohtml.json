@@ -1,0 +1,108 @@
+{
+  "mapsFormsWorkflowStepId": 2,
+  "belongsto": "65099",
+  "name": null,
+  "formObject": {
+    "name": ["Doe, John"],
+    "artUnit": [2255]
+  },
+  "formDataStructure": [
+    {
+      "html": "<kendo-label class='k-checkbox-label' [for]='child.id' [text]='child.label'></kendo-label>",
+      "tag": "kendo-label",
+      "attributes": [
+        ["class", "k-checkbox-label"],
+        ["for", "gender"],
+        ["text", "Select your gender"]
+      ],
+      "id": "",
+      "name": "",
+      "type": "heading",
+      "class": "col-md-12",
+      "label": "SECTION II - PERFORMANCE SUMMARY AND RATING",
+      "value": "",
+      "section": "",
+      "required": false,
+      "formControlName": ""
+    },
+     {
+       "tag": "kendo-textbox",
+       "attributes": [
+         ["formControlName", "name"],
+         ["id", "gender"]
+       ],
+       "id": "",
+       "name": "",
+       "type": "heading",
+       "class": "col-md-12",
+       "label": "SECTION II - PERFORMANCE SUMMARY AND RATING",
+       "value": "",
+       "section": "",
+       "required": false,
+       "formControlName": ""
+     }
+  ],
+  "formAssignedTo": {
+    "workerId": 101399,
+    "workerNumber": "65099",
+    "familyName": "Donely",
+    "givenName": "Jason",
+    "middleName": "",
+    "email": "raviramani@gmail.com"
+  },
+  "formAssignedBy": {
+    "workerId": 101398,
+    "workerNumber": "65098",
+    "familyName": "Ramani",
+    "givenName": "Ravi",
+    "middleName": "",
+    "email": "raviramani@gmail.com"
+  },
+  "listOfAction": [
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    },
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    },
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    },
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    }
+  ],
+  "auditData": {
+    "createDateTime": "2024-04-05T11:28:26.0676",
+    "createUserId": "rramani",
+    "lastModifiedDateTime": "2024-04-05T11:28:26.067542",
+    "lastModifiedUserId": "rramani"
+  },
+  "lifeCycleData": {
+    "beginEffectiveDate": "2024-04-05T11:28:26.067605"
+  }
+}

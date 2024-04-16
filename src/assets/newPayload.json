@@ -1,779 +1,543 @@
-[
-  {
-    "id": 1,
-    "html_data": "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <label class=\"col-sm-2 col-form-label\" style=\"text-align: end;\">Employee Name</label>\r\n        <div class=\"col-sm-3\">\r\n            <input id=\"empName\" type=\"text\" class=\"form-control form-control-sm\" #empName>\r\n        </div>\r\n        <label class=\"col-sm-2 col-form-label\" style=\"text-align: end;\">Employee Number</label>\r\n        <div class=\"col-sm-3\">\r\n            <input id=\"empNum\" type=\"text\" class=\"form-control form-control-sm\" #empNum>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <label class=\"col-sm-2 col-form-label\" style=\"text-align: end;\">Oag. / Art Unit</label>\r\n        <div class=\"col-sm-3\">\r\n            <input id=\"oagArt\" type=\"text\" class=\"form-control form-control-sm\" #oagArt>\r\n        </div>\r\n        <label class=\"col-sm-2 col-form-label\" style=\"text-align: end;\">Phone Number</label>\r\n        <div class=\"col-sm-3\">\r\n            <input id=\"phoneNum\" type=\"text\" class=\"form-control form-control-sm\" #phoneNum>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n            <ul>\r\n                <li>\r\n                    <label>\r\n                        I am:\r\n                    </label>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"partProg\" #partProg name=\"partProg\" />\r\n                            <label for=\"partProg\">A Current Part-Time Program Participant</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <input type=\"checkbox\" id=\"renProg\" #renProg name=\"renProg\" />\r\n                            <label for=\"renProg\">Renewing participation in the program</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <input type=\"checkbox\" id=\"reqHours\" #reqHours name=\"reqHours\" />\r\n                            <label for=\"reqHours\">Requesting a change in schedule/hours</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:35px ;\">\r\n                            <label>Note: If only requesting a change in schedule/hours, please only complete this\r\n                                section, the Schedule Information section and the Daily Schedule section.</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\" style=\"margin-left:75px;\">\r\n                        <div class=\"col-md-4\">\r\n                            <label for=\"reqStartDt\">Requested Start Date:</label>\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <input id=\"reqStartDt\" type=\"date\" class=\"form-control form-control-sm\" #reqStartDt>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\" style=\"margin-left:75px;\">\r\n                        <div>\r\n                            <label>Note: Requested Start Date should be the first Sunday of a bi-week and End Date will\r\n                                be the end of the current term</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"newPart\" #newPart name=\"newPart\" />\r\n                            <label for=\"newPart\">A New Applicant</label>\r\n                        </div>\r\n                    </div>\r\n                </li>\r\n                <li>\r\n                    <label>\r\n                        I am requesting participation in the Part-Time Program under the:\r\n                    </label>\r\n                    <br />\r\n                    <label>\r\n                        (Please check one)\r\n                    </label>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"childPreSc\" #childPreSc name=\"childPreSc\" />\r\n                            <label for=\"childPreSc\">Childcare (Pre-School Age) Component</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <label for=\"child\">(Has child who has not yet begun first grade)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"childSc\" #childPreSc name=\"childSc\" />\r\n                            <label for=\"childSc\">Childcare (School Age) Component</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <label for=\"child\">(Has child in school who has not yet turned age 16)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"elderCare\" #elderCare name=\"elderCare\" />\r\n                            <label for=\"elderCare\">Eldercare Component</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <label for=\"child\">(Has an elderly relative; including parent/grandparent, in-laws or\r\n                                equivalent relationships; who requires care)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"retention\" #retention name=\"retention\" />\r\n                            <label for=\"retention\">Retention Component</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\" style=\"margin-left:25px ;\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"retirement\" #retirement name=\"retirement\" />\r\n                            <label for=\"retirement\">Retirement Exception Eligible</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:50px ;\">\r\n                            <label for=\"child\">(MUST meet CSRS or FERS minimum retirement eligibility\r\n                                requirements)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"splReq\" #splReq name=\"splReq\" />\r\n                            <label for=\"splReq\">Special Request - Hardship Situations</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <label for=\"child\">(Management's Discretion on a case by case basis)</label>\r\n                        </div>\r\n                    </div>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            <ul>\r\n                <li>\r\n                    <label>\r\n                        New Applicant / Renewing Participant Only\r\n                    </label>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Please complete the following:</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <label for=\"newReqStartDt\">Requested Start Date:</label>\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <input id=\"newReqStartDt\" type=\"date\" class=\"form-control form-control-sm\" #newReqStartDt>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Note for New Applicants: Requested start date is usually the first\r\n                                Sunday of a bi-week</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Note for Renewing Participants: Requested start date should be the day\r\n                                after your current term ends</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label for=\"newReqterm\">Requested Term in Months (3-18):</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input id=\"newReqterm\" type=\"text\" class=\"form-control form-control-sm\" #newReqterm>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label for=\"newReqEndDt\">End Date:</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input id=\"newReqEndDt\" type=\"date\" class=\"form-control form-control-sm\" #newReqEndDt>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Note: At the end of the term, participant will revert to full-time\r\n                                status or may reapply</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label for=\"yrPTOSer\">Years of PTO service:</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input id=\"yrPTOSer\" type=\"date\" class=\"form-control form-control-sm\" #yrPTOSer>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">(at least 1 yr)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-2\">\r\n                            <label for=\"gsGrade\">GS Grade</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input id=\"gsGrade\" type=\"text\" class=\"form-control form-control-sm\" #gsGrade>\r\n                        </div>\r\n                        <div class=\"col-md-2\">\r\n                            <label for=\"gradeDate\">Grade Date</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input id=\"gradeDate\" type=\"date\" class=\"form-control form-control-sm\" #gradeDate>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">(at least GS-11 for Retention Component)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <label for=\"partProg\">Signatory Authority:</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input type=\"checkbox\" id=\"psa\" #psa name=\"psa\" />\r\n                            <label for=\"psa\">PSA</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input type=\"checkbox\" id=\"fsa\" #fsa name=\"fsa\" />\r\n                            <label for=\"fsa\">FSA</label>\r\n                        </div>\r\n                    </div>\r\n                </li>\r\n                <hr style=\"border-top: dotted 3px;\">\r\n                <li>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Schedule Information</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label for=\"biWeekHrs\">Work Hours per Bi-week</label>\r\n                        </div>\r\n                        <div class=\"col-md-4\">\r\n                            <input id=\"biWeekHrs\" type=\"text\" class=\"form-control form-control-sm\" #biWeekHrs>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Note: Indicate between 32-64 hours</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">I am also:</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <input type=\"checkbox\" id=\"currentpart\" #currentpart name=\"currentpart\" />\r\n                            <label for=\"currentpart\">A Current Participant of, or</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"margin-left:25px ;\">\r\n                            <input type=\"checkbox\" id=\"planToApply\" #planToApply name=\"planToApply\" />\r\n                            <label for=\"planToApply\">Plan to Apply in the:</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"php\" #php name=\"php\" />\r\n                            <label for=\"php\">Patents Hoteling Program (PHP)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <input type=\"checkbox\" id=\"ptp\" #ptp name=\"ptp\" />\r\n                            <label for=\"ptp\">Patent Telework Program (PTP)</label>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label for=\"partProg\">Note: Must separately apply and be eligible for these programs</label>\r\n                        </div>\r\n                    </div>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\" style=\"text-align: center;\">\r\n        <div class=\"col-md-12\">\r\n            <label class=\"col-sm-2 col-form-label\">Daily Schedule</label>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n            <label class=\"col-form-label\">Indicate the number of hours to be worked and the day on which they will be\r\n                worked</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            <label class=\"col-sm-2 col-form-label\">Week 1</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            <label class=\"col-sm-2 col-form-label\">Week 2</label>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\" style=\"text-align: center;\">\r\n        <table>\r\n            <tr>\r\n                <td style=\"padding-top: 35px;padding-right: 20px;\">\r\n                    <label class=\"col-sm-2 col-form-label\">Hours</label>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">M</label>\r\n                    <input id=\"w1m\" type=\"text\" class=\"form-control form-control-sm\" #w1m>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">T</label>\r\n                    <input id=\"w1t\" type=\"text\" class=\"form-control form-control-sm\" #w1t>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">W</label>\r\n                    <input id=\"w1w\" type=\"text\" class=\"form-control form-control-sm\" #w1w>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">Th</label>\r\n                    <input id=\"w1th\" type=\"text\" class=\"form-control form-control-sm\" #w1th>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">F</label>\r\n                    <input id=\"w1f\" type=\"text\" class=\"form-control form-control-sm\" #w1f>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">S</label>\r\n                    <input id=\"w1s\" type=\"text\" class=\"form-control form-control-sm\" #w1s>\r\n                </td>\r\n                <td style=\"padding-top: 35px;padding-right: 20px;\">\r\n                    <label class=\"col-sm-2 col-form-label\">Hours</label>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">M</label>\r\n                    <input id=\"w2m\" type=\"text\" class=\"form-control form-control-sm\" #w2m>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">T</label>\r\n                    <input id=\"w2t\" type=\"text\" class=\"form-control form-control-sm\" #w2t>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">W</label>\r\n                    <input id=\"w2w\" type=\"text\" class=\"form-control form-control-sm\" #w2w>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">Th</label>\r\n                    <input id=\"w2th\" type=\"text\" class=\"form-control form-control-sm\" #w2th>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">F</label>\r\n                    <input id=\"w2f\" type=\"text\" class=\"form-control form-control-sm\" #w2f>\r\n                </td>\r\n                <td>\r\n                    <label class=\"col-sm-2 col-form-label\">S</label>\r\n                    <input id=\"w2s\" type=\"text\" class=\"form-control form-control-sm\" #w2s>\r\n                </td>\r\n            </tr>\r\n        </table>\r\n    </div>\r\n    <div class=\"row\" style=\"margin-left: 250px;\">\r\n        <div class=\"col-md-12\">\r\n            <label class=\"col-form-label\">* Must work at least 2 days and 16 hours per week (M-F)</label>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n            <label class=\"col-form-label\">* May only work 4-10 regular hours per day</label>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n            <label class=\"col-form-label\">* At least one core day (Tues or Thurs) must be worked each week between 12pm\r\n                - 2pm</label>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <ul>\r\n            <li>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-2\">\r\n                        <label class=\"col-form-label\">Employee's Signature:</label>\r\n                    </div>\r\n                    <div class=\"col-md-7\">\r\n                        <kendo-signature _ngcontent-ng-c1982058636=\"\" style=\"width: 600px;\" ng-reflect-stroke-width=\"3\"\r\n                            ng-reflect-smooth=\"true\" ng-reflect-maximizable=\"false\" ng-reflect-hide-line=\"true\"\r\n                            class=\"k-signature k-input k-signature-md k-input-solid k-rounded-md\" dir=\"ltr\"><!--bindings={\r\n                        \"ng-reflect-canvas-label\": \"Signature canvas\"\r\n                      }-->\r\n                            <div role=\"img\" class=\"k-signature-canvas\" id=\"k-signature-focusable-0\" tabindex=\"0\"\r\n                                aria-label=\"Signature canvas\" style=\"touch-action: none;\"><canvas width=\"747\"\r\n                                    height=\"132\" style=\"width: 100%; height: 100%;\"></canvas></div>\r\n                            <div class=\"k-signature-actions k-signature-actions-top\"><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }--><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }--></div><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }-->\r\n                            <div class=\"k-signature-actions k-signature-actions-bottom\"><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }--></div><!--bindings={}-->\r\n                        </kendo-signature>\r\n                    </div>\r\n                    <div class=\"col-md-1\">\r\n                        <label class=\"col-form-label\">Date:</label>\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                        <input id=\"empDate\" type=\"date\" class=\"form-control form-control-sm\" #empDate>\r\n                    </div>\r\n                </div>\r\n            </li>\r\n            <li>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"col-form-label\">Supervisor's acknowledgement that the employee meets the\r\n                            eligibility\r\n                            requirements to request enrollment or renewal in a part-time program component. Employee\r\n                            does not\r\n                            have to meet eligibility requirements for Hardship Situations or when only requesting a\r\n                            change in\r\n                            schedule/hours.</label>\r\n                    </div>                    \r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-2\">\r\n                        <label class=\"col-form-label\">Print Name:</label>\r\n                        <input id=\"supName\" type=\"text\" class=\"form-control form-control-sm\" #supName>\r\n                    </div>\r\n                    <div class=\"col-md-8\">\r\n                        <label class=\"col-form-label\">Signature:</label>\r\n                        <kendo-signature _ngcontent-ng-c1982058636=\"\" style=\"width: 600px;\" ng-reflect-stroke-width=\"3\"\r\n                            ng-reflect-smooth=\"true\" ng-reflect-maximizable=\"false\" ng-reflect-hide-line=\"true\"\r\n                            class=\"k-signature k-input k-signature-md k-input-solid k-rounded-md\" dir=\"ltr\"><!--bindings={\r\n                        \"ng-reflect-canvas-label\": \"Signature canvas\"\r\n                      }-->\r\n                            <div role=\"img\" class=\"k-signature-canvas\" id=\"k-signature-focusable-0\" tabindex=\"0\"\r\n                                aria-label=\"Signature canvas\" style=\"touch-action: none;\"><canvas width=\"747\"\r\n                                    height=\"132\" style=\"width: 100%; height: 100%;\"></canvas></div>\r\n                            <div class=\"k-signature-actions k-signature-actions-top\"><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }--><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }--></div><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }-->\r\n                            <div class=\"k-signature-actions k-signature-actions-bottom\"><!--bindings={\r\n                        \"ng-reflect-ng-if\": \"false\"\r\n                      }--></div><!--bindings={}-->\r\n                        </kendo-signature>\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                        <label class=\"col-form-label\">Date:</label>\r\n                        <input id=\"supDate\" type=\"date\" class=\"form-control form-control-sm\" #supDate>\r\n                    </div>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>",
-    "html_value": {
-      "fields": [
+{
+  "mapsFormsWorkflowStepId": 2,
+  "belongsto": "65099",
+  "name": null,
+  "formObject": {
+    "name": ["Doe, John"],
+    "artUnit": [2255],
+    "qualityCorNC": ["C"],
+    "qualityMbo": [""],
+    "qualityIndWeight": ["30%"],
+    "qualityRating": [5],
+    "qualityScore": [150],
+    "productionCorNC": ["C"],
+    "productionMbo": [""],
+    "productionIndWeight": ["30%"],
+    "productionRating": [4],
+    "productionScore": [120],
+    "dmCorNC": ["C"],
+    "dmMbo": [""],
+    "dmIndWeight": ["30%"],
+    "dmRating": [5],
+    "dmScore": [150],
+    "professionalismCorNC": ["C"],
+    "professionalismMbo": [""],
+    "professionalismIndWeight": ["10%"],
+    "professionalismRating": [4],
+    "professionalismScore": [40]
+  },
+  "formDataStructure": [
+    {
+      "id": "",
+      "name": "",
+      "type": "heading",
+      "class": "col-md-12",
+      "label": "SECTION II - PERFORMANCE SUMMARY AND RATING",
+      "value": "",
+      "section": "",
+      "required": false,
+      "formControlName": "",
+      "children": [
         {
-          "id": "employeeName",
-          "name": "",
+          "id": "name",
+          "name": "name",
           "type": "text",
-          "label": "Employee Name",
-          "value": "John",
-          "section": "header",
-          "required": true,
-          "formControlName": "employeeName"
+          "class": "col-md-6",
+          "label": "Name",
+          "value": "Doe, John",
+          "section": "",
+          "required": false,
+          "formControlName": "name"
         },
         {
-          "id": "employeeNumber",
-          "name": "",
+          "id": "artUnit",
+          "name": "artUnit",
           "type": "text",
-          "label": "Employee Number",
-          "value": "123465",
-          "section": "header",
-          "required": true,
-          "formControlName": "employeeNumber"
-        },
-        {
-          "id": "org_Art_unit",
-          "name": "",
-          "type": "text",
-          "label": "Org. / Art Unit",
-          "value": "Abc llc",
-          "section": "header",
-          "required": true,
-          "formControlName": "orgArtUnit"
-        },
-        {
-          "id": "phoneNumber",
-          "name": "",
-          "type": "text",
-          "label": "Phone Number",
-          "value": "7896541230",
-          "section": "header",
-          "required": true,
-          "formControlName": "phoneNumber"
-        },
-        {
-          "id": "currentMemberPTPP",
-          "name": "",
-          "type": "checkbox",
-          "label": "A Current Part-Time Program Participant",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
+          "class": "col-md-6",
+          "label": "Art Unit",
+          "value": "2255",
+          "section": "",
           "required": false,
-          "formControlName": "PTPP"
-        },
-        {
-          "id": "RPP",
-          "name": "",
-          "type": "checkbox",
-          "label": "Renewing participation in the program ",
-          "value": true,
-          "section": "currentMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "RPP"
-        },
-        {
-          "id": "RqtChngHrs",
-          "name": "",
-          "type": "checkbox",
-          "label": "Requesting a change in schedule/hours",
-          "value": true,
-          "section": "currentMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "RqtChngHrs"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: If only requesting a change in schedule/hours, please only complete this section, the Schedule Information section and the Daily Schedule section.",
-          "section": "currentMember",
-          "category": "sub",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "currentAppStartDate",
-          "name": "",
-          "type": "date",
-          "label": "Requested Start Date",
-          "value": "",
-          "section": "currentMember",
-          "category": "subsub",
-          "required": false,
-          "formControlName": "newAppStartDate"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: Requested Start Date should be the first Sunday of a bi-week and End Date will be the end of the current term",
-          "section": "currentMember",
-          "category": "subsub",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newAppl",
-          "name": "",
-          "type": "checkbox",
-          "label": "A New Applicant",
-          "value": false,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "newAppl"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "I am requesting participation in the Part-Time Program under the:",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "preSch",
-          "name": "",
-          "type": "checkbox",
-          "label": "Childcare (Pre-School Age) Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "preSch"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Has child who has not yet begun first grade)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "childcare",
-          "name": "",
-          "type": "checkbox",
-          "label": "Childcare (School Age) Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "childcare"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Has child in school who has not yet turned age 16)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "elderCare",
-          "name": "",
-          "type": "checkbox",
-          "label": "Eldercare Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "elderCare"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Has an elderly relative; including parent/grandparent, in-laws or equivalent relationships; who requires care)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "retention",
-          "name": "",
-          "type": "checkbox",
-          "label": "Retention Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "retention"
-        },
-        {
-          "id": "retirement",
-          "name": "",
-          "type": "checkbox",
-          "label": "Retirement Exception Eligible",
-          "value": true,
-          "section": "currentMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "retirement"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(MUST meet CSRS or FERS minimum retirement eligibility requirements)",
-          "section": "currentMember",
-          "category": "sub",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "hardship",
-          "name": "",
-          "type": "checkbox",
-          "label": "Special Request - Hardship Situations",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "hardship"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Management's Discretion on a case by case basis)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "New Applicant / Renewing Participant Only",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Please complete the following:",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newStartDate",
-          "name": "",
-          "type": "date",
-          "label": "Requested Start Date:",
-          "value": "",
-          "section": "newMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "startDate"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note for New Applicants: Requested start date is usually the first Sunday of a bi-week",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "endDate",
-          "name": "",
-          "type": "date",
-          "label": "End Date",
-          "value": "",
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "endDate"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note for Renewing Participants: Requested start date should be the day after your current term ends",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: At the end of the term, participant will revert to full-time status or may reapply",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "gradeDate",
-          "name": "",
-          "type": "date",
-          "label": "Grade Date",
-          "value": "",
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "gradeDate"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "(at least GS-11 for Retention Component)",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Signatory Authority:",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "PSA",
-          "name": "",
-          "type": "checkbox",
-          "label": "PSA",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "PSA"
-        },
-        {
-          "id": "FSA",
-          "name": "",
-          "type": "checkbox",
-          "label": "FSA",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "FSA"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Schedule Information",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "workHours",
-          "name": "",
-          "type": "text",
-          "label": "Work Hours per Bi-week",
-          "value": "",
-          "section": "newMember",
-          "required": false,
-          "formControlName": "workHours"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: Indicate between 32-64 hours",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "I am also:",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "currentParticipant",
-          "name": "",
-          "type": "checkbox",
-          "label": "A Current Participant of, or",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "currentParticipant"
-        },
-        {
-          "id": "apply",
-          "name": "",
-          "type": "checkbox",
-          "label": "Plan to Apply in the:",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "apply"
-        },
-        {
-          "id": "php",
-          "name": "",
-          "type": "checkbox",
-          "label": "Patents Hoteling Program (PHP)",
-          "value": true,
-          "section": "newMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "php"
-        },
-        {
-          "id": "ptp",
-          "name": "",
-          "type": "checkbox",
-          "label": "Patent Telework Program (PTP)",
-          "value": true,
-          "section": "newMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "ptp"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: Must separately apply and be eligible for these programs",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "Daily Schedule",
-          "section": "Schedule",
-          "category": "main",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "Indicate the number of hours to be worked and the day on which they will be worked",
-          "section": "Schedule",
-          "category": "main",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "Week 1",
-          "section": "Schedule",
-          "category": "table",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "week 2",
-          "section": "Schedule",
-          "category": "table",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "w1m",
-          "name": "",
-          "type": "text",
-          "label": "M",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1m"
-        },
-        {
-          "id": "w1t",
-          "name": "",
-          "type": "text",
-          "label": "T",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1t"
-        },
-        {
-          "id": "w1w",
-          "name": "",
-          "type": "text",
-          "label": "W",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1W"
-        },
-        {
-          "id": "w1th",
-          "name": "",
-          "type": "text",
-          "label": "Th",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1th"
-        },
-        {
-          "id": "w1f",
-          "name": "",
-          "type": "text",
-          "label": "F",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1f"
-        },
-        {
-          "id": "w1s",
-          "name": "",
-          "type": "text",
-          "label": "S",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1s"
-        },
-        {
-          "id": "w2m",
-          "name": "",
-          "type": "text",
-          "label": "M",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2m"
-        },
-        {
-          "id": "w2t",
-          "name": "",
-          "type": "text",
-          "label": "T",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2t"
-        },
-        {
-          "id": "w2w",
-          "name": "",
-          "type": "text",
-          "label": "W",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2W"
-        },
-        {
-          "id": "w2th",
-          "name": "",
-          "type": "text",
-          "label": "Th",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2th"
-        },
-        {
-          "id": "w2f",
-          "name": "",
-          "type": "text",
-          "label": "F",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2f"
-        },
-        {
-          "id": "w2s",
-          "name": "",
-          "type": "text",
-          "label": "S",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2s"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "* Must work at least 2 days and 16 hours per week (M-F)",
-          "section": "Schedule",
-          "category": "tableSub",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "* May only work 4-10 regular hours per day",
-          "section": "Schedule",
-          "category": "tableSub",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "* At least one core day (Tues or Thurs) must be worked each week between 12pm - 2pm",
-          "section": "Schedule",
-          "category": "tableSub",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "employeeSign",
-          "name": "",
-          "type": "sign",
-          "label": "Employee's Signature:",
-          "value": "",
-          "section": "sign",
-          "required": true,
-          "formControlName": "employeeSignature:"
-        },
-        {
-          "id": "signDate",
-          "name": "",
-          "type": "date",
-          "label": "Date:",
-          "value": "",
-          "section": "sign",
-          "required": true,
-          "formControlName": "signDate"
-        },
-        {
-          "id": "supAck",
-          "name": "",
-          "type": "label",
-          "label": "Supervisor's acknowledgement that the employee meets the eligibility requirements to request enrollment or renewal in a part-time program component. Employee does not have to meet eligibility requirements for Hardship Situations or when only requesting a change in schedule/hours.",
-          "value": "",
-          "section": "supAck",
-          "required": true,
-          "formControlName": "supAck"
-        },
-        {
-          "id": "supName",
-          "name": "",
-          "type": "text",
-          "label": "Print Name:",
-          "value": "",
-          "section": "sup",
-          "required": true,
-          "formControlName": "supName"
-        },
-        {
-          "id": "supSign",
-          "name": "",
-          "type": "sign",
-          "label": "Signature:",
-          "value": "",
-          "section": "sup",
-          "required": true,
-          "formControlName": "supSign"
-        },
-        {
-          "id": "suvSignDate",
-          "name": "",
-          "type": "date",
-          "label": "Date:",
-          "value": "",
-          "section": "sup",
-          "required": true,
-          "formControlName": "suvSignDate"
-        },
-        {
-          "id": "dirName",
-          "name": "",
-          "type": "text",
-          "label": "Print Name:",
-          "value": "",
-          "section": "dir",
-          "required": true,
-          "formControlName": "dirName"
-        },
-        {
-          "id": "dirSign",
-          "name": "",
-          "type": "sign",
-          "label": "Signature:",
-          "value": "",
-          "section": "dir",
-          "required": true,
-          "formControlName": "dirSign"
-        },
-        {
-          "id": "dirSignDate",
-          "name": "",
-          "type": "date",
-          "label": "Date:",
-          "value": "",
-          "section": "dir",
-          "required": true,
-          "formControlName": "dirSignDate"
-        },
-        {
-          "id": "adminNote",
-          "name": "",
-          "type": "label",
-          "label": "Note: Applicants should ensure that their request forms are received by the Program Administrator no less than two (2) weeks prior to the requested start date. Applicants will be notified if their request has been approved or, if no current slot is available, that they have been placed on a wait list.",
-          "value": "",
-          "section": "adminNote",
-          "required": true,
-          "formControlName": "adminNote"
-        },
-        {
-          "id": "age",
-          "name": "",
-          "type": "number",
-          "label": "Age",
-          "value": 40,
-          "required": false,
-          "formControlName": "age"
-        },
-        {
-          "id": "member",
-          "name": "",
-          "type": "checkbox",
-          "label": "Are you current member?",
-          "value": true,
-          "section": "currentMember",
-          "required": false,
-          "formControlName": "isMember"
-        },
-        {
-          "id": "comments",
-          "name": "",
-          "type": "textarea",
-          "label": "Comments",
-          "value": "I have read all of the terms and conditions",
-          "section": "currentMember",
-          "required": false,
-          "formControlName": "comments"
-        },
-        {
-          "id": "male",
-          "name": "gender",
-          "type": "radio",
-          "label": "Male",
-          "value": false,
-          "required": false,
-          "formControlName": "gender"
-        },
-        {
-          "id": "female",
-          "name": "gender",
-          "type": "radio",
-          "label": "Female",
-          "value": false,
-          "required": false,
-          "formControlName": "gender"
-        },
-        {
-          "id": "neither",
-          "name": "gender",
-          "type": "radio",
-          "label": "Prefer not to say",
-          "value": false,
-          "required": false,
-          "formControlName": "gender"
+          "formControlName": "artUnit"
         }
-      ],
-      "formName": "testForm"
+      ]
+    },
+    {
+      "id": "",
+      "name": "",
+      "type": "heading",
+      "class": "col-md-12",
+      "label": "Item 1: Instructions",
+      "value": "",
+      "section": "",
+      "required": false,
+      "formControlName": "",
+      "children": [
+        {
+          "id": "",
+          "name": "",
+          "type": "list",
+          "class": "col-md-12",
+          "label": "1. List each element in the performance plan; indicate whether it is critical/non critical and what weight has been assigned to it.",
+          "value": "",
+          "section": "",
+          "required": false,
+          "formControlName": ""
+        },
+        {
+          "id": "",
+          "name": "",
+          "type": "list",
+          "class": "col-md-12",
+          "label": "2. Assign a rating level for each element. (5) Outstanding, (4) Commendable, (3) Fully Successful, (2) Marginal/Minimal Satisfactory (SES), (1) Unacceptable/Unsatisfactory (SES)",
+          "value": "",
+          "section": "",
+          "required": false,
+          "formControlName": ""
+        },
+        {
+          "id": "",
+          "name": "",
+          "type": "list",
+          "class": "col-md-12",
+          "label": "3. Score each element by multiplying the weight by the rating level",
+          "value": "",
+          "section": "",
+          "required": false,
+          "formControlName": ""
+        },
+        {
+          "id": "",
+          "name": "",
+          "type": "list",
+          "class": "col-md-12",
+          "label": "4. After each element has been scored, compute the total score by summing all individual scores. Total score can range from 100 to 500",
+          "value": "",
+          "section": "",
+          "required": false,
+          "formControlName": ""
+        }
+      ]
+    },
+     {
+       "id": "",
+       "name": "",
+       "type": "heading",
+       "class": "col-md-12",
+       "label": "Item 1: Instructions",
+       "value": "",
+       "section": "",
+       "required": false,
+       "formControlName": "",
+       "children": [
+         {
+           "id": "",
+           "name": "",
+           "type": "grid",
+           "class": "row",
+           "label": "",
+           "value": "",
+           "section": "",
+           "required": false,
+           "formControlName": "",
+           "children": [
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-4 grid-border",
+               "label": "Performance Element",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-2 grid-border",
+               "label": "Critical or Non-critical (C or NC)",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-1 grid-border",
+               "label": "MBO",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-2 grid-border",
+               "label": "Individual Weights (sum must total 100)",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-2 grid-border",
+               "label": "Element Rating (1-5)",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-1 grid-border",
+               "label": "Score",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-4 grid-border",
+               "label": "I. Quality",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "qualityCorNC"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "qualityMbo"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "qualityIndWeight"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "qualityRating"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "qualityScore"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-4 grid-border",
+               "label": "II. Production",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "productionCorNC"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "productionMbo"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "productionIndWeight"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "productionRating"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "productionScore"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-4 grid-border",
+               "label": "III. Docket Management",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "dmCorNC"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "dmMbo"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "dmIndWeight"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "dmRating"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "dmScore"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "grid",
+               "class": "col-md-4 grid-border",
+               "label": "IV. Professionalism and Stakeholder Interaction",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": ""
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "professionalismCorNC"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "professionalismMbo"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "professionalismIndWeight"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-2 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "professionalismRating"
+             },
+             {
+               "id": "",
+               "name": "",
+               "type": "text",
+               "class": "col-md-1 grid-border",
+               "label": "",
+               "value": "",
+               "section": "",
+               "required": false,
+               "formControlName": "professionalismScore"
+             }
+           ]
+         }
+       ]
+     }
+  ],
+  "formAssignedTo": {
+    "workerId": 101399,
+    "workerNumber": "65099",
+    "familyName": "Donely",
+    "givenName": "Jason",
+    "middleName": "",
+    "email": "raviramani@gmail.com"
+  },
+  "formAssignedBy": {
+    "workerId": 101398,
+    "workerNumber": "65098",
+    "familyName": "Ramani",
+    "givenName": "Ravi",
+    "middleName": "",
+    "email": "raviramani@gmail.com"
+  },
+  "listOfAction": [
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    },
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    },
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
+    },
+    {
+      "id": "SAVE_INIT",
+      "name": "SAVE",
+      "type": "Button",
+      "label": "Save and Continue",
+      "value": "/xxx/xx",
+      "required": false,
+      "formControlName": "SAVE"
     }
+  ],
+  "auditData": {
+    "createDateTime": "2024-04-05T11:28:26.0676",
+    "createUserId": "rramani",
+    "lastModifiedDateTime": "2024-04-05T11:28:26.067542",
+    "lastModifiedUserId": "rramani"
+  },
+  "lifeCycleData": {
+    "beginEffectiveDate": "2024-04-05T11:28:26.067605"
   }
-]
+}

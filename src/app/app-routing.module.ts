@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PartTimeComponent } from './components/forms/part-time/part-time.component';
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
-import { RatingComponent } from '@progress/kendo-angular-inputs';
+import { RatingComponent } from './components/forms/rating/rating.component';
+
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
     component: PapCoverComponent,
   },
   {
-    path: 'rating',
+    path: 'ratings',
     component: RatingComponent,
   },
 ];
