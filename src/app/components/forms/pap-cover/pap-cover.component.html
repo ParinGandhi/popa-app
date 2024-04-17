@@ -162,7 +162,7 @@
           </div>
           <div [ngClass]="child.class" *ngIf="child.type == 'sign'" style="border:1px solid black;">
             <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
-            <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true"
+            <kendo-signature #signature [(value)]="child.value" [strokeWidth]="3" [smooth]="true"
             [formControlName]="child.formControlName" [id]="child.id"
               [maximizable]="false" [hideLine]="true" style="width: 400px;"></kendo-signature>
           </div>
@@ -188,7 +188,7 @@
               </div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'sign'">
                 <kendo-label class="k-checkbox-label" [for]="eachRow.id" [text]="eachRow.label"></kendo-label>
-                <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true"
+                <kendo-signature #signature [(value)]="eachRow.value" [strokeWidth]="3" [smooth]="true"
                   [maximizable]="false" [hideLine]="true" style="width: 300px;"></kendo-signature>
               </div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'date'">
