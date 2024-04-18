@@ -14,13 +14,14 @@ import { NewFormComponent } from './components/new-form/new-form.component';
 import { PartTimeComponent } from './components/forms/part-time/part-time.component';
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
 import { RatingComponent } from './components/forms/rating/rating.component';
+import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, NewFormComponent, PartTimeComponent, PapCoverComponent, RatingComponent],
+  declarations: [AppComponent, NewFormComponent, PartTimeComponent, PapCoverComponent, RatingComponent, NewRatingComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, InputsModule, BrowserAnimationsModule, ButtonsModule, LabelModule, DateInputsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

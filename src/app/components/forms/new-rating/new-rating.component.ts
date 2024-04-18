@@ -8,14 +8,13 @@ import {
   ButtonThemeColor,
 } from '@progress/kendo-angular-buttons';
 import { HttpClient } from '@angular/common/http';
-declare let jsontohtml: any;
 
 @Component({
-  selector: 'app-rating',
-  templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.scss'],
+  selector: 'app-new-rating',
+  templateUrl: './new-rating.component.html',
+  styleUrls: ['./new-rating.component.scss'],
 })
-export class RatingComponent {
+export class NewRatingComponent {
   ratingForm: any;
   ratingFormFields: any;
   public size: ButtonSize = 'large';
@@ -38,10 +37,9 @@ export class RatingComponent {
     // console.log(jsontohtml)
     console.log('Firing ngOnInit');
     this.httpClient
-      .get('assets/newPayload.json')
+      .get('assets/newRatingPayload.json')
       .subscribe((ratingData: any) => {
         console.log(ratingData);
-        this.ratingForm = this.fb.group(ratingData.formObject);
         this.ratingFormFields = ratingData.formDataStructure;
         this.loading = false;
       });
@@ -58,6 +56,6 @@ export class RatingComponent {
   }
 
   logJson() {
-console.log(this.ratingFormFields);
+    console.log(this.ratingFormFields);
   }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PartTimeComponent } from './components/forms/part-time/part-time.component';
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
 import { RatingComponent } from './components/forms/rating/rating.component';
+import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'ratings',
     component: RatingComponent,
+  },
+  {
+    path: 'new-ratings',
+    component: NewRatingComponent,
   },
 ];
 

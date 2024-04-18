@@ -1,10 +1,53 @@
 <div
   class="container"
   style="margin-bottom: 10px"
-  *ngIf="ratingForm && !loading"
+  *ngIf="!loading"
 >
 
-  <form class="k-form k-form-md mt-5" [formGroup]="ratingForm" id="ratingForm">
+<div class="row">
+ <ng-container  *ngFor="let field of ratingFormFields">
+  <div [ngClass]="field.class" *ngIf="field.type == 'h4'">
+          <h4>{{ field.label }}</h4>
+        </div>
+  <div [ngClass]="field.class" *ngIf="field.type == 'h5'">
+          <h5>{{ field.label }}</h5>
+        </div>
+
+        <div [ngClass]="field.class" *ngIf="field.type == 'input'">
+            <kendo-label
+              [for]="field.id"
+              [text]="field.label"
+            ></kendo-label>
+            <kendo-textbox
+              [(ngModel)]="field.value"
+              [id]="field.id"
+            ></kendo-textbox>
+          </div>
+
+          <div [ngClass]="field.class" *ngIf="field.type === 'grid'">
+                {{ field.label }}
+              </div>
+
+          <ng-container *ngIf="field.children">
+            <ng-container *ngIf="field.childrenType === 'list'">
+             <div [ngClass]="field.class">
+               <ol>
+                    <li *ngFor="let child of field.children">
+                      {{ child.label }}
+                    </li>
+                  </ol>
+             </div>
+
+
+            </ng-container>
+
+          </ng-container>
+
+ </ng-container>
+
+</div>
+
+  <!-- <form class="k-form k-form-md mt-5" [formGroup]="ratingForm" id="ratingForm">
     <div>
       <div class="row" *ngFor="let field of ratingFormFields">
         <div [ngClass]="field.class" *ngIf="field.type == 'heading'">
@@ -116,7 +159,7 @@
         </ng-container>
       </div>
     </div>
-  </form>
+  </form> -->
 </div>
 
 
