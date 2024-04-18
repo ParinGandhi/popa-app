@@ -35,14 +35,16 @@ export class PapCoverComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.httpClient.get('assets/payload.json').subscribe((buttonsData) => {
-      console.log(buttonsData);
-      this.jsonData = buttonsData;
-    });
-    this.httpClient.get('assets/papCoverData.json').subscribe((eData) => {
-      console.log(eData);
-      this.papCoverData = eData;
-      this.papFormFields = this.papCoverData?.fields;
+    // this.httpClient.get('assets/payload.json').subscribe((buttonsData) => {
+    //   console.log(buttonsData);
+    //   this.jsonData = buttonsData;
+    // });
+    this.httpClient.get('assets/papCoverData_new.json').subscribe((eData:any) => {
+      // console.log(eData);
+      // this.papCoverData = eData;
+      // this.papFormFields = this.papCoverData?.fields;
+      this.PAPCoverForm = this.fb.group(eData?.formObject);
+      this.papFormFields = eData?.formDataStructure;
     });
   }
 }
