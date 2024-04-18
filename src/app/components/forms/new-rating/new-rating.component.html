@@ -1,51 +1,78 @@
-<div
-  class="container"
-  style="margin-bottom: 10px"
-  *ngIf="!loading"
->
+<div class="container" style="margin-bottom: 10px" *ngIf="!loading">
+  <div class="row">
+    <ng-container *ngFor="let field of ratingFormFields">
+      <div [ngClass]="field.class" *ngIf="field.type == 'h4'">
+        <h4>{{ field.label }}</h4>
+      </div>
+      <div [ngClass]="field.class" *ngIf="field.type == 'h5'">
+        <h5>{{ field.label }}</h5>
+      </div>
 
-<div class="row">
- <ng-container  *ngFor="let field of ratingFormFields">
-  <div [ngClass]="field.class" *ngIf="field.type == 'h4'">
-          <h4>{{ field.label }}</h4>
-        </div>
-  <div [ngClass]="field.class" *ngIf="field.type == 'h5'">
-          <h5>{{ field.label }}</h5>
-        </div>
+      <div [ngClass]="field.class" *ngIf="field.type == 'input'">
+        <kendo-label [for]="field.id" [text]="field.label"></kendo-label>
+        <kendo-textbox
+          [(ngModel)]="field.value"
+          [id]="field.id"
+        ></kendo-textbox>
+      </div>
 
-        <div [ngClass]="field.class" *ngIf="field.type == 'input'">
+      <div [ngClass]="field.class" *ngIf="field.type === 'grid'">
+        {{ field.label }}
+      </div>
+
+      <ng-container *ngIf="field.children">
+        <ng-container *ngIf="field.childrenType === 'list'">
+          <div [ngClass]="field.class">
+            <ol>
+              <li *ngFor="let child of field.children">
+                {{ child.label }}
+              </li>
+            </ol>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <div [ngClass]="field.class" *ngIf="field.type == 'radio-inline'">
+          <input
+            type="radio"
+            [id]="field.id"
+            [value]="field.value"
+            [name]="field.name"
+            [(ngModel)]="field.selectedValue"
+            kendoRadioButton
+          />
+          <kendo-label
+            style="display: block"
+            class="k-radio-label"
+            [for]="field.id"
+            [text]="field.label"
+          ></kendo-label>
+      </div>
+
+      <div [ngClass]="field.class" *ngIf="field.type == 'signature'">
             <kendo-label
+              class="k-checkbox-label"
               [for]="field.id"
               [text]="field.label"
             ></kendo-label>
-            <kendo-textbox
+            <kendo-signature
+            style="width: 100%"
+              #signature
+              [strokeWidth]="3"
+              [smooth]="true"
+              [maximizable]="false"
+              [hideLine]="true"
               [(ngModel)]="field.value"
-              [id]="field.id"
-            ></kendo-textbox>
+            ></kendo-signature>
           </div>
 
-          <div [ngClass]="field.class" *ngIf="field.type === 'grid'">
-                {{ field.label }}
-              </div>
+          <div [ngClass]="field.class" *ngIf="field.type == 'date'">
+             <kendo-label class="k-checkbox-label" [for]="field.id" [text]="field.label"></kendo-label>
+        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
+          </div>
 
-          <ng-container *ngIf="field.children">
-            <ng-container *ngIf="field.childrenType === 'list'">
-             <div [ngClass]="field.class">
-               <ol>
-                    <li *ngFor="let child of field.children">
-                      {{ child.label }}
-                    </li>
-                  </ol>
-             </div>
-
-
-            </ng-container>
-
-          </ng-container>
-
- </ng-container>
-
-</div>
+    </ng-container>
+  </div>
 
   <!-- <form class="k-form k-form-md mt-5" [formGroup]="ratingForm" id="ratingForm">
     <div>
@@ -161,7 +188,6 @@
     </div>
   </form> -->
 </div>
-
 
 <div>
   <button class="btn btn-info" (click)="logJson()">Log Json</button>

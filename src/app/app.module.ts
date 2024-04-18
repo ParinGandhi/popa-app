@@ -15,14 +15,34 @@ import { PartTimeComponent } from './components/forms/part-time/part-time.compon
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
 import { RatingComponent } from './components/forms/rating/rating.component';
 import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
-
-
+// import { NavigationModule } from '@progress/kendo-angular-navigation';
+// import { IconsModule } from "@progress/kendo-angular-icons";
 
 
 
 @NgModule({
-  declarations: [AppComponent, NewFormComponent, PartTimeComponent, PapCoverComponent, RatingComponent, NewRatingComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, InputsModule, BrowserAnimationsModule, ButtonsModule, LabelModule, DateInputsModule,HttpClientModule],
+  declarations: [
+    AppComponent,
+    NewFormComponent,
+    PartTimeComponent,
+    PapCoverComponent,
+    RatingComponent,
+    NewRatingComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputsModule,
+    BrowserAnimationsModule,
+    ButtonsModule,
+    LabelModule,
+    DateInputsModule,
+    HttpClientModule,
+    // NavigationModule,
+    // IconsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
