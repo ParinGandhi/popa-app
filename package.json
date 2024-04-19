@@ -37,7 +37,6 @@
     "@progress/kendo-theme-default": "^7.2.0",
     "@supabase/supabase-js": "^2.39.8",
     "bootstrap": "^5.0.1",
-    "jsontohtml": "^0.0.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

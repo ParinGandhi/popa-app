@@ -29,6 +29,7 @@ export class NewRatingComponent {
   papCoverData: any;
   loading: boolean = false;
   checked: boolean = false;
+  entireForm: any;
 
   constructor(private fb: FormBuilder, private httpClient: HttpClient) {}
 
@@ -40,6 +41,7 @@ export class NewRatingComponent {
       .get('assets/newRatingPayload.json')
       .subscribe((ratingData: any) => {
         console.log(ratingData);
+        this.entireForm = ratingData;
         this.ratingFormFields = ratingData.formDataStructure;
         this.loading = false;
       });

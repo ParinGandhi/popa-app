@@ -1,0 +1,7 @@
+<div class="row d-flex justify-content-start mt-5">
+  <ng-container *ngFor="let actionItem of entireForm?.listOfAction">
+ <div class="col-md-2">
+    <button [id]="actionItem.id" [ngClass]="actionItem.class" (click)="performAction(actionItem)">{{actionItem.label}}</button>
+  </div>
+</ng-container>
+</div>

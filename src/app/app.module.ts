@@ -15,6 +15,7 @@ import { PartTimeComponent } from './components/forms/part-time/part-time.compon
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
 import { RatingComponent } from './components/forms/rating/rating.component';
 import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
+import { ActionButtonsComponent } from './components/common/action-buttons/action-buttons.component';
 // import { NavigationModule } from '@progress/kendo-angular-navigation';
 // import { IconsModule } from "@progress/kendo-angular-icons";
 
@@ -28,6 +29,7 @@ import { NewRatingComponent } from './components/forms/new-rating/new-rating.com
     PapCoverComponent,
     RatingComponent,
     NewRatingComponent,
+    ActionButtonsComponent,
   ],
   imports: [
     BrowserModule,

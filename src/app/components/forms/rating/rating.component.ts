@@ -8,7 +8,6 @@ import {
   ButtonThemeColor,
 } from '@progress/kendo-angular-buttons';
 import { HttpClient } from '@angular/common/http';
-declare let jsontohtml: any;
 
 @Component({
   selector: 'app-rating',

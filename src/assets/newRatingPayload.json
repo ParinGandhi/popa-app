@@ -1223,40 +1223,31 @@
   },
   "listOfAction": [
     {
-      "id": "SAVE_INIT",
+      "id": "save_action",
+      "class": "btn btn-success",
       "name": "SAVE",
-      "type": "Button",
+      "type": "save",
       "label": "Save and Continue",
-      "value": "/xxx/xx",
-      "required": false,
-      "formControlName": "SAVE"
+      "value": "/saveForm",
+      "required": false
     },
     {
-      "id": "SAVE_INIT",
-      "name": "SAVE",
-      "type": "Button",
-      "label": "Save and Continue",
-      "value": "/xxx/xx",
-      "required": false,
-      "formControlName": "SAVE"
+      "id": "update_action",
+      "class": "btn btn-warning",
+      "name": "UPDATE",
+      "type": "update",
+      "label": "Update",
+      "value": "/updateForm",
+      "required": false
     },
     {
-      "id": "SAVE_INIT",
-      "name": "SAVE",
-      "type": "Button",
-      "label": "Save and Continue",
-      "value": "/xxx/xx",
-      "required": false,
-      "formControlName": "SAVE"
-    },
-    {
-      "id": "SAVE_INIT",
-      "name": "SAVE",
-      "type": "Button",
-      "label": "Save and Continue",
-      "value": "/xxx/xx",
-      "required": false,
-      "formControlName": "SAVE"
+      "id": "delete_action",
+      "name": "DELETE",
+      "class": "btn btn-danger",
+      "type": "delete",
+      "label": "Delete",
+      "value": "/deleteForm",
+      "required": false
     }
   ],
   "auditData": {
