@@ -20,13 +20,13 @@ const routes: Routes = [
     component: RatingComponent,
   },
   {
-    path: 'new-ratings',
+    path: 'new-ratings/:id',
     component: NewRatingComponent,
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

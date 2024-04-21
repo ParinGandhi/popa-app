@@ -8,6 +8,8 @@ import {
   ButtonThemeColor,
 } from '@progress/kendo-angular-buttons';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { FormsService } from 'src/app/services/forms.service';
 
 @Component({
   selector: 'app-new-rating',
@@ -31,20 +33,31 @@ export class NewRatingComponent {
   checked: boolean = false;
   entireForm: any;
 
-  constructor(private fb: FormBuilder, private httpClient: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private httpClient: HttpClient,
+    private route: ActivatedRoute,
+    private formsService: FormsService
+  ) {}
 
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+
     this.loading = true;
     // console.log(jsontohtml)
-    console.log('Firing ngOnInit');
-    this.httpClient
-      .get('assets/newRatingPayload.json')
-      .subscribe((ratingData: any) => {
-        console.log(ratingData);
-        this.entireForm = ratingData;
-        this.ratingFormFields = ratingData.formDataStructure;
-        this.loading = false;
-      });
+    if (id && !isNaN(parseInt(id))) {
+      console.log('Firing ngOnInit');
+      this.httpClient
+        .get('assets/newRatingPayload.json')
+        .subscribe((ratingData: any) => {
+          console.log(ratingData);
+          this.entireForm = ratingData;
+          this.ratingFormFields = ratingData.formDataStructure;
+          this.loading = false;
+        });
+    } else {
+      this.getInitialForm();
+    }
     // if (this.ratingFormFields) {
     //   let formGroupObj: any = {};
     //   for (const key of this.ratingFormFields) {
@@ -55,6 +68,17 @@ export class NewRatingComponent {
 
     //   // this.partTimeFormFields = dataFromService.data[0].html_value.fields;
     // }
+  }
+
+  getInitialForm() {
+    this.formsService.getFormsMenu().subscribe((formsMenuResponse: any) => {
+      const ratingMenu = formsMenuResponse.find((indMenu: any) => {
+        return indMenu.name.toLowerCase() == 'rating';
+      });
+      this.entireForm = ratingMenu;
+      this.ratingFormFields = ratingMenu.formDataStructure;
+      this.loading = false;
+    });
   }
 
   logJson() {

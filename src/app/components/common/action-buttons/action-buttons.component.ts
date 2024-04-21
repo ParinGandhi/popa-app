@@ -14,6 +14,9 @@ export class ActionButtonsComponent {
 
   performAction(actionItem: any) {
     switch (actionItem.type) {
+      case 'initiate':
+        this.saveForm(actionItem);
+        break;
       case 'save':
         this.saveForm(actionItem);
         break;
