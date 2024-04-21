@@ -43,8 +43,13 @@ export class PapCoverComponent implements OnInit {
       // console.log(eData);
       // this.papCoverData = eData;
       // this.papFormFields = this.papCoverData?.fields;
-      this.PAPCoverForm = this.fb.group(eData?.formObject);
+      // this.PAPCoverForm = this.fb.group(eData?.formObject);
       this.papFormFields = eData?.formDataStructure;
     });
   }
+
+  logJson() {
+    console.log(this.papFormFields);
+  }
+
 }
