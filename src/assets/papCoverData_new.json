@@ -84,40 +84,40 @@
     "yes": [
       ""
     ],
-    "sec8name": [
+    "classifierName": [
       ""
     ],
-    "sec8Sign": [
+    "classifierSign": [
       ""
     ],
-    "sec8Dt": [
+    "classifierDt": [
       ""
     ],
     "sec9lbl": [
       ""
     ],
-    "sec10name": [
+    "speName": [
       ""
     ],
-    "sec10Sign": [
+    "speSign": [
       ""
     ],
-    "sec10Dt": [
+    "speDt": [
       ""
     ],
-    "sec12name": [
+    "directorName": [
       ""
     ],
-    "sec12Sign": [
+    "directorSign": [
       ""
     ],
-    "sec12Dt": [
+    "directorDt": [
       ""
     ],
-    "sec13Sign": [
+    "ackSign": [
       ""
     ],
-    "sec13Dt": [
+    "ackDt": [
       ""
     ]
   },
@@ -653,27 +653,27 @@
           "label": "NAME & TITLE OF CLASSIFIER:",
           "value": "",
           "required": false,
-          "formControlName": "sec8name",
+          "formControlName": "classifierName",
           "class": "col-md-5"
         },
         {
-          "id": "sec8Sign",
+          "id": "classifierSign",
           "name": "",
           "type": "sign",
           "label": "SIGNATURE:",
           "value": "",
           "required": false,
-          "formControlName": "sec8Sign",
+          "formControlName": "classifierSign",
           "class": "col-md-5"
         },
         {
-          "id": "sec8Dt",
+          "id": "classifierDt",
           "name": "",
           "type": "date",
           "label": "DATE",
           "value": "",
           "required": false,
-          "formControlName": "sec8Dt",
+          "formControlName": "classifierDt",
           "class": "col-md-2"
         }
       ]
@@ -717,33 +717,33 @@
       "class": "row",
       "children": [
         {
-          "id": "sec10name",
+          "id": "speName",
           "name": "",
           "type": "text",
           "label": "NAME & TITLE OF FIRST LINE SUPERVISOR/RATING OFFICIAL:",
           "value": "",
           "required": false,
-          "formControlName": "sec10name",
+          "formControlName": "speName",
           "class": "col-md-5"
         },
         {
-          "id": "sec10Sign",
+          "id": "speSign",
           "name": "",
           "type": "sign",
           "label": "SIGNATURE:",
           "value": "",
           "required": false,
-          "formControlName": "sec10Sign",
+          "formControlName": "speSign",
           "class": "col-md-5"
         },
         {
-          "id": "sec10Dt",
+          "id": "speDt",
           "name": "",
           "type": "date",
           "label": "DATE",
           "value": "",
           "required": false,
-          "formControlName": "sec10Dt",
+          "formControlName": "speDt",
           "class": "col-md-2"
         }
       ]
@@ -771,33 +771,33 @@
       "class": "row",
       "children": [
         {
-          "id": "sec12name",
+          "id": "directorName",
           "name": "",
           "type": "text",
           "label": "NAME & TITLE OF APPROVING OFFICIAL OR SES APPOINTING AUTHORITY",
           "value": "",
           "required": false,
-          "formControlName": "sec12name",
+          "formControlName": "directorName",
           "class": "col-md-5"
         },
         {
-          "id": "sec12Sign",
+          "id": "directorSign",
           "name": "",
           "type": "sign",
           "label": "SIGNATURE:",
           "value": "",
           "required": false,
-          "formControlName": "sec12Sign",
+          "formControlName": "directorSign",
           "class": "col-md-5"
         },
         {
-          "id": "sec12Dt",
+          "id": "directorDt",
           "name": "",
           "type": "date",
           "label": "DATE",
           "value": "",
           "required": false,
-          "formControlName": "sec12Dt",
+          "formControlName": "directorDt",
           "class": "col-md-2"
         }
       ]
@@ -819,23 +819,23 @@
           "class": "col-md-5"
         },
         {
-          "id": "sec13Sign",
+          "id": "ackSign",
           "name": "",
           "type": "sign",
           "label": "SIGNATURE:",
           "value": "",
           "required": false,
-          "formControlName": "sec13Sign",
+          "formControlName": "ackSign",
           "class": "col-md-5"
         },
         {
-          "id": "sec13Dt",
+          "id": "ackDt",
           "name": "",
           "type": "date",
           "label": "DATE",
           "value": "",
           "required": false,
-          "formControlName": "sec13Dt",
+          "formControlName": "ackDt",
           "class": "col-md-2"
         }
       ]
@@ -853,7 +853,7 @@
           "label": "PRIVACY ACT STATEMENT - Disclosure of your social security number on this form is voluntary. The number is linked with your name in theofficial personnel records system to ensure unique identification of your records. The social security number will be used solely to ensureaccurate entry of your performance rating into the automated record system.",
           "value": "",
           "required": false,
-          "formControlName": "name",
+          "formControlName": "privacyStmt",
           "class": "col-md-12"
         }
       ]
