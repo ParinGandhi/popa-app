@@ -1,150 +1,5 @@
-<!-- <div class="container" style="margin-bottom: 10px;">
-  <form class="k-form k-form-md mt-5" [formGroup]="PAPCoverForm">
-    <div class="row" id="mainDiv" *ngFor="let formField of papFormFields;let i=index;let even = even;">
-      <div class="col-md-8" *ngIf="formField.section=='header'">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='headerRight'">
-        <div class="wrap">
-          <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-          <kendo-textbox [formControlName]="formField.formControlName" [id]="formField.id"
-            required></kendo-textbox>
-        </div>
-      </div>
-      <div [class]="formField.colclass" *ngIf="formField.section=='section1'">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="formField.formControlName" [id]="formField.id"
-          required></kendo-textbox>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='section2-1'">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='section2-2'">
-        <input type="checkbox" [id]="formField.id" [formControlName]="formField.formControlName" kendoCheckBox />
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='section2-3'">
-        <input type="checkbox" [id]="formField.id" [formControlName]="formField.formControlName" kendoCheckBox />
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='sectionIII'">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='section3-1'">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='section3-2'">
-        <input type="radio" name="coveredby" [value]="formField.id" #formField.id
-          formControlName="formField.formControlName" kendoRadioButton />
-        <kendo-label [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div class="col-md-4" *ngIf="formField.section=='section3-3'">
-        <input type="radio" name="coveredby" [value]="formField.id" #formField.id
-          formControlName="formField.formControlName" kendoRadioButton />
-        <kendo-label [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div [class]="formField.colclass" *ngIf="formField.section=='section3lbl'" style="text-align: center;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div *ngIf="formField.section=='section4' && formField.type === 'sign'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true" [maximizable]="false"
-          [hideLine]="true" style="width: 600px;"></kendo-signature>
-      </div>
-      <div *ngIf="formField.section=='section4' && formField.type === 'date'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
-      </div>
-      <div *ngIf="formField.section=='section5' && formField.type === 'text'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="papFormFields[i].formControlName" [id]="papFormFields[i].id"
-          required></kendo-textbox>
-      </div>
-      <div *ngIf="formField.section=='section6' && formField.type === 'text'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="papFormFields[i].formControlName" [id]="papFormFields[i].id"
-          required></kendo-textbox>
-      </div>
-      <div *ngIf="formField.section=='section6' && formField.type === 'radio'" style="display: flex;">
-        <input type="radio" name="yesNo" [value]="formField.id" #formField.id
-          formControlName="formField.formControlName" kendoRadioButton />
-        <kendo-label [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div *ngIf="formField.section=='section7'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div *ngIf="formField.section=='section8' && formField.type === 'text'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="papFormFields[i].formControlName" [id]="papFormFields[i].id"
-        required></kendo-textbox>
-      </div>
-      <div *ngIf="formField.section=='section8' && formField.type === 'sign'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true" [maximizable]="false"
-          [hideLine]="true" style="width: 600px;"></kendo-signature>
-      </div>
-      <div *ngIf="formField.section=='section8' && formField.type === 'date'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
-      </div>
-      <div *ngIf="formField.section=='section9'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div *ngIf="formField.section=='section10' && formField.type === 'text'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="papFormFields[i].formControlName" [id]="papFormFields[i].id"
-        required></kendo-textbox>
-      </div>
-      <div *ngIf="formField.section=='section10' && formField.type === 'sign'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true" [maximizable]="false"
-          [hideLine]="true" style="width: 600px;"></kendo-signature>
-      </div>
-      <div *ngIf="formField.section=='section10' && formField.type === 'date'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
-      </div>
-      <div *ngIf="formField.section=='section11'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-      <div *ngIf="formField.section=='section12' && formField.type === 'text'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="papFormFields[i].formControlName" [id]="papFormFields[i].id"
-        required></kendo-textbox>
-      </div>
-      <div *ngIf="formField.section=='section12' && formField.type === 'sign'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true" [maximizable]="false"
-          [hideLine]="true" style="width: 600px;"></kendo-signature>
-      </div>
-      <div *ngIf="formField.section=='section12' && formField.type === 'date'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
-      </div>
-      <div *ngIf="formField.section=='section13' && formField.type === 'text'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-textbox [formControlName]="papFormFields[i].formControlName" [id]="papFormFields[i].id"
-        required></kendo-textbox>
-      </div>
-      <div *ngIf="formField.section=='section13' && formField.type === 'sign'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-signature #signature [(value)]="dirSignValue" [strokeWidth]="3" [smooth]="true" [maximizable]="false"
-          [hideLine]="true" style="width: 600px;"></kendo-signature>
-      </div>
-      <div *ngIf="formField.section=='section13' && formField.type === 'date'" style="display: flex;width: auto;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
-      </div>
-      <div *ngIf="formField.section=='section14'" style="display: flex;">
-        <kendo-label class="k-checkbox-label" [for]="formField.id" [text]="formField.label"></kendo-label>
-      </div>
-    </div>
-  </form>
-</div> -->
-
-
 <div class="container" style="margin-bottom: 10px">
-  <form class="k-form k-form-md mt-5" [formGroup]="PAPCoverForm" id="PAPCoverForm">
+  <!-- <form class="k-form k-form-md mt-5" [formGroup]="PAPCoverForm" id="PAPCoverForm"> -->
     <div>
       <div class="row" *ngFor="let field of papFormFields">
         <ng-container *ngFor="let child of field.children">
@@ -153,52 +8,55 @@
           </div>
           <div [ngClass]="child.class" *ngIf="child.type == 'text'" style="border:1px solid black;">
             <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
-            <kendo-textbox [formControlName]="child.formControlName" [id]="child.id" [style.width.px]="200"
-              style="margin-left: 5px;margin-bottom: 5px;"></kendo-textbox>
+            <kendo-textbox [id]="child.id" [style.width.px]="200"
+              style="margin-left: 5px;margin-bottom: 5px;" [(ngModel)]="child.value"></kendo-textbox>
           </div>
           <div [ngClass]="child.class" *ngIf="child.type == 'radio'" style="border:1px solid black;">
-            <input type="radio" [name]="child.name" [value]="child.id" #child.id kendoRadioButton />
+            <input type="radio" [name]="child.name" [value]="child.id" [(ngModel)]="child.selectedValue" #child.id kendoRadioButton />
             <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
           </div>
           <div [ngClass]="child.class" *ngIf="child.type == 'sign'" style="border:1px solid black;">
             <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
             <kendo-signature #signature [(value)]="child.value" [strokeWidth]="3" [smooth]="true"
-            [formControlName]="child.formControlName" [id]="child.id"
+             [id]="child.id" [(ngModel)]="child.value"
               [maximizable]="false" [hideLine]="true" style="width: 400px;"></kendo-signature>
           </div>
           <div [ngClass]="child.class" *ngIf="child.type == 'date'" style="border:1px solid black;">
             <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
-            <kendo-datepicker [formControlName]="child.formControlName" [id]="child.id" placeholder="Choose a date ..."></kendo-datepicker>
+            <kendo-datepicker [(ngModel)]="child.value" [id]="child.id" placeholder="Choose a date ..."></kendo-datepicker>
           </div>
           <div [ngClass]="child.class" *ngIf="child.type == 'subrow'" style="border:1px solid black;">
             <ng-container *ngFor="let eachRow of child.children">
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'label'">{{eachRow.label}}</div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'text'">
                 <kendo-label class="k-checkbox-label" [for]="eachRow.id" [text]="eachRow.label"></kendo-label>
-                <kendo-textbox [formControlName]="eachRow.formControlName" [id]="eachRow.id" [style.width.px]="500"
+                <kendo-textbox [id]="eachRow.id" [(ngModel)]="eachRow.value" [style.width.px]="500"
                   style="margin-left: 5px;margin-bottom: 5px;"></kendo-textbox>
               </div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'checkbox'">
-                <input type="checkbox" [id]="eachRow.id" [formControlName]="eachRow.formControlName" kendoCheckBox />
+                <input type="checkbox" [id]="eachRow.id" [(ngModel)]="eachRow.value" kendoCheckBox />
                 <kendo-label class="k-checkbox-label" [for]="eachRow.id" [text]="eachRow.label"></kendo-label>
               </div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'radio'">
-                <input type="radio" [name]="eachRow.name" [value]="eachRow.id" #eachRow.id kendoRadioButton />
+                <input type="radio" [name]="eachRow.name" [value]="eachRow.id" [(ngModel)]="eachRow.selectedValue" #eachRow.id kendoRadioButton />
                 <kendo-label [for]="eachRow.id" [text]="eachRow.label"></kendo-label>
               </div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'sign'">
                 <kendo-label class="k-checkbox-label" [for]="eachRow.id" [text]="eachRow.label"></kendo-label>
-                <kendo-signature #signature [(value)]="eachRow.value" [strokeWidth]="3" [smooth]="true"
+                <kendo-signature #signature [(value)]="eachRow.value" [strokeWidth]="3" [smooth]="true" [(ngModel)]="eachRow.value"
                   [maximizable]="false" [hideLine]="true" style="width: 300px;"></kendo-signature>
               </div>
               <div [ngClass]="eachRow.class" *ngIf="eachRow.type == 'date'">
                 <kendo-label class="k-checkbox-label" [for]="eachRow.id" [text]="eachRow.label"></kendo-label>
-                <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
+                <kendo-datepicker placeholder="Choose a date ..."   [(ngModel)]="eachRow.value"></kendo-datepicker>
               </div>
             </ng-container>
           </div>
         </ng-container>
       </div>
     </div>
-  </form>
+  <!-- </form> -->
+</div>
+<div>
+  <button class="btn btn-info" (click)="logJson()">Log Json</button>
 </div>
