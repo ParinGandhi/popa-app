@@ -134,10 +134,10 @@ export class AppComponent implements OnInit {
     const formNameLower = formName.name.toLowerCase();
     switch (formNameLower) {
       case 'pap_2023':
-        this.router.navigate(['pap-cover']);
+        this.router.navigate(['pap-cover/initiate']);
         break;
       case 'pap_2024':
-        this.router.navigate(['pap-cover']);
+        this.router.navigate(['pap-cover/initiate']);
         break;
       case 'part-time':
         this.router.navigate(['part-time']);

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { FormsService } from 'src/app/services/forms.service';
 
@@ -7,10 +7,14 @@ import { FormsService } from 'src/app/services/forms.service';
   templateUrl: './action-buttons.component.html',
   styleUrls: ['./action-buttons.component.scss'],
 })
-export class ActionButtonsComponent {
+export class ActionButtonsComponent implements OnInit{
   @Input() entireForm: any;
 
   constructor(private formsService: FormsService) {}
+
+  ngOnInit(): void {
+    console.log('From action buttons: ', this.entireForm);
+  }
 
   performAction(actionItem: any) {
     switch (actionItem.type) {

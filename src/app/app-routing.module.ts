@@ -12,7 +12,7 @@ const routes: Routes = [
     component: PartTimeComponent,
   },
   {
-    path: 'pap-cover',
+    path: 'pap-cover/:id',
     component: PapCoverComponent,
   },
   {

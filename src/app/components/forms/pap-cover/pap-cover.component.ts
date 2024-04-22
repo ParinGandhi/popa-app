@@ -8,6 +8,8 @@ import {
   ButtonThemeColor,
 } from '@progress/kendo-angular-buttons';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { FormsService } from 'src/app/services/forms.service';
 
 @Component({
   selector: 'app-pap-cover',
@@ -30,8 +32,10 @@ export class PapCoverComponent implements OnInit {
   papCoverData: any;
 
   constructor(
-     private fb: FormBuilder,
-    private httpClient: HttpClient
+    private fb: FormBuilder,
+    private httpClient: HttpClient,
+    private route: ActivatedRoute,
+    private formsService: FormsService
   ) {}
 
   ngOnInit(): void {
@@ -39,17 +43,51 @@ export class PapCoverComponent implements OnInit {
     //   console.log(buttonsData);
     //   this.jsonData = buttonsData;
     // });
-    this.httpClient.get('assets/papCoverData_new.json').subscribe((eData:any) => {
-      // console.log(eData);
-      // this.papCoverData = eData;
-      // this.papFormFields = this.papCoverData?.fields;
-      // this.PAPCoverForm = this.fb.group(eData?.formObject);
-      this.papFormFields = eData?.formDataStructure;
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id && !isNaN(parseInt(id))) {
+      console.log('Firing ngOnInit');
+      this.httpClient
+        .get('assets/papCoverData_new.json')
+        .subscribe((eData: any) => {
+          console.log(eData);
+          this.papCoverData = eData;
+          this.papFormFields = eData?.formDataStructure;
+        });
+    } else {
+      this.getInitialForm();
+    }
+    // this.httpClient.get('assets/papCoverData_new.json').subscribe((eData:any) => {
+    //   // console.log(eData);
+    //   this.papCoverData = eData;
+    //   // this.papFormFields = this.papCoverData?.fields;
+    //   // this.PAPCoverForm = this.fb.group(eData?.formObject);
+    //   this.papFormFields = eData?.formDataStructure;
+    // });
+  }
+
+  getInitialForm() {
+    this.formsService.getFormsMenu().subscribe((formsMenuResponse: any) => {
+      const papCoverMenu = formsMenuResponse.find((indMenu: any) => {
+        return indMenu.name.toLowerCase() == 'pap_2023';
+      });
+       this.papCoverData = papCoverMenu;
+       this.papFormFields = papCoverMenu?.formDataStructure;
     });
+
+
+    this.httpClient
+      .get('assets/papCoverData_new.json')
+      .subscribe((eData: any) => {
+        // console.log(eData);
+        this.papCoverData = eData;
+        // this.papFormFields = this.papCoverData?.fields;
+        // this.PAPCoverForm = this.fb.group(eData?.formObject);
+        this.papFormFields = eData?.formDataStructure;
+      });
   }
 
   logJson() {
     console.log(this.papFormFields);
   }
-
 }
