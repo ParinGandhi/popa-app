@@ -29,9 +29,7 @@
               "node_modules/@progress/kendo-theme-bootstrap/dist/all.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jsontohtml/index.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
