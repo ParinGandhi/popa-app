@@ -1762,779 +1762,843 @@
   {
     "name": "PART_TIME",
     "description": "Part time request from Examiner",
-    "formDataStructure": {
-      "fields": [
-        {
-          "id": "employeeName",
-          "name": "",
-          "type": "text",
-          "label": "Employee Name",
-          "value": "John",
-          "section": "header",
-          "required": true,
-          "formControlName": "employeeName"
-        },
-        {
-          "id": "employeeNumber",
-          "name": "",
-          "type": "text",
-          "label": "Employee Number",
-          "value": "123465",
-          "section": "header",
-          "required": true,
-          "formControlName": "employeeNumber"
-        },
-        {
-          "id": "org_Art_unit",
-          "name": "",
-          "type": "text",
-          "label": "Org. / Art Unit",
-          "value": "Abc llc",
-          "section": "header",
-          "required": true,
-          "formControlName": "orgArtUnit"
-        },
-        {
-          "id": "phoneNumber",
-          "name": "",
-          "type": "text",
-          "label": "Phone Number",
-          "value": "7896541230",
-          "section": "header",
-          "required": true,
-          "formControlName": "phoneNumber"
-        },
-        {
-          "id": "currentMemberPTPP",
-          "name": "",
-          "type": "checkbox",
-          "label": "A Current Part-Time Program Participant",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "PTPP"
-        },
-        {
-          "id": "RPP",
-          "name": "",
-          "type": "checkbox",
-          "label": "Renewing participation in the program ",
-          "value": true,
-          "section": "currentMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "RPP"
-        },
-        {
-          "id": "RqtChngHrs",
-          "name": "",
-          "type": "checkbox",
-          "label": "Requesting a change in schedule/hours",
-          "value": true,
-          "section": "currentMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "RqtChngHrs"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: If only requesting a change in schedule/hours, please only complete this section, the Schedule Information section and the Daily Schedule section.",
-          "section": "currentMember",
-          "category": "sub",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "currentAppStartDate",
-          "name": "",
-          "type": "date",
-          "label": "Requested Start Date",
-          "value": "",
-          "section": "currentMember",
-          "category": "subsub",
-          "required": false,
-          "formControlName": "newAppStartDate"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: Requested Start Date should be the first Sunday of a bi-week and End Date will be the end of the current term",
-          "section": "currentMember",
-          "category": "subsub",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newAppl",
-          "name": "",
-          "type": "checkbox",
-          "label": "A New Applicant",
-          "value": false,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "newAppl"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "I am requesting participation in the Part-Time Program under the:",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "preSch",
-          "name": "",
-          "type": "checkbox",
-          "label": "Childcare (Pre-School Age) Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "preSch"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Has child who has not yet begun first grade)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "childcare",
-          "name": "",
-          "type": "checkbox",
-          "label": "Childcare (School Age) Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "childcare"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Has child in school who has not yet turned age 16)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "elderCare",
-          "name": "",
-          "type": "checkbox",
-          "label": "Eldercare Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "elderCare"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Has an elderly relative; including parent/grandparent, in-laws or equivalent relationships; who requires care)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "retention",
-          "name": "",
-          "type": "checkbox",
-          "label": "Retention Component",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "retention"
-        },
-        {
-          "id": "retirement",
-          "name": "",
-          "type": "checkbox",
-          "label": "Retirement Exception Eligible",
-          "value": true,
-          "section": "currentMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "retirement"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(MUST meet CSRS or FERS minimum retirement eligibility requirements)",
-          "section": "currentMember",
-          "category": "sub",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "hardship",
-          "name": "",
-          "type": "checkbox",
-          "label": "Special Request - Hardship Situations",
-          "value": true,
-          "section": "currentMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "hardship"
-        },
-        {
-          "id": "currentMember",
-          "name": "",
-          "type": "label",
-          "label": "(Managements Discretion on a case by case basis)",
-          "section": "currentMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "New Applicant / Renewing Participant Only",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Please complete the following:",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newStartDate",
-          "name": "",
-          "type": "date",
-          "label": "Requested Start Date:",
-          "value": "",
-          "section": "newMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "startDate"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note for New Applicants: Requested start date is usually the first Sunday of a bi-week",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "endDate",
-          "name": "",
-          "type": "date",
-          "label": "End Date",
-          "value": "",
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "endDate"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note for Renewing Participants: Requested start date should be the day after your current term ends",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: At the end of the term, participant will revert to full-time status or may reapply",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "gradeDate",
-          "name": "",
-          "type": "date",
-          "label": "Grade Date",
-          "value": "",
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "gradeDate"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "(at least GS-11 for Retention Component)",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Signatory Authority:",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "PSA",
-          "name": "",
-          "type": "checkbox",
-          "label": "PSA",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "PSA"
-        },
-        {
-          "id": "FSA",
-          "name": "",
-          "type": "checkbox",
-          "label": "FSA",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "FSA"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Schedule Information",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "workHours",
-          "name": "",
-          "type": "text",
-          "label": "Work Hours per Bi-week",
-          "value": "",
-          "section": "newMember",
-          "required": false,
-          "formControlName": "workHours"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: Indicate between 32-64 hours",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "I am also:",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "currentParticipant",
-          "name": "",
-          "type": "checkbox",
-          "label": "A Current Participant of, or",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "currentParticipant"
-        },
-        {
-          "id": "apply",
-          "name": "",
-          "type": "checkbox",
-          "label": "Plan to Apply in the:",
-          "value": true,
-          "section": "newMember",
-          "category": "sub",
-          "required": false,
-          "formControlName": "apply"
-        },
-        {
-          "id": "php",
-          "name": "",
-          "type": "checkbox",
-          "label": "Patents Hoteling Program (PHP)",
-          "value": true,
-          "section": "newMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "php"
-        },
-        {
-          "id": "ptp",
-          "name": "",
-          "type": "checkbox",
-          "label": "Patent Telework Program (PTP)",
-          "value": true,
-          "section": "newMember",
-          "category": "main",
-          "required": false,
-          "formControlName": "ptp"
-        },
-        {
-          "id": "newMember",
-          "name": "",
-          "type": "label",
-          "label": "Note: Must separately apply and be eligible for these programs",
-          "section": "newMember",
-          "category": "main",
-          "formControlName": "isMember"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "Daily Schedule",
-          "section": "Schedule",
-          "category": "main",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "Indicate the number of hours to be worked and the day on which they will be worked",
-          "section": "Schedule",
-          "category": "main",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "Week 1",
-          "section": "Schedule",
-          "category": "table",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "week 2",
-          "section": "Schedule",
-          "category": "table",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "w1m",
-          "name": "",
-          "type": "text",
-          "label": "M",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1m"
-        },
-        {
-          "id": "w1t",
-          "name": "",
-          "type": "text",
-          "label": "T",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1t"
-        },
-        {
-          "id": "w1w",
-          "name": "",
-          "type": "text",
-          "label": "W",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1W"
-        },
-        {
-          "id": "w1th",
-          "name": "",
-          "type": "text",
-          "label": "Th",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1th"
-        },
-        {
-          "id": "w1f",
-          "name": "",
-          "type": "text",
-          "label": "F",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1f"
-        },
-        {
-          "id": "w1s",
-          "name": "",
-          "type": "text",
-          "label": "S",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w1s"
-        },
-        {
-          "id": "w2m",
-          "name": "",
-          "type": "text",
-          "label": "M",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2m"
-        },
-        {
-          "id": "w2t",
-          "name": "",
-          "type": "text",
-          "label": "T",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2t"
-        },
-        {
-          "id": "w2w",
-          "name": "",
-          "type": "text",
-          "label": "W",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2W"
-        },
-        {
-          "id": "w2th",
-          "name": "",
-          "type": "text",
-          "label": "Th",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2th"
-        },
-        {
-          "id": "w2f",
-          "name": "",
-          "type": "text",
-          "label": "F",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2f"
-        },
-        {
-          "id": "w2s",
-          "name": "",
-          "type": "text",
-          "label": "S",
-          "value": "",
-          "section": "Schedule",
-          "formControlName": "w2s"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "* Must work at least 2 days and 16 hours per week (M-F)",
-          "section": "Schedule",
-          "category": "tableSub",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "* May only work 4-10 regular hours per day",
-          "section": "Schedule",
-          "category": "tableSub",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "dailySchedule",
-          "name": "",
-          "type": "label",
-          "label": "* At least one core day (Tues or Thurs) must be worked each week between 12pm - 2pm",
-          "section": "Schedule",
-          "category": "tableSub",
-          "formControlName": "dailySchedule"
-        },
-        {
-          "id": "employeeSign",
-          "name": "",
-          "type": "sign",
-          "label": "Employees Signature:",
-          "value": "",
-          "section": "sign",
-          "required": true,
-          "formControlName": "employeeSignature:"
-        },
-        {
-          "id": "signDate",
-          "name": "",
-          "type": "date",
-          "label": "Date:",
-          "value": "",
-          "section": "sign",
-          "required": true,
-          "formControlName": "signDate"
-        },
-        {
-          "id": "supAck",
-          "name": "",
-          "type": "label",
-          "label": "Supervisors acknowledgement that the employee meets the eligibility requirements to request enrollment or renewal in a part-time program component. Employee does not have to meet eligibility requirements for Hardship Situations or when only requesting a change in schedule/hours.",
-          "value": "",
-          "section": "supAck",
-          "required": true,
-          "formControlName": "supAck"
-        },
-        {
-          "id": "supName",
-          "name": "",
-          "type": "text",
-          "label": "Print Name:",
-          "value": "",
-          "section": "sup",
-          "required": true,
-          "formControlName": "supName"
-        },
-        {
-          "id": "supSign",
-          "name": "",
-          "type": "sign",
-          "label": "Signature:",
-          "value": "",
-          "section": "sup",
-          "required": true,
-          "formControlName": "supSign"
-        },
-        {
-          "id": "suvSignDate",
-          "name": "",
-          "type": "date",
-          "label": "Date:",
-          "value": "",
-          "section": "sup",
-          "required": true,
-          "formControlName": "suvSignDate"
-        },
-        {
-          "id": "dirName",
-          "name": "",
-          "type": "text",
-          "label": "Print Name:",
-          "value": "",
-          "section": "dir",
-          "required": true,
-          "formControlName": "dirName"
-        },
-        {
-          "id": "dirSign",
-          "name": "",
-          "type": "sign",
-          "label": "Signature:",
-          "value": "",
-          "section": "dir",
-          "required": true,
-          "formControlName": "dirSign"
-        },
-        {
-          "id": "dirSignDate",
-          "name": "",
-          "type": "date",
-          "label": "Date:",
-          "value": "",
-          "section": "dir",
-          "required": true,
-          "formControlName": "dirSignDate"
-        },
-        {
-          "id": "adminNote",
-          "name": "",
-          "type": "label",
-          "label": "Note: Applicants should ensure that their request forms are received by the Program Administrator no less than two (2) weeks prior to the requested start date. Applicants will be notified if their request has been approved or, if no current slot is available, that they have been placed on a wait list.",
-          "value": "",
-          "section": "adminNote",
-          "required": true,
-          "formControlName": "adminNote"
-        },
-        {
-          "id": "age",
-          "name": "",
-          "type": "number",
-          "label": "Age",
-          "value": 40.0,
-          "required": false,
-          "formControlName": "age"
-        },
-        {
-          "id": "member",
-          "name": "",
-          "type": "checkbox",
-          "label": "Are you current member?",
-          "value": true,
-          "section": "currentMember",
-          "required": false,
-          "formControlName": "isMember"
-        },
-        {
-          "id": "comments",
-          "name": "",
-          "type": "textarea",
-          "label": "Comments",
-          "value": "I have read all of the terms and conditions",
-          "section": "currentMember",
-          "required": false,
-          "formControlName": "comments"
-        },
-        {
-          "id": "male",
-          "name": "gender",
-          "type": "radio",
-          "label": "Male",
-          "value": false,
-          "required": false,
-          "formControlName": "gender"
-        },
-        {
-          "id": "female",
-          "name": "gender",
-          "type": "radio",
-          "label": "Female",
-          "value": false,
-          "required": false,
-          "formControlName": "gender"
-        },
-        {
-          "id": "neither",
-          "name": "gender",
-          "type": "radio",
-          "label": "Prefer not to say",
-          "value": false,
-          "required": false,
-          "formControlName": "gender"
-        }
-      ],
-      "formName": "partimeform"
-    },
+    "formDataStructure": [
+      {
+        "id": "employeeName",
+        "name": "",
+        "type": "input",
+        "class": "col-md-6 grid-border",
+        "label": "Employee Name",
+        "value": "John",
+        "section": "header",
+        "required": true,
+        "formControlName": "employeeName"
+      },
+      {
+        "id": "employeeNumber",
+        "name": "",
+        "type": "input",
+        "class": "col-md-6 grid-border",
+        "label": "Employee Number",
+        "value": "123465",
+        "section": "header",
+        "required": true,
+        "formControlName": "employeeNumber"
+      },
+      {
+        "id": "org_Art_unit",
+        "name": "",
+        "type": "input",
+        "class": "col-md-6 grid-border",
+        "label": "Org. / Art Unit",
+        "value": "Abc llc",
+        "section": "header",
+        "required": true,
+        "formControlName": "orgArtUnit"
+      },
+      {
+        "id": "phoneNumber",
+        "name": "",
+        "type": "phone-number",
+        "class": "col-md-6 grid-border",
+        "label": "Phone Number",
+        "value": "7896541230",
+        "section": "header",
+        "required": true,
+        "format": "(999) 000-0000",
+        "formControlName": "phoneNumber"
+      },
+      {
+        "id": "",
+        "name": "",
+        "type": "",
+        "class": "col-md-6 grid-border",
+        "label": "",
+        "value": "",
+        "section": "",
+        "category": "",
+        "required": "",
+        "formControlName": "",
+        "childrenType": "checkbox",
+        "children": [
+          {
+            "id": "currentMemberPTPP",
+            "name": "",
+            "type": "checkbox",
+            "class": "",
+            "label": "A Current Part-Time Program Participant",
+            "value": true,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "PTPP"
+          },
+          {
+            "id": "RPP",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "Renewing participation in the program ",
+            "value": true,
+            "section": "currentMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "RPP"
+          },
+          {
+            "id": "RqtChngHrs",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "Requesting a change in schedule/hours",
+            "value": true,
+            "section": "currentMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "RqtChngHrs"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "class": "checkbox-indent",
+            "label": "Note: If only requesting a change in schedule/hours, please only complete this section, the Schedule Information section and the Daily Schedule section.",
+            "section": "currentMember",
+            "category": "sub",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "currentAppStartDate",
+            "name": "",
+            "type": "date",
+            "class": "checkbox-indent",
+            "label": "Requested Start Date",
+            "value": "",
+            "section": "currentMember",
+            "category": "subsub",
+            "required": false,
+            "formControlName": "newAppStartDate"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "class": "checkbox-indent",
+            "label": "Note: Requested Start Date should be the first Sunday of a bi-week and End Date will be the end of the current term",
+            "section": "currentMember",
+            "category": "subsub",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "newAppl",
+            "name": "",
+            "type": "checkbox",
+            "label": "A New Applicant",
+            "value": false,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "newAppl"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "I am requesting participation in the Part-Time Program under the:",
+            "section": "currentMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "preSch",
+            "name": "",
+            "type": "checkbox",
+            "label": "Childcare (Pre-School Age) Component",
+            "value": true,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "preSch"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "(Has child who has not yet begun first grade)",
+            "section": "currentMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "childcare",
+            "name": "",
+            "type": "checkbox",
+            "label": "Childcare (School Age) Component",
+            "value": true,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "childcare"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "(Has child in school who has not yet turned age 16)",
+            "section": "currentMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "elderCare",
+            "name": "",
+            "type": "checkbox",
+            "label": "Eldercare Component",
+            "value": true,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "elderCare"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "(Has an elderly relative; including parent/grandparent, in-laws or equivalent relationships; who requires care)",
+            "section": "currentMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "retention",
+            "name": "",
+            "type": "checkbox",
+            "label": "Retention Component",
+            "value": true,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "retention"
+          },
+          {
+            "id": "retirement",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "Retirement Exception Eligible",
+            "value": true,
+            "section": "currentMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "retirement"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "class": "checkbox-indent",
+            "label": "(MUST meet CSRS or FERS minimum retirement eligibility requirements)",
+            "section": "currentMember",
+            "category": "sub",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "hardship",
+            "name": "",
+            "type": "checkbox",
+            "label": "Special Request - Hardship Situations",
+            "value": true,
+            "section": "currentMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "hardship"
+          },
+          {
+            "id": "currentMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "(Managements Discretion on a case by case basis)",
+            "section": "currentMember",
+            "category": "main",
+            "formControlName": "isMember"
+          }
+        ]
+      },
+
+      {
+        "id": "",
+        "name": "",
+        "type": "",
+        "class": "col-md-6 grid-border",
+        "label": "",
+        "value": "",
+        "section": "",
+        "category": "",
+        "required": "",
+        "formControlName": "",
+        "childrenType": "checkbox",
+        "children": [
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "New Applicant / Renewing Participant Only",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Please complete the following:",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "newStartDate",
+            "name": "",
+            "type": "date",
+            "label": "Requested Start Date:",
+            "value": "",
+            "section": "newMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "startDate"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Note for New Applicants: Requested start date is usually the first Sunday of a bi-week",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "endDate",
+            "name": "",
+            "type": "date",
+            "class": "checkbox-indent",
+            "label": "End Date",
+            "value": "",
+            "section": "newMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "endDate"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Note for Renewing Participants: Requested start date should be the day after your current term ends",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Note: At the end of the term, participant will revert to full-time status or may reapply",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "gradeDate",
+            "name": "",
+            "type": "date",
+            "class": "checkbox-indent",
+            "label": "Grade Date",
+            "value": "",
+            "section": "newMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "gradeDate"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "(at least GS-11 for Retention Component)",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Signatory Authority:",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "PSA",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "PSA",
+            "value": true,
+            "section": "newMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "PSA"
+          },
+          {
+            "id": "FSA",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "FSA",
+            "value": true,
+            "section": "newMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "FSA"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Schedule Information",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "workHours",
+            "name": "",
+            "type": "paragraph",
+            "label": "Work Hours per Bi-week",
+            "value": "",
+            "section": "newMember",
+            "required": false,
+            "formControlName": "workHours"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Note: Indicate between 32-64 hours",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "I am also:",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          },
+          {
+            "id": "currentParticipant",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "A Current Participant of, or",
+            "value": true,
+            "section": "newMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "currentParticipant"
+          },
+          {
+            "id": "apply",
+            "name": "",
+            "type": "checkbox",
+            "class": "checkbox-indent",
+            "label": "Plan to Apply in the:",
+            "value": true,
+            "section": "newMember",
+            "category": "sub",
+            "required": false,
+            "formControlName": "apply"
+          },
+          {
+            "id": "php",
+            "name": "",
+            "type": "checkbox",
+            "label": "Patents Hoteling Program (PHP)",
+            "value": true,
+            "section": "newMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "php"
+          },
+          {
+            "id": "ptp",
+            "name": "",
+            "type": "checkbox",
+            "label": "Patent Telework Program (PTP)",
+            "value": true,
+            "section": "newMember",
+            "category": "main",
+            "required": false,
+            "formControlName": "ptp"
+          },
+          {
+            "id": "newMember",
+            "name": "",
+            "type": "paragraph",
+            "label": "Note: Must separately apply and be eligible for these programs",
+            "section": "newMember",
+            "category": "main",
+            "formControlName": "isMember"
+          }
+        ]
+      },
+
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "text-center",
+        "label": "Daily Schedule",
+        "section": "Schedule",
+        "category": "main",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "text-center",
+        "label": "Indicate the number of hours to be worked and the day on which they will be worked",
+        "section": "Schedule",
+        "category": "main",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "col-md-6 text-center",
+        "label": "Week 1",
+        "section": "Schedule",
+        "category": "table",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "col-md-6 text-center",
+        "label": "Week 2",
+        "section": "Schedule",
+        "category": "table",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "",
+        "name": "",
+        "type": "",
+        "class": "col-md-6",
+        "label": "",
+        "value": "",
+        "section": "",
+        "formControlName": "",
+        "childrenType": "table",
+        "children": [
+          {
+            "id": "w1t",
+            "name": "",
+            "type": "text",
+            "label": "Mon",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1t"
+          },
+          {
+            "id": "w1t",
+            "name": "",
+            "type": "text",
+            "label": "Tue",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1t"
+          },
+          {
+            "id": "w1w",
+            "name": "",
+            "type": "text",
+            "label": "Wed",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1W"
+          },
+          {
+            "id": "w1th",
+            "name": "",
+            "type": "text",
+            "label": "Thurs",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1th"
+          },
+          {
+            "id": "w1f",
+            "name": "",
+            "type": "text",
+            "label": "Fri",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1f"
+          },
+          {
+            "id": "w1s",
+            "name": "",
+            "type": "text",
+            "label": "Sat",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1s"
+          },
+          {
+            "id": "w1s",
+            "name": "",
+            "type": "text",
+            "label": "Sun",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1s"
+          }
+        ]
+      },
+      {
+        "id": "",
+        "name": "",
+        "type": "",
+        "class": "col-md-6",
+        "label": "",
+        "value": "",
+        "section": "",
+        "formControlName": "",
+        "childrenType": "table",
+        "children": [
+          {
+            "id": "w1t",
+            "name": "",
+            "type": "text",
+            "label": "Mon",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1t"
+          },
+          {
+            "id": "w1t",
+            "name": "",
+            "type": "text",
+            "label": "Tue",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1t"
+          },
+          {
+            "id": "w1w",
+            "name": "",
+            "type": "text",
+            "label": "Wed",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1W"
+          },
+          {
+            "id": "w1th",
+            "name": "",
+            "type": "text",
+            "label": "Thurs",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1th"
+          },
+          {
+            "id": "w1f",
+            "name": "",
+            "type": "text",
+            "label": "Fri",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1f"
+          },
+          {
+            "id": "w1s",
+            "name": "",
+            "type": "text",
+            "label": "Sat",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1s"
+          },
+          {
+            "id": "w1s",
+            "name": "",
+            "type": "text",
+            "label": "Sun",
+            "value": "",
+            "section": "Schedule",
+            "formControlName": "w1s"
+          }
+        ]
+      },
+
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "text-center",
+        "label": "* Must work at least 2 days and 16 hours per week (M-F)",
+        "section": "Schedule",
+        "category": "tableSub",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "text-center",
+        "label": "* May only work 4-10 regular hours per day",
+        "section": "Schedule",
+        "category": "tableSub",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "dailySchedule",
+        "name": "",
+        "type": "paragraph",
+        "class": "text-center",
+        "label": "* At least one core day (Tues or Thurs) must be worked each week between 12pm - 2pm",
+        "section": "Schedule",
+        "category": "tableSub",
+        "formControlName": "dailySchedule"
+      },
+      {
+        "id": "employeeSign",
+        "name": "",
+        "type": "signature",
+        "class": "col-md-8",
+        "label": "Employees Signature:",
+        "value": "",
+        "section": "sign",
+        "required": true,
+        "formControlName": "employeeSignature:"
+      },
+      {
+        "id": "signDate",
+        "name": "",
+        "type": "date",
+        "class": "col-md-4",
+        "label": "Date:",
+        "value": "",
+        "section": "sign",
+        "required": true,
+        "formControlName": "signDate"
+      },
+      {
+        "id": "supAck",
+        "name": "",
+        "type": "paragraph",
+        "class": "col-md-12",
+        "label": "Supervisors acknowledgement that the employee meets the eligibility requirements to request enrollment or renewal in a part-time program component. Employee does not have to meet eligibility requirements for Hardship Situations or when only requesting a change in schedule/hours.",
+        "value": "",
+        "section": "supAck",
+        "required": true,
+        "formControlName": "supAck"
+      },
+      {
+        "id": "supName",
+        "name": "",
+        "type": "input",
+        "class": "col-md-3",
+        "label": "Print Name:",
+        "value": "",
+        "section": "sup",
+        "required": true,
+        "formControlName": "supName"
+      },
+      {
+        "id": "supSign",
+        "name": "",
+        "type": "signature",
+        "class": "col-md-7",
+        "label": "Signature:",
+        "value": "",
+        "section": "sup",
+        "required": true,
+        "formControlName": "supSign"
+      },
+      {
+        "id": "suvSignDate",
+        "name": "",
+        "type": "date",
+        "class": "col-md-2",
+        "label": "Date:",
+        "value": "",
+        "section": "sup",
+        "required": true,
+        "formControlName": "suvSignDate"
+      },
+      {
+        "id": "dirName",
+        "name": "",
+        "type": "input",
+        "class": "col-md-3",
+        "label": "Print Name:",
+        "value": "",
+        "section": "dir",
+        "required": true,
+        "formControlName": "dirName"
+      },
+      {
+        "id": "dirSign",
+        "name": "",
+        "type": "signature",
+        "class": "col-md-7",
+        "label": "Signature:",
+        "value": "",
+        "section": "dir",
+        "required": true,
+        "formControlName": "dirSign"
+      },
+      {
+        "id": "dirSignDate",
+        "name": "",
+        "type": "date",
+        "class": "col-md-2",
+        "label": "Date:",
+        "value": "",
+        "section": "dir",
+        "required": true,
+        "formControlName": "dirSignDate"
+      },
+      {
+        "id": "adminNote",
+        "name": "",
+        "type": "paragraph",
+        "label": "Note: Applicants should ensure that their request forms are received by the Program Administrator no less than two (2) weeks prior to the requested start date. Applicants will be notified if their request has been approved or, if no current slot is available, that they have been placed on a wait list.",
+        "value": "",
+        "section": "adminNote",
+        "required": true,
+        "formControlName": "adminNote"
+      }
+    ],
+    "listOfAction": [
+      {
+        "id": "initiate_action",
+        "class": "btn btn-success",
+        "name": "INITIATE",
+        "type": "initiate",
+        "label": "Initiate form",
+        "value": "/initiateForm",
+        "required": false
+      }
+    ],
     "audit": { "lastModifiedUserId": "rramani" },
     "lifeCycle": null
   }
