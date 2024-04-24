@@ -156,6 +156,10 @@ export class AppComponent implements OnInit {
 
   }
 
+  goToSavedForm() {
+    this.router.navigate(['new-ratings/1']);
+  }
+
   submitForm() {
     let obj = {
       empName: '',
