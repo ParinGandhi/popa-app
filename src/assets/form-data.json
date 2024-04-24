@@ -2,744 +2,568 @@
   {
     "name": "PAP_2023",
     "description": "PAP Forms or 2023",
-    "formDataStructure": [
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "papCoverTitle1",
-          "name": "papCoverTitle1",
-          "type": "label",
-          "class": "col-md-6",
-          "label": "US PATENT AND TRADEMARK OFFICE CLASSIFICATION AND PERFORMANCE MANAGEMENT RECORD",
-          "formControlName": "papCoverTitle1"
-        },
-        {
-          "id": "",
-          "name": "",
-          "type": "subrow",
-          "class": "col-md-6",
-          "children": [
-            {
-              "id": "new",
-              "name": "new",
-              "type": "text",
-              "label": "NEW",
-              "value": "",
-              "section": "headerRight",
-              "required": false,
-              "formControlName": "new",
-              "class": "col-md-12"
-            },
-            {
-              "id": "ia",
-              "name": "ia",
-              "type": "text",
-              "label": "I/A:",
-              "value": "",
-              "section": "headerRight",
-              "required": false,
-              "formControlName": "ia",
-              "class": "col-md-12"
-            },
-            {
-              "id": "mr",
-              "name": "mr",
-              "type": "text",
-              "label": "MR#:",
-              "value": "",
-              "section": "headerRight",
-              "required": false,
-              "formControlName": "mr",
-              "class": "col-md-12"
-            },
-            {
-              "id": "ip",
-              "name": "ip",
-              "type": "text",
-              "label": "IP#:",
-              "value": "",
-              "section": "headerRight",
-              "required": false,
-              "formControlName": "ip",
-              "class": "col-md-12"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "note",
-          "name": "note",
-          "type": "label",
-          "label": "*Performance Plan *Performance Appraisal *Performance Recognition *Progress Review *Position Description",
-          "class": "col-md-12",
-          "formControlName": "note"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "empNm",
-          "name": "empNm",
-          "type": "text",
-          "label": "Employee Name:",
-          "value": "Akhavannik, Hadi",
-          "class": "col-md-12",
-          "required": true,
-          "formControlName": "empNm"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "posTl",
-          "name": "posTl",
-          "type": "text",
-          "label": "Position Title:",
-          "value": "PEXMR",
-          "class": "col-md-12",
-          "required": true,
-          "formControlName": "posTl"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "step",
-          "name": "step",
-          "type": "text",
-          "label": "Pay Plan, Series, Grade/Step:",
-          "value": "GS-1224, Grades 5-15",
-          "class": "col-md-12",
-          "required": true,
-          "formControlName": "step"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "org",
-          "name": "org",
-          "type": "label",
-          "label": "Organization",
-          "class": "col-md-4",
-          "formControlName": "org"
-        },
-        {
-          "id": "",
-          "name": "",
-          "type": "subrow",
-          "class": "col-md-4",
-          "children": [
-            {
-              "id": "dptComm",
-              "name": "",
-              "type": "checkbox",
-              "label": "1. Department of Commerce",
-              "value": true,
-              "required": false,
-              "formControlName": "dptComm"
-            },
-            {
-              "id": "pto",
-              "name": "",
-              "type": "checkbox",
-              "label": "2. Patent & Trademark Office",
-              "value": true,
-              "required": false,
-              "formControlName": "pto"
-            },
-            {
-              "id": "dcp",
-              "name": "",
-              "type": "checkbox",
-              "label": "3. Deputy Commissioner for Patents",
-              "value": true,
-              "required": false,
-              "formControlName": "dcp"
-            }
-          ]
-        },
-        {
-          "id": "",
-          "name": "",
-          "type": "subrow",
-          "class": "col-md-4",
-          "children": [
-            {
-              "id": "peg",
-              "name": "",
-              "type": "checkbox",
-              "label": "4. Patent Examining Groups",
-              "value": true,
-              "required": false,
-              "formControlName": "peg"
-            },
-            {
-              "id": "tc",
-              "name": "",
-              "type": "checkbox",
-              "label": "5. Technology Center 2600",
-              "value": true,
-              "required": false,
-              "formControlName": "tc"
-            },
-            {
-              "id": "au",
-              "name": "",
-              "type": "checkbox",
-              "label": "6. Art Unit 2662",
-              "value": true,
-              "required": false,
-              "formControlName": "au"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "period",
-          "name": "",
-          "type": "text",
-          "label": "Rating Period:",
-          "value": "",
-          "required": false,
-          "formControlName": "period",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "covBy",
-          "name": "covBy",
-          "type": "label",
-          "label": "Covered by",
-          "class": "col-md-4",
-          "formControlName": "covBy"
-        },
-        {
-          "id": "",
-          "name": "",
-          "type": "subrow",
-          "class": "col-md-4",
-          "children": [
-            {
-              "id": "ses",
-              "name": "coveredBy",
-              "type": "radio",
-              "label": "Senior Executive Service",
-              "value": false,
-              "required": false,
-              "formControlName": "ses"
-            },
-            {
-              "id": "gw",
-              "name": "coveredBy",
-              "type": "radio",
-              "label": "General Workforce",
-              "value": true,
-              "required": false,
-              "formControlName": "gw"
-            }
-          ]
-        },
-        {
-          "id": "",
-          "name": "",
-          "type": "subrow",
-          "class": "col-md-4",
-          "children": [
-            {
-              "id": "dp",
-              "name": "coveredBy",
-              "type": "radio",
-              "label": "Demonstration Project",
-              "value": false,
-              "required": false,
-              "formControlName": "dp"
-            },
-            {
-              "id": "oth",
-              "name": "coveredBy",
-              "type": "radio",
-              "label": "Other",
-              "value": false,
-              "required": false,
-              "formControlName": "oth"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "prtAtitle",
-          "name": "",
-          "type": "label",
-          "label": "PART A - POSITION DESCRIPTION",
-          "formControlName": "prtAtitle",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "prtADesc",
-          "name": "",
-          "type": "label",
-          "label": "POSITION CERTIFICATION - I certify that this is an accurate statement of the major duties and responsibilities of the position and itsorganization relationships and that the position is necessary to carry out Government functions for which I am responsible. Thiscertification is made with the knowledge that this information is to be used for statutory purposes relating to appointment and paymentof public funds and that false or misleading statements may constitute violation of such statute or their implementing regulations.",
-          "formControlName": "prtADesc",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "suvSign",
-          "name": "",
-          "type": "sign",
-          "label": "SUPERVISOR'S SIGNATURE",
-          "value": "",
-          "required": false,
-          "formControlName": "suvSign",
-          "class": "col-md-4"
-        },
-        {
-          "id": "suvDt",
-          "name": "",
-          "type": "date",
-          "label": "DATE",
-          "value": "",
-          "required": false,
-          "formControlName": "suvDt",
-          "class": "col-md-2"
-        },
-        {
-          "id": "sndsuvSign",
-          "name": "",
-          "type": "sign",
-          "label": "SECOND LEVEL SUPERVISOR",
-          "value": "",
-          "required": false,
-          "formControlName": "sndsuvSign",
-          "class": "col-md-4"
-        },
-        {
-          "id": "sndsuvDt",
-          "name": "",
-          "type": "date",
-          "label": "DATE",
-          "value": "",
-          "required": false,
-          "formControlName": "sndsuvDt",
-          "class": "col-md-2"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "clasCert",
-          "name": "clasCert",
-          "type": "label",
-          "class": "col-md-2",
-          "label": "CLASSIFICATION CERTIFICATION",
-          "formControlName": "clasCert"
-        },
-        {
-          "id": "",
-          "name": "",
-          "type": "subrow",
-          "class": "col-md-10",
-          "children": [
-            {
-              "id": "offttl",
-              "name": "",
-              "type": "text",
-              "label": "OFFICIAL TITLE:",
-              "value": "",
-              "required": false,
-              "formControlName": "offttl",
-              "class": "col-md-12"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "pp",
-          "name": "",
-          "type": "text",
-          "label": "PP:",
-          "value": "",
-          "required": false,
-          "formControlName": "pp",
-          "class": "col-md-2"
-        },
-        {
-          "id": "series",
-          "name": "",
-          "type": "text",
-          "label": "SERIES:",
-          "value": "",
-          "required": false,
-          "formControlName": "series",
-          "class": "col-md-2"
-        },
-        {
-          "id": "func",
-          "name": "",
-          "type": "text",
-          "label": "FUNC:",
-          "value": "",
-          "required": false,
-          "formControlName": "func",
-          "class": "col-md-2"
-        },
-        {
-          "id": "grade",
-          "name": "",
-          "type": "text",
-          "label": "GRADE:",
-          "value": "",
-          "required": false,
-          "formControlName": "grade",
-          "class": "col-md-2"
-        },
-        {
-          "id": "ia",
-          "name": "",
-          "type": "text",
-          "label": "I/A:",
-          "value": "",
-          "required": false,
-          "formControlName": "ia",
-          "class": "col-md-2"
-        },
-        {
-          "id": "yes",
-          "name": "yes",
-          "type": "radio",
-          "label": "YES:",
-          "value": "",
-          "required": false,
-          "formControlName": "yes",
-          "class": "col-md-1"
-        },
-        {
-          "id": "no",
-          "name": "yes",
-          "type": "radio",
-          "label": "NO:",
-          "value": "",
-          "required": false,
-          "formControlName": "yes",
-          "class": "col-md-1"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "descp",
-          "name": "",
-          "type": "label",
-          "label": "I certify that this position has been classified as required by Title 5, US Code, in conformance with standards published by the OPM or, if nopublished standard applies directly, consistently with the most applicable published standards.",
-          "formControlName": "prtADesc",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "name",
-          "name": "",
-          "type": "text",
-          "label": "NAME & TITLE OF CLASSIFIER:",
-          "value": "",
-          "required": false,
-          "formControlName": "classifierName",
-          "class": "col-md-5"
-        },
-        {
-          "id": "classifierSign",
-          "name": "",
-          "type": "sign",
-          "label": "SIGNATURE:",
-          "value": "",
-          "required": false,
-          "formControlName": "classifierSign",
-          "class": "col-md-5"
-        },
-        {
-          "id": "classifierDt",
-          "name": "",
-          "type": "date",
-          "label": "DATE",
-          "value": "",
-          "required": false,
-          "formControlName": "classifierDt",
-          "class": "col-md-2"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "sec9lbl",
-          "name": "",
-          "type": "label",
-          "label": "PART B - PERFORMANCE PLAN",
-          "formControlName": "sec9lbl",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "sec9lbl2",
-          "name": "",
-          "type": "label",
-          "label": "This plan is an accurate statement of the work that will be the basis of the employee's performance appraisal.",
-          "formControlName": "sec9lbl2",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "speName",
-          "name": "",
-          "type": "text",
-          "label": "NAME & TITLE OF FIRST LINE SUPERVISOR/RATING OFFICIAL:",
-          "value": "",
-          "required": false,
-          "formControlName": "speName",
-          "class": "col-md-5"
-        },
-        {
-          "id": "speSign",
-          "name": "",
-          "type": "sign",
-          "label": "SIGNATURE:",
-          "value": "",
-          "required": false,
-          "formControlName": "speSign",
-          "class": "col-md-5"
-        },
-        {
-          "id": "speDt",
-          "name": "",
-          "type": "date",
-          "label": "DATE",
-          "value": "",
-          "required": false,
-          "formControlName": "speDt",
-          "class": "col-md-2"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "sec11lbl",
-          "name": "",
-          "type": "label",
-          "label": "APPROVAL - I agree with the certification of the position description and approve the performance plan.",
-          "formControlName": "sec11lbl",
-          "class": "col-md-12"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "directorName",
-          "name": "",
-          "type": "text",
-          "label": "NAME & TITLE OF APPROVING OFFICIAL OR SES APPOINTING AUTHORITY",
-          "value": "",
-          "required": false,
-          "formControlName": "directorName",
-          "class": "col-md-5"
-        },
-        {
-          "id": "directorSign",
-          "name": "",
-          "type": "sign",
-          "label": "SIGNATURE:",
-          "value": "",
-          "required": false,
-          "formControlName": "directorSign",
-          "class": "col-md-5"
-        },
-        {
-          "id": "directorDt",
-          "name": "",
-          "type": "date",
-          "label": "DATE",
-          "value": "",
-          "required": false,
-          "formControlName": "directorDt",
-          "class": "col-md-2"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
+     "formDataStructure": [
+       {
+         "id": "papCoverTitle1",
+         "name": "papCoverTitle1",
+         "type": "h5",
+         "class": "col-md-6 grid-border bold",
+         "label": "US PATENT AND TRADEMARK OFFICE CLASSIFICATION AND PERFORMANCE MANAGEMENT RECORD",
+         "formControlName": ""
+       },
+       {
+         "id": "",
+         "name": "",
+         "type": "subrow",
+         "class": "col-md-6 grid-border",
+         "childrenType": "input",
+         "children": [
+           {
+             "id": "new",
+             "name": "new",
+             "type": "input",
+             "label": "NEW",
+             "value": "",
+             "section": "headerRight",
+             "required": false,
+             "formControlName": "new",
+             "class": "col-md-12"
+           },
+           {
+             "id": "ia",
+             "name": "ia",
+             "type": "text",
+             "label": "I/A:",
+             "value": "",
+             "section": "headerRight",
+             "required": false,
+             "formControlName": "ia",
+             "class": "col-md-12"
+           },
+           {
+             "id": "mr",
+             "name": "mr",
+             "type": "text",
+             "label": "MR#:",
+             "value": "",
+             "section": "headerRight",
+             "required": false,
+             "formControlName": "mr",
+             "class": "col-md-12"
+           },
+           {
+             "id": "ip",
+             "name": "ip",
+             "type": "text",
+             "label": "IP#:",
+             "value": "",
+             "section": "headerRight",
+             "required": false,
+             "formControlName": "ip",
+             "class": "col-md-12"
+           }
+         ]
+       },
+       {
+         "id": "note",
+         "name": "note",
+         "type": "paragraph",
+         "label": "*Performance Plan *Performance Appraisal *Performance Recognition *Progress Review *Position Description",
+         "class": "col-md-12 grid-border",
+         "formControlName": ""
+       },
+       {
+         "id": "empNm",
+         "name": "empNm",
+         "type": "input",
+         "label": "Employee Name:",
+         "value": "Akhavannik, Hadi",
+         "class": "col-md-12 grid-border",
+         "required": true,
+         "formControlName": ""
+       },
+       {
+         "id": "posTl",
+         "name": "posTl",
+         "type": "input",
+         "label": "Position Title:",
+         "value": "PEXMR",
+         "class": "col-md-12 grid-border",
+         "required": true,
+         "formControlName": "posTl"
+       },
+       {
+         "id": "step",
+         "name": "step",
+         "type": "input",
+         "label": "Pay Plan, Series, Grade/Step:",
+         "value": "GS-1224, Grades 5-15",
+         "class": "col-md-12 grid-border",
+         "required": true,
+         "formControlName": "step"
+       },
+       {
+         "id": "org",
+         "name": "org",
+         "type": "paragraph",
+         "label": "Organization",
+         "class": "col-md-4 grid-border",
+         "formControlName": "org"
+       },
+       {
+         "id": "",
+         "name": "",
+         "type": "",
+         "class": "col-md-4 grid-border",
+         "childrenType": "checkbox",
+         "children": [
+           {
+             "id": "dptComm",
+             "name": "",
+             "type": "checkbox",
+             "label": "1. Department of Commerce",
+             "value": false,
+             "required": false,
+             "formControlName": "dptComm"
+           },
+           {
+             "id": "pto",
+             "name": "",
+             "type": "checkbox",
+             "label": "2. Patent & Trademark Office",
+             "value": true,
+             "required": false,
+             "formControlName": "pto"
+           },
+           {
+             "id": "dcp",
+             "name": "",
+             "type": "checkbox",
+             "label": "3. Deputy Commissioner for Patents",
+             "value": true,
+             "required": false,
+             "formControlName": "dcp"
+           }
+         ]
+       },
+       {
+         "id": "",
+         "name": "",
+         "type": "",
+         "class": "col-md-4 grid-border",
+         "childrenType": "checkbox",
+         "children": [
+           {
+             "id": "peg",
+             "name": "",
+             "type": "checkbox",
+             "label": "4. Patent Examining Groups",
+             "value": true,
+             "required": false,
+             "formControlName": "peg"
+           },
+           {
+             "id": "tc",
+             "name": "",
+             "type": "checkbox",
+             "label": "5. Technology Center 2600",
+             "value": true,
+             "required": false,
+             "formControlName": "tc"
+           },
+           {
+             "id": "au",
+             "name": "",
+             "type": "checkbox",
+             "label": "6. Art Unit 2662",
+             "value": true,
+             "required": false,
+             "formControlName": "au"
+           }
+         ]
+       },
+       {
+         "id": "period",
+         "name": "",
+         "type": "input",
+         "label": "Rating Period:",
+         "value": "",
+         "required": false,
+         "formControlName": "",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "covBy",
+         "name": "covBy",
+         "type": "paragraph",
+         "label": "Covered by",
+         "class": "col-md-4 grid-border",
+         "formControlName": "covBy"
+       },
+       {
+         "id": "",
+         "name": "",
+         "type": "subrow",
+         "class": "col-md-4 grid-border",
+         "childrenType": "radio",
+         "children": [
+           {
+             "id": "ses",
+             "name": "coveredBy",
+             "type": "radio",
+             "label": "Senior Executive Service",
+             "value": false,
+             "selectedValue": "",
+             "required": false,
+             "formControlName": "ses"
+           },
+           {
+             "id": "gw",
+             "name": "coveredBy",
+             "type": "radio",
+             "label": "General Workforce",
+             "value": true,
+             "selectedValue": "",
+             "required": false,
+             "formControlName": "gw"
+           }
+         ]
+       },
+       {
+         "id": "",
+         "name": "",
+         "type": "subrow",
+         "class": "col-md-4 grid-border",
+         "childrenType": "radio",
+         "children": [
+           {
+             "id": "dp",
+             "name": "coveredBy",
+             "type": "radio",
+             "label": "Demonstration Project",
+             "value": false,
+             "required": false,
+             "formControlName": "dp"
+           },
+           {
+             "id": "oth",
+             "name": "coveredBy",
+             "type": "radio",
+             "label": "Other",
+             "value": false,
+             "required": false,
+             "formControlName": "oth"
+           }
+         ]
+       },
+
+       {
+         "id": "prtAtitle",
+         "name": "",
+         "type": "h5",
+         "label": "PART A - POSITION DESCRIPTION",
+         "formControlName": "prtAtitle",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "prtADesc",
+         "name": "",
+         "type": "paragraph",
+         "label": "POSITION CERTIFICATION - I certify that this is an accurate statement of the major duties and responsibilities of the position and itsorganization relationships and that the position is necessary to carry out Government functions for which I am responsible. Thiscertification is made with the knowledge that this information is to be used for statutory purposes relating to appointment and paymentof public funds and that false or misleading statements may constitute violation of such statute or their implementing regulations.",
+         "formControlName": "prtADesc",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "suvSign",
+         "name": "",
+         "type": "signature",
+         "label": "SUPERVISOR'S SIGNATURE",
+         "value": "",
+         "required": false,
+         "formControlName": "suvSign",
+         "class": "col-md-4 grid-border"
+       },
+       {
+         "id": "suvDt",
+         "name": "",
+         "type": "date",
+         "label": "DATE",
+         "value": "",
+         "required": false,
+         "formControlName": "suvDt",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "sndsuvSign",
+         "name": "",
+         "type": "signature",
+         "label": "SECOND LEVEL SUPERVISOR",
+         "value": "",
+         "required": false,
+         "formControlName": "sndsuvSign",
+         "class": "col-md-4 grid-border"
+       },
+       {
+         "id": "sndsuvDt",
+         "name": "",
+         "type": "date",
+         "label": "DATE",
+         "value": "",
+         "required": false,
+         "formControlName": "sndsuvDt",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "clasCert",
+         "name": "clasCert",
+         "type": "paragraph",
+         "class": "col-md-2 grid-border",
+         "label": "CLASSIFICATION CERTIFICATION",
+         "formControlName": "clasCert"
+       },
+       {
+         "id": "offttl",
+         "name": "",
+         "type": "input",
+         "label": "OFFICIAL TITLE:",
+         "value": "",
+         "required": false,
+         "formControlName": "offttl",
+         "class": "col-md-10 grid-border"
+       },
+       {
+         "id": "pp",
+         "name": "",
+         "type": "input",
+         "label": "PP:",
+         "value": "",
+         "required": false,
+         "formControlName": "pp",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "series",
+         "name": "",
+         "type": "input",
+         "label": "SERIES:",
+         "value": "",
+         "required": false,
+         "formControlName": "series",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "func",
+         "name": "",
+         "type": "input",
+         "label": "FUNC:",
+         "value": "",
+         "required": false,
+         "formControlName": "func",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "grade",
+         "name": "",
+         "type": "input",
+         "label": "GRADE:",
+         "value": "",
+         "required": false,
+         "formControlName": "grade",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "ia",
+         "name": "",
+         "type": "input",
+         "label": "I/A:",
+         "value": "",
+         "required": false,
+         "formControlName": "ia",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "yes",
+         "name": "yes",
+         "type": "radio-inline",
+         "label": "YES:",
+         "value": "",
+         "required": false,
+         "formControlName": "yes",
+         "class": "col-md-1 grid-border"
+       },
+       {
+         "id": "no",
+         "name": "yes",
+         "type": "radio-inline",
+         "label": "NO:",
+         "value": "",
+         "required": false,
+         "formControlName": "yes",
+         "class": "col-md-1 grid-border"
+       },
+       {
+         "id": "descp",
+         "name": "",
+         "type": "paragraph",
+         "label": "I certify that this position has been classified as required by Title 5, US Code, in conformance with standards published by the OPM or, if nopublished standard applies directly, consistently with the most applicable published standards.",
+         "formControlName": "prtADesc",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "name",
+         "name": "",
+         "type": "input",
+         "label": "NAME & TITLE OF CLASSIFIER:",
+         "value": "",
+         "required": false,
+         "formControlName": "classifierName",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "classifierSign",
+         "name": "",
+         "type": "signature",
+         "label": "SIGNATURE:",
+         "value": "",
+         "required": false,
+         "formControlName": "classifierSign",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "classifierDt",
+         "name": "",
+         "type": "date",
+         "label": "DATE",
+         "value": "",
+         "required": false,
+         "formControlName": "classifierDt",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "sec9lbl",
+         "name": "",
+         "type": "h5",
+         "label": "PART B - PERFORMANCE PLAN",
+         "formControlName": "sec9lbl",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "sec9lbl2",
+         "name": "",
+         "type": "paragraph",
+         "label": "This plan is an accurate statement of the work that will be the basis of the employee's performance appraisal.",
+         "formControlName": "sec9lbl2",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "speName",
+         "name": "",
+         "type": "input",
+         "label": "NAME & TITLE OF FIRST LINE SUPERVISOR/RATING OFFICIAL:",
+         "value": "",
+         "required": false,
+         "formControlName": "speName",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "speSign",
+         "name": "",
+         "type": "signature",
+         "label": "SIGNATURE:",
+         "value": "",
+         "required": false,
+         "formControlName": "speSign",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "speDt",
+         "name": "",
+         "type": "date",
+         "label": "DATE",
+         "value": "",
+         "required": false,
+         "formControlName": "speDt",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "sec11lbl",
+         "name": "",
+         "type": "paragraph",
+         "label": "APPROVAL - I agree with the certification of the position description and approve the performance plan.",
+         "formControlName": "sec11lbl",
+         "class": "col-md-12 grid-border"
+       },
+       {
+         "id": "directorName",
+         "name": "",
+         "type": "input",
+         "label": "NAME & TITLE OF APPROVING OFFICIAL OR SES APPOINTING AUTHORITY",
+         "value": "",
+         "required": false,
+         "formControlName": "directorName",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "directorSign",
+         "name": "",
+         "type": "signature",
+         "label": "SIGNATURE:",
+         "value": "",
+         "required": false,
+         "formControlName": "directorSign",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "directorDt",
+         "name": "",
+         "type": "date",
+         "label": "DATE",
+         "value": "",
+         "required": false,
+         "formControlName": "directorDt",
+         "class": "col-md-2 grid-border"
+       },
+       {
+         "id": "name",
+         "name": "",
+         "type": "paragraph",
+         "label": "EMPLOYEE ACKNOWLEDGMENT - My signature acknowledges dicussion of the position description and receipt of the plan, and does notnecessarily signify agreement.",
+         "value": "",
+         "required": false,
+         "formControlName": "name",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "ackSign",
+         "name": "",
+         "type": "signature",
+         "label": "SIGNATURE:",
+         "value": "",
+         "required": false,
+         "formControlName": "ackSign",
+         "class": "col-md-5 grid-border"
+       },
+       {
+         "id": "ackDt",
+         "name": "",
+         "type": "date",
+         "label": "DATE",
+         "value": "",
+         "required": false,
+         "formControlName": "ackDt",
+         "class": "col-md-2 grid-border"
+       },
         {
           "id": "name",
           "name": "",
-          "type": "label",
-          "label": "EMPLOYEE ACKNOWLEDGMENT - My signature acknowledges dicussion of the position description and receipt of the plan, and does notnecessarily signify agreement.",
-          "value": "",
-          "required": false,
-          "formControlName": "name",
-          "class": "col-md-5"
-        },
-        {
-          "id": "ackSign",
-          "name": "",
-          "type": "sign",
-          "label": "SIGNATURE:",
-          "value": "",
-          "required": false,
-          "formControlName": "ackSign",
-          "class": "col-md-5"
-        },
-        {
-          "id": "ackDt",
-          "name": "",
-          "type": "date",
-          "label": "DATE",
-          "value": "",
-          "required": false,
-          "formControlName": "ackDt",
-          "class": "col-md-2"
-        }
-      ]
-    },
-    {
-      "id": "",
-      "name": "",
-      "type": "row",
-      "class": "row",
-      "children": [
-        {
-          "id": "name",
-          "name": "",
-          "type": "label",
+          "type": "paragraph",
           "label": "PRIVACY ACT STATEMENT - Disclosure of your social security number on this form is voluntary. The number is linked with your name in theofficial personnel records system to ensure unique identification of your records. The social security number will be used solely to ensureaccurate entry of your performance rating into the automated record system.",
           "value": "",
           "required": false,
           "formControlName": "privacyStmt",
-          "class": "col-md-12"
+          "class": "col-md-12 grid-border"
         }
-      ]
-    }
-  ],
+     ],
   "listOfAction": [
       {
         "id": "initiate_action",

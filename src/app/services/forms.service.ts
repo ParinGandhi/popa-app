@@ -27,4 +27,8 @@ export class FormsService {
   deleteForm(url: string, entireForm: any) {
     return this.http.delete(`${URLS.BASE_URL}${url}`, entireForm);
   }
+
+  getFormInstance(url: string, instanceId: string) {
+return this.http.get(`${URLS.BASE_URL}${URLS.GET_FORMS_MENU}/${instanceId}`);
+  }
 }

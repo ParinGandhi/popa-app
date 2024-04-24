@@ -129,28 +129,30 @@ export class AppComponent implements OnInit {
     });
   }
 
-  goToForm(formName: any) {
-    console.log(formName);
-    const formNameLower = formName.name.toLowerCase();
-    switch (formNameLower) {
-      case 'pap_2023':
-        this.router.navigate(['pap-cover/initiate']);
-        break;
-      case 'pap_2024':
-        this.router.navigate(['pap-cover/initiate']);
-        break;
-      case 'part-time':
-        this.router.navigate(['part-time']);
-        break;
-      case 'rating':
-        this.router.navigateByUrl('new-ratings/initiate');
-        break;
-      case 'ratingsaved':
-        this.router.navigateByUrl('new-ratings/1');
-      break;
-      default:
-        break;
-    }
+  goToForm(selectedForm: any) {
+    console.log(selectedForm);
+    const selectedFormLower = selectedForm.name.toLowerCase();
+    window.sessionStorage.setItem("selectedForm", JSON.stringify(selectedForm));
+    this.router.navigate(['generic-form-template/initiate'])
+    // switch (selectedFormLower) {
+    //   case 'pap_2023':
+    //     this.router.navigate(['pap-cover/initiate']);
+    //     break;
+    //   case 'pap_2024':
+    //     this.router.navigate(['pap-cover/initiate']);
+    //     break;
+    //   case 'part-time':
+    //     this.router.navigate(['part-time']);
+    //     break;
+    //   case 'rating':
+    //     this.router.navigateByUrl('new-ratings/initiate');
+    //     break;
+    //   case 'ratingsaved':
+    //     this.router.navigateByUrl('new-ratings/1');
+    //   break;
+    //   default:
+    //     break;
+    // }
 
   }
 

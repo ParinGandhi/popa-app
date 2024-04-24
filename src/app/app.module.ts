@@ -16,6 +16,7 @@ import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.compon
 import { RatingComponent } from './components/forms/rating/rating.component';
 import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
 import { ActionButtonsComponent } from './components/common/action-buttons/action-buttons.component';
+import { GenericFormTemplateComponent } from './components/forms/generic-form-template/generic-form-template.component';
 // import { NavigationModule } from '@progress/kendo-angular-navigation';
 // import { IconsModule } from "@progress/kendo-angular-icons";
 
@@ -30,6 +31,7 @@ import { ActionButtonsComponent } from './components/common/action-buttons/actio
     RatingComponent,
     NewRatingComponent,
     ActionButtonsComponent,
+    GenericFormTemplateComponent,
   ],
   imports: [
     BrowserModule,

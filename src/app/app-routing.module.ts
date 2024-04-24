@@ -4,6 +4,7 @@ import { PartTimeComponent } from './components/forms/part-time/part-time.compon
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
 import { RatingComponent } from './components/forms/rating/rating.component';
 import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
+import { GenericFormTemplateComponent } from './components/forms/generic-form-template/generic-form-template.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'new-ratings/:id',
     component: NewRatingComponent,
+  },
+  {
+    path: 'generic-form-template/:id',
+    component: GenericFormTemplateComponent,
   },
 ];
 

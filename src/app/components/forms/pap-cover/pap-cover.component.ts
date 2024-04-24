@@ -48,7 +48,7 @@ export class PapCoverComponent implements OnInit {
     if (id && !isNaN(parseInt(id))) {
       console.log('Firing ngOnInit');
       this.httpClient
-        .get('assets/papCoverData_new.json')
+        .get('assets/papCoverData_new copy.json')
         .subscribe((eData: any) => {
           console.log(eData);
           this.papCoverData = eData;
