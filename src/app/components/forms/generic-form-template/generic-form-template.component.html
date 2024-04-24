@@ -16,6 +16,13 @@
         ></kendo-textbox>
       </div>
 
+      <div [ngClass]="field.class" *ngIf="field.type == 'phone-number'">
+        <kendo-label [text]="field.label">
+                <kendo-maskedtextbox [mask]="field.format" [value]="field.value">
+                </kendo-maskedtextbox>
+              </kendo-label>
+      </div>
+
       <div [ngClass]="field.class" *ngIf="field.type == 'paragraph'">
         <p>{{field.label}}</p>
       </div>
@@ -93,9 +100,26 @@
         <ng-container *ngIf="field.childrenType === 'checkbox'">
           <div [ngClass]="field.class">
             <ng-container *ngFor="let child of field.children">
-              <input type="checkbox" [id]="child.id" [(ngModel)]="child.value" kendoCheckBox />
+             <ng-container *ngIf="child.type == 'checkbox'">
+               <input [ngClass]="child.class" type="checkbox" [id]="child.id" [(ngModel)]="child.value" kendoCheckBox />
                 <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
                 <br>
+             </ng-container>
+             <ng-container *ngIf="child.type == 'paragraph'">
+              <!-- <div *ngIf="child.type == 'paragraph'"> -->
+        <p [ngClass]="child.class" >{{child.label}}</p>
+      <!-- </div> -->
+             </ng-container>
+             <ng-container *ngIf="child.type == 'date'">
+               <div [ngClass]="child.class" *ngIf="child.type == 'date'">
+        <kendo-label
+          class="k-checkbox-label"
+          [for]="child.id"
+          [text]="child.label"
+        ></kendo-label>
+        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
+      </div>
+             </ng-container>
             </ng-container>
           </div>
         </ng-container>
@@ -120,6 +144,24 @@
             </ng-container>
           </div>
         </ng-container>
+
+
+        <ng-container *ngIf="field.childrenType == 'table'">
+           <div [ngClass]="field.class">
+            <table>
+          <tr>
+            <td *ngFor="let child of field.children; let i=index;">
+              <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+            <kendo-textbox
+              [(ngModel)]="child.value"
+              [id]="child.id"
+            ></kendo-textbox>
+            </td>
+          </tr>
+        </table>
+          </div>
+        </ng-container>
+
 
       </ng-container>
     </ng-container>
