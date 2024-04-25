@@ -7,17 +7,18 @@ import { URLS } from '../constants/URLS.constants';
   providedIn: 'root',
 })
 export class FormsService {
-
-
   constructor(private http: HttpClient) {}
-
 
   getFormsMenu() {
     return this.http.get(`${URLS.BASE_URL}${URLS.GET_FORMS_MENU}`);
   }
 
-  saveForm(url: string, entireForm: any) {
+  initiateForm(url: string, entireForm: any) {
     return this.http.post(`${URLS.BASE_URL}${url}`, entireForm);
+  }
+
+  saveForm(url: string, entireForm: any) {
+    return this.http.put(`${URLS.BASE_URL}${url}`, entireForm);
   }
 
   updateForm(url: string, entireForm: any) {
@@ -29,6 +30,8 @@ export class FormsService {
   }
 
   getFormInstance(url: string, instanceId: string) {
-return this.http.get(`${URLS.BASE_URL}${URLS.GET_FORMS_MENU}/${instanceId}`);
+    return this.http.get(
+      `${URLS.BASE_URL}${URLS.GET_FORMS_MENU}/${instanceId}`
+    );
   }
 }

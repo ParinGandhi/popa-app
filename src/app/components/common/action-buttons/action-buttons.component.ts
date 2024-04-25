@@ -7,7 +7,7 @@ import { FormsService } from 'src/app/services/forms.service';
   templateUrl: './action-buttons.component.html',
   styleUrls: ['./action-buttons.component.scss'],
 })
-export class ActionButtonsComponent implements OnInit{
+export class ActionButtonsComponent implements OnInit {
   @Input() entireForm: any;
 
   constructor(private formsService: FormsService) {}
@@ -19,7 +19,7 @@ export class ActionButtonsComponent implements OnInit{
   performAction(actionItem: any) {
     switch (actionItem.type) {
       case 'initiate':
-        this.saveForm(actionItem);
+        this.initiateForm(actionItem);
         break;
       case 'save':
         this.saveForm(actionItem);
@@ -33,6 +33,23 @@ export class ActionButtonsComponent implements OnInit{
       default:
         break;
     }
+  }
+
+  initiateForm(actionItem: any) {
+    this.formsService
+      .initiateForm(actionItem.value, this.entireForm)
+      .pipe(take(1))
+      .subscribe({
+        complete: () => {
+          console.log('Complete');
+        }, // completeHandler
+        error: () => {
+          console.log('Error');
+        }, // errorHandler
+        next: () => {
+          console.log('Next');
+        }, // nextHandler
+      });
   }
 
   saveForm(actionItem: any) {
