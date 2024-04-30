@@ -34,7 +34,8 @@ export class GenericFormTemplateComponent implements OnInit {
     this.loading = true;
 
     if (id && !isNaN(parseInt(id))) {
-      this.formsService.getFormInstance(this.formFromSession, id).subscribe((formResponse: any) => {
+      // this.formsService.getFormInstance(this.formFromSession, id).subscribe((formResponse: any) => {
+      this.formsService.getFormInstance(id).subscribe((formResponse: any) => {
         this.entireForm = formResponse;
         this.formFields = formResponse.formDataStructure;
         this.loading = false;

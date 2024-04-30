@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
   jsonData: any;
   papCoverData: any;
   formsMenu: any;
+  formInstanceId: any = null;
 
   constructor(
     private supabaseService: SupabaseService,
@@ -157,7 +158,7 @@ export class AppComponent implements OnInit {
   }
 
   goToSavedForm() {
-    this.router.navigate(['new-ratings/1']);
+    this.router.navigate([`generic-form-template/${this.formInstanceId}`]);
   }
 
   submitForm() {
