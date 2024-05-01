@@ -10,17 +10,14 @@
 
       <div [ngClass]="field.class" *ngIf="field.type == 'input'">
         <kendo-label [for]="field.id" [text]="field.label"></kendo-label>
-        <kendo-textbox
-          [(ngModel)]="field.value"
-          [id]="field.id"
-        ></kendo-textbox>
+        <kendo-textbox [(ngModel)]="field.value" [id]="field.id"></kendo-textbox>
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'phone-number'">
-        <kendo-label [text]="field.label">
-                <kendo-maskedtextbox [mask]="field.format" [value]="field.value">
-                </kendo-maskedtextbox>
-              </kendo-label>
+        <kendo-label [for]="field.id" [text]="field.label"></kendo-label>
+        <kendo-maskedtextbox [mask]="field.format" [value]="field.value">
+        </kendo-maskedtextbox>
+
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'paragraph'">
@@ -32,45 +29,19 @@
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'radio-inline'">
-        <input
-          type="radio"
-          [id]="field.id"
-          [value]="field.value"
-          [name]="field.name"
-          [(ngModel)]="field.selectedValue"
-          kendoRadioButton
-        />
-        <kendo-label
-          style="display: block"
-          class="k-radio-label"
-          [for]="field.id"
-          [text]="field.label"
-        ></kendo-label>
+        <input type="radio" #field.id [value]="field.value" [name]="field.name" [(ngModel)]="field.selectedValue"
+          kendoRadioButton />
+        <kendo-label style="display: block" class="k-radio-label" [for]="field.id" [text]="field.label"></kendo-label>
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'signature'">
-        <kendo-label
-          class="k-checkbox-label"
-          [for]="field.id"
-          [text]="field.label"
-        ></kendo-label>
-        <kendo-signature
-          style="width: 100%"
-          #signature
-          [strokeWidth]="3"
-          [smooth]="true"
-          [maximizable]="false"
-          [hideLine]="true"
-          [(ngModel)]="field.value"
-        ></kendo-signature>
+        <kendo-label class="k-checkbox-label" [for]="field.id" [text]="field.label"></kendo-label>
+        <kendo-signature style="width: 100%" #signature [strokeWidth]="3" [smooth]="true" [maximizable]="false"
+          [hideLine]="true" [(ngModel)]="field.value"></kendo-signature>
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'date'">
-        <kendo-label
-          class="k-checkbox-label"
-          [for]="field.id"
-          [text]="field.label"
-        ></kendo-label>
+        <kendo-label class="k-checkbox-label" [for]="field.id" [text]="field.label"></kendo-label>
         <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
       </div>
 
@@ -88,38 +59,38 @@
         <ng-container *ngIf="field.childrenType === 'input'">
           <div [ngClass]="field.class">
             <ng-container *ngFor="let child of field.children">
-            <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
-            <kendo-textbox
-              [(ngModel)]="child.value"
-              [id]="child.id"
-            ></kendo-textbox>
-          </ng-container>
+              <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+              <kendo-textbox [(ngModel)]="child.value" [id]="child.id"></kendo-textbox>
+            </ng-container>
           </div>
         </ng-container>
 
         <ng-container *ngIf="field.childrenType === 'checkbox'">
           <div [ngClass]="field.class">
             <ng-container *ngFor="let child of field.children">
-             <ng-container *ngIf="child.type == 'checkbox'">
-               <input [ngClass]="child.class" type="checkbox" [id]="child.id" [(ngModel)]="child.value" kendoCheckBox />
+              <ng-container *ngIf="child.type == 'checkbox'">
+                <input [ngClass]="child.class" type="checkbox" [id]="child.id" [(ngModel)]="child.value"
+                  kendoCheckBox />
                 <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
                 <br>
-             </ng-container>
-             <ng-container *ngIf="child.type == 'paragraph'">
-              <!-- <div *ngIf="child.type == 'paragraph'"> -->
-        <p [ngClass]="child.class" >{{child.label}}</p>
-      <!-- </div> -->
-             </ng-container>
-             <ng-container *ngIf="child.type == 'date'">
-               <div [ngClass]="child.class" *ngIf="child.type == 'date'">
-        <kendo-label
-          class="k-checkbox-label"
-          [for]="child.id"
-          [text]="child.label"
-        ></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
-      </div>
-             </ng-container>
+              </ng-container>
+              <ng-container *ngIf="child.type == 'paragraph'">
+                <!-- <div *ngIf="child.type == 'paragraph'"> -->
+                <p [ngClass]="child.class">{{child.label}}</p>
+                <!-- </div> -->
+              </ng-container>
+              <ng-container *ngIf="child.type == 'date'">
+                <div [ngClass]="child.class" *ngIf="child.type == 'date'">
+                  <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
+                  <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="child.type == 'input'">
+                <div [ngClass]="child.class">
+                  <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+                  <kendo-textbox [(ngModel)]="child.value" [id]="child.id"></kendo-textbox>
+                </div>
+              </ng-container>
             </ng-container>
           </div>
         </ng-container>
@@ -127,38 +98,25 @@
         <ng-container *ngIf="field.childrenType === 'radio'">
           <div [ngClass]="field.class">
             <ng-container *ngFor="let child of field.children">
-        <input
-          type="radio"
-          [id]="child.id"
-          [value]="child.value"
-          [name]="child.name"
-          [(ngModel)]="child.selectedValue"
-          kendoRadioButton
-        />
-        <kendo-label
-          class="k-radio-label"
-          [for]="child.id"
-          [text]="child.label"
-        ></kendo-label>
-        <br>
+              <input type="radio" #child.id [value]="child.value" [name]="child.name" [(ngModel)]="child.selectedValue"
+                kendoRadioButton />
+              <kendo-label class="k-radio-label" [for]="child.id" [text]="child.label"></kendo-label>
+              <br>
             </ng-container>
           </div>
         </ng-container>
 
 
         <ng-container *ngIf="field.childrenType == 'table'">
-           <div [ngClass]="field.class">
+          <div [ngClass]="field.class">
             <table>
-          <tr>
-            <td *ngFor="let child of field.children; let i=index;">
-              <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
-            <kendo-textbox
-              [(ngModel)]="child.value"
-              [id]="child.id"
-            ></kendo-textbox>
-            </td>
-          </tr>
-        </table>
+              <tr>
+                <td *ngFor="let child of field.children; let i=index;">
+                  <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+                  <kendo-textbox [(ngModel)]="child.value" [id]="child.id"></kendo-textbox>
+                </td>
+              </tr>
+            </table>
           </div>
         </ng-container>
 
