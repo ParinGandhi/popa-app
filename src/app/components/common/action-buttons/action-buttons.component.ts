@@ -88,10 +88,7 @@ export class ActionButtonsComponent implements OnInit {
           ]);
         },
         (formError) => {
-          this.toastr.error(
-            'Save error',
-            'There was an issue saving the form'
-          );
+          this.toastr.error('Save error', `${formError.message}`);
         }
       );
       // .subscribe({
@@ -122,10 +119,7 @@ export class ActionButtonsComponent implements OnInit {
           ]);
         },
         (formError) => {
-          this.toastr.error(
-            'Update error',
-            'There was an issue updating the form'
-          );
+          this.toastr.error('Update error', `${formError.message}`);
         }
       );
       // .subscribe({
@@ -156,10 +150,7 @@ export class ActionButtonsComponent implements OnInit {
           ]);
         },
         (formError) => {
-          this.toastr.error(
-            'Delete error',
-            'There was an issue deleting the form'
-          );
+          this.toastr.error('Delete error', `${formError.message}`);
         }
       );
       // .subscribe({
