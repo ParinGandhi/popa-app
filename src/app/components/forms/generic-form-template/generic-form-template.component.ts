@@ -7,6 +7,7 @@ import {
 } from '@progress/kendo-angular-buttons';
 import { FormsService } from 'src/app/services/forms.service';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-generic-form-template',
@@ -25,7 +26,8 @@ export class GenericFormTemplateComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private formsService: FormsService
+    private formsService: FormsService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class GenericFormTemplateComponent implements OnInit {
         this.entireForm = formResponse;
         this.formFields = formResponse.formDataStructure;
         this.loading = false;
+        this.toastr.success('Retrieve', 'Form loaded');
       })
       // this.httpClient
       //   .get('assets/newRatingPayload.json')
@@ -65,6 +68,7 @@ export class GenericFormTemplateComponent implements OnInit {
     if (this.formFromSession) {
       this.entireForm = JSON.parse(this.formFromSession);
       this.loading = false;
+      this.toastr.success('Initiate', 'New form loaded');
     }
   }
 }

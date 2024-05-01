@@ -39,17 +39,27 @@ export class ActionButtonsComponent implements OnInit {
     this.formsService
       .initiateForm(actionItem.value, this.entireForm)
       .pipe(take(1))
-      .subscribe({
-        complete: () => {
-          console.log('Complete');
-        }, // completeHandler
-        error: () => {
-          console.log('Error');
-        }, // errorHandler
-        next: () => {
-          console.log('Next');
-        }, // nextHandler
+      .subscribe((formResponse: any) => {
+         window.sessionStorage.setItem(
+            'selectedForm',
+            JSON.stringify(formResponse)
+          );
       });
+      // .subscribe({
+      //   complete: (formResponse: any) => {
+      //     window.sessionStorage.setItem(
+      //       'selectedForm',
+      //       JSON.stringify(formResponse)
+      //     );
+      //     console.log('Complete');
+      //   }, // completeHandler
+      //   error: () => {
+      //     console.log('Error');
+      //   }, // errorHandler
+      //   next: () => {
+      //     console.log('Next');
+      //   }, // nextHandler
+      // });
   }
 
   saveForm(actionItem: any) {

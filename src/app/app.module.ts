@@ -19,6 +19,7 @@ import { ActionButtonsComponent } from './components/common/action-buttons/actio
 import { GenericFormTemplateComponent } from './components/forms/generic-form-template/generic-form-template.component';
 // import { NavigationModule } from '@progress/kendo-angular-navigation';
 // import { IconsModule } from "@progress/kendo-angular-icons";
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -44,6 +45,7 @@ import { GenericFormTemplateComponent } from './components/forms/generic-form-te
     LabelModule,
     DateInputsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     // NavigationModule,
     // IconsModule
   ],
