@@ -1,7 +1,13 @@
-<div class="row d-flex justify-content-start mt-5">
-  <ng-container *ngFor="let actionItem of entireForm?.listOfAction">
- <div class="col-md-2">
-    <button [id]="actionItem.id" [ngClass]="actionItem.class" (click)="performAction(actionItem)">{{actionItem.label}}</button>
+<div class="d-flex justify-content-between mt-5">
+  <div>
+    <button class="btn btn-secondary">Cancel</button>
   </div>
-</ng-container>
+  <div>
+  <ng-container *ngFor="let actionItem of entireForm?.listOfAction">
+    <button style="margin-left: 10px;" [id]="actionItem.id" [ngClass]="actionItem.class" (click)="performAction(actionItem)">{{actionItem.label}}</button>
+    <!-- <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary">Update</button>
+    <button class="btn btn-primary">Delete</button> -->
+  </ng-container>
+</div>
 </div>
