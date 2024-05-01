@@ -32,7 +32,7 @@ export class FormsService {
   // getFormInstance(url: string, instanceId: string) {
   getFormInstance(instanceId: string) {
     return this.http.get(
-      `${URLS.BASE_URL}${URLS.GET_FORMS_MENU}/${instanceId}`
+      `${URLS.BASE_URL}${URLS.GET_FORM_BY_ID}/${instanceId}`
     );
   }
 }
