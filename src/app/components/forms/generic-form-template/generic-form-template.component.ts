@@ -23,6 +23,7 @@ export class GenericFormTemplateComponent implements OnInit {
   entireForm: any;
   formFields: any;
   loading: boolean = false;
+  testdate = new Date("Wed May 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time)");
 
   constructor(
     private route: ActivatedRoute,
@@ -67,6 +68,18 @@ export class GenericFormTemplateComponent implements OnInit {
     // });
     if (this.formFromSession) {
       this.entireForm = JSON.parse(this.formFromSession);
+      for(var i=0;i<this.entireForm.formDataStructure.length;i++){
+        if(this.entireForm.formDataStructure[i].type=="date" && this.entireForm.formDataStructure[i].value){
+          this.entireForm.formDataStructure[i].value = new Date(this.entireForm.formDataStructure[i].value);
+        }
+        if(this.entireForm.formDataStructure[i].children){
+          for(var j=0;j<this.entireForm.formDataStructure[i].children.length;j++){
+            if(this.entireForm.formDataStructure[i].children[j].type=="date" && this.entireForm.formDataStructure[i].children[j].value){
+              this.entireForm.formDataStructure[i].children[j].value = new Date(this.entireForm.formDataStructure[i].children[j].value);
+            }
+          }
+        }
+      }
       this.loading = false;
       this.toastr.success('Initiate', 'New form loaded');
     }
