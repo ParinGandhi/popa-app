@@ -42,7 +42,7 @@
 
       <div [ngClass]="field.class" *ngIf="field.type == 'date'">
         <kendo-label class="k-checkbox-label" [for]="field.id" [text]="field.label"></kendo-label>
-        <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
+        <kendo-datepicker [(ngModel)]="field.value" placeholder="Choose a date ..."></kendo-datepicker>
       </div>
 
       <ng-container *ngIf="field.children">
@@ -82,7 +82,7 @@
               <ng-container *ngIf="child.type == 'date'">
                 <div [ngClass]="child.class" *ngIf="child.type == 'date'">
                   <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
-                  <kendo-datepicker placeholder="Choose a date ..."></kendo-datepicker>
+                  <kendo-datepicker [(ngModel)]="child.value" placeholder="Choose a date ..."></kendo-datepicker>
                 </div>
               </ng-container>
               <ng-container *ngIf="child.type == 'input'">
