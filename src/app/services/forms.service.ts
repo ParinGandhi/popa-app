@@ -21,6 +21,14 @@ export class FormsService {
     return this.http.put(`${URLS.BASE_URL}${url}`, entireForm);
   }
 
+  submitForApprovalForm(url: string, entireForm: any) {
+    return this.http.put(`${URLS.BASE_URL}${url}`, entireForm);
+  }
+
+  returnForm(url: string, entireForm: any) {
+    return this.http.put(`${URLS.BASE_URL}${url}`, entireForm);
+  }
+
   updateForm(url: string, entireForm: any) {
     return this.http.put(`${URLS.BASE_URL}${url}`, entireForm);
   }
@@ -32,7 +40,7 @@ export class FormsService {
   // getFormInstance(url: string, instanceId: string) {
   getFormInstance(instanceId: string) {
     return this.http.get(
-      `${URLS.BASE_URL}${URLS.GET_FORM_BY_ID}/${instanceId}`
+      `${URLS.BASE_URL}${URLS.GET_FORMS_MENU}/${instanceId}`
     );
   }
 }
