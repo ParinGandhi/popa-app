@@ -1,4 +1,7 @@
 <div class="container" style="margin-bottom: 10px" *ngIf="!loading">
+  <div class="d-flex justify-content-end my-3" *ngIf="entireForm?.currentState?.description">
+    <h5>Current state: {{entireForm?.currentState?.description}}</h5>
+  </div>
   <div class="row">
     <ng-container *ngFor="let field of entireForm?.formDataStructure">
       <div [ngClass]="field.class" *ngIf="field.type == 'h4'">
