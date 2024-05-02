@@ -33,6 +33,12 @@ export class ActionButtonsComponent implements OnInit {
       case 'update':
         this.updateForm(actionItem);
         break;
+      case 'submitApproval':
+        this.submitApprovalForm(actionItem);
+        break;
+      case 'return':
+        this.returnForm(actionItem);
+        break;
       case 'delete':
         this.deleteForm(actionItem);
         break;
@@ -133,6 +139,46 @@ export class ActionButtonsComponent implements OnInit {
       //     console.log('Next');
       //   }, // nextHandler
       // });
+  }
+
+  submitApprovalForm(actionItem: any) {
+    this.formsService
+      .submitForApprovalForm(actionItem.value, this.entireForm)
+      .pipe(take(1))
+      .subscribe(
+        (formResponse: any) => {
+          window.sessionStorage.setItem(
+            'selectedForm',
+            JSON.stringify(formResponse)
+          );
+          this.router.navigate([
+            `generic-form-template/${formResponse.mapsFormsWorkflowStepId}`,
+          ]);
+        },
+        (formError) => {
+          this.toastr.error('submitApproval error', `${formError.message}`);
+        }
+      );
+  }
+
+  returnForm(actionItem: any) {
+    this.formsService
+      .returnForm(actionItem.value, this.entireForm)
+      .pipe(take(1))
+      .subscribe(
+        (formResponse: any) => {
+          window.sessionStorage.setItem(
+            'selectedForm',
+            JSON.stringify(formResponse)
+          );
+          this.router.navigate([
+            `generic-form-template/${formResponse.mapsFormsWorkflowStepId}`,
+          ]);
+        },
+        (formError) => {
+          this.toastr.error('Return error', `${formError.message}`);
+        }
+      );
   }
 
   deleteForm(actionItem: any) {
