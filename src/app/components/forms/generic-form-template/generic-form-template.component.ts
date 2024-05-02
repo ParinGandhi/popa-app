@@ -41,6 +41,34 @@ export class GenericFormTemplateComponent implements OnInit {
       this.formsService.getFormInstance(id).subscribe((formResponse: any) => {
         this.entireForm = formResponse;
         this.formFields = formResponse.formDataStructure;
+        for (var i = 0; i < this.entireForm.formDataStructure.length; i++) {
+          if (
+            this.entireForm.formDataStructure[i].type == 'date' &&
+            this.entireForm.formDataStructure[i].value
+          ) {
+            this.entireForm.formDataStructure[i].value = new Date(
+              this.entireForm.formDataStructure[i].value
+            );
+          }
+          if (this.entireForm.formDataStructure[i].children) {
+            for (
+              var j = 0;
+              j < this.entireForm.formDataStructure[i].children.length;
+              j++
+            ) {
+              if (
+                this.entireForm.formDataStructure[i].children[j].type ==
+                  'date' &&
+                this.entireForm.formDataStructure[i].children[j].value
+              ) {
+                this.entireForm.formDataStructure[i].children[j].value =
+                  new Date(
+                    this.entireForm.formDataStructure[i].children[j].value
+                  );
+              }
+            }
+          }
+        }
         this.loading = false;
         this.toastr.success('Retrieve', 'Form loaded');
       })
