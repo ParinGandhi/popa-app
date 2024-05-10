@@ -23,7 +23,9 @@ export class GenericFormTemplateComponent implements OnInit {
   entireForm: any;
   formFields: any;
   loading: boolean = false;
-  testdate = new Date("Wed May 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time)");
+  testdate = new Date(
+    'Wed May 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time)'
+  );
 
   constructor(
     private route: ActivatedRoute,
@@ -69,9 +71,10 @@ export class GenericFormTemplateComponent implements OnInit {
             }
           }
         }
+        this.mapValuesToForm();
         this.loading = false;
         this.toastr.success('Retrieve', 'Form loaded');
-      })
+      });
       // this.httpClient
       //   .get('assets/newRatingPayload.json')
       //   .subscribe((ratingData: any) => {
@@ -85,6 +88,36 @@ export class GenericFormTemplateComponent implements OnInit {
     }
   }
 
+  mapValuesToForm() {
+    for (var i = 0; i < this.entireForm?.formValues?.length; i++) {
+      for (var j = 0; j < this.entireForm?.formDataStructure?.length; j++) {
+        if (
+          this.entireForm.formDataStructure[j].id ==
+          this.entireForm.formValues[i].id
+        ) {
+          this.entireForm.formDataStructure[j].value =
+            this.entireForm.formValues[i].value;
+        }
+        if (this.entireForm.formDataStructure[j].children) {
+          for (
+            var k = 0;
+            k < this.entireForm?.formDataStructure[j]?.children?.length;
+            k++
+          ) {
+            if (
+              this.entireForm.formDataStructure[j].children[k].id ==
+              this.entireForm.formValues[i].id
+            ) {
+              this.entireForm.formDataStructure[j].children[k].value =
+                this.entireForm.formValues[i].value;
+            }
+          }
+        }
+      }
+    }
+    console.log('After mapping: ', this.entireForm);
+  }
+
   getInitialForm() {
     // this.formsService.getFormsMenu().subscribe((formsMenuResponse: any) => {
     //   const ratingMenu = formsMenuResponse.find((indMenu: any) => {
@@ -96,18 +129,33 @@ export class GenericFormTemplateComponent implements OnInit {
     // });
     if (this.formFromSession) {
       this.entireForm = JSON.parse(this.formFromSession);
-      for(var i=0;i<this.entireForm.formDataStructure.length;i++){
-        if(this.entireForm.formDataStructure[i].type=="date" && this.entireForm.formDataStructure[i].value){
-          this.entireForm.formDataStructure[i].value = new Date(this.entireForm.formDataStructure[i].value);
+      for (var i = 0; i < this.entireForm.formDataStructure.length; i++) {
+        if (
+          this.entireForm.formDataStructure[i].type == 'date' &&
+          this.entireForm.formDataStructure[i].value
+        ) {
+          this.entireForm.formDataStructure[i].value = new Date(
+            this.entireForm.formDataStructure[i].value
+          );
         }
-        if(this.entireForm.formDataStructure[i].children){
-          for(var j=0;j<this.entireForm.formDataStructure[i].children.length;j++){
-            if(this.entireForm.formDataStructure[i].children[j].type=="date" && this.entireForm.formDataStructure[i].children[j].value){
-              this.entireForm.formDataStructure[i].children[j].value = new Date(this.entireForm.formDataStructure[i].children[j].value);
+        if (this.entireForm.formDataStructure[i].children) {
+          for (
+            var j = 0;
+            j < this.entireForm.formDataStructure[i].children.length;
+            j++
+          ) {
+            if (
+              this.entireForm.formDataStructure[i].children[j].type == 'date' &&
+              this.entireForm.formDataStructure[i].children[j].value
+            ) {
+              this.entireForm.formDataStructure[i].children[j].value = new Date(
+                this.entireForm.formDataStructure[i].children[j].value
+              );
             }
           }
         }
       }
+      // this.mapValuesToForm();
       this.loading = false;
       this.toastr.success('Initiate', 'New form loaded');
     }

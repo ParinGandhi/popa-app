@@ -73,21 +73,21 @@
         "formControlName": ""
       },
       {
-        "id": "empNm",
-        "name": "empNm",
+        "id": "employeeName",
+        "name": "employeeName",
         "type": "input",
         "label": "Employee Name:",
-        "value": "Akhavannik, Hadi",
+        "value": "",
         "class": "col-md-12 k-pb-xs k-pt-xs k-textbox k-button k-space-right grid-border",
         "required": true,
         "formControlName": ""
       },
       {
-        "id": "posTl",
-        "name": "posTl",
+        "id": "positionTitle",
+        "name": "positionTitle",
         "type": "input",
         "label": "Position Title:",
-        "value": "PEXMR",
+        "value": "",
         "class": "col-md-12 k-pb-xs k-pt-xs k-textbox k-button k-space-right grid-border",
         "required": true,
         "formControlName": "posTl"
@@ -97,7 +97,7 @@
         "name": "step",
         "type": "input",
         "label": "Pay Plan, Series, Grade/Step:",
-        "value": "GS-1224, Grades 5-15",
+        "value": "",
         "class": "col-md-12 k-pb-xs k-pt-xs k-textbox k-button k-space-right grid-border",
         "required": true,
         "formControlName": "step"
@@ -131,7 +131,7 @@
             "name": "",
             "type": "checkbox",
             "label": "2. Patent & Trademark Office",
-            "value": true,
+            "value": false,
             "required": false,
             "formControlName": "pto"
           },
@@ -140,7 +140,7 @@
             "name": "",
             "type": "checkbox",
             "label": "3. Deputy Commissioner for Patents",
-            "value": true,
+            "value": false,
             "required": false,
             "formControlName": "dcp"
           }
@@ -158,25 +158,25 @@
             "name": "",
             "type": "checkbox",
             "label": "4. Patent Examining Groups",
-            "value": true,
+            "value": false,
             "required": false,
             "formControlName": "peg"
           },
           {
-            "id": "tc",
+            "id": "techCenter",
             "name": "",
             "type": "checkbox",
             "label": "5. Technology Center 2600",
-            "value": true,
+            "value": false,
             "required": false,
             "formControlName": "tc"
           },
           {
-            "id": "au",
+            "id": "artUnit",
             "name": "",
             "type": "checkbox",
             "label": "6. Art Unit 2662",
-            "value": true,
+            "value": false,
             "required": false,
             "formControlName": "au"
           }
@@ -193,12 +193,12 @@
         "class": "col-md-12 k-pb-xs k-pt-xs k-textbox k-button k-space-right grid-border"
       },
       {
-        "id": "covBy",
-        "name": "covBy",
+        "id": "coveredBy",
+        "name": "coveredBy",
         "type": "paragraph",
         "label": "Covered by",
         "class": "col-md-4 grid-border",
-        "formControlName": "covBy"
+        "formControlName": "coveredBy"
       },
       {
         "id": "",
@@ -209,10 +209,10 @@
         "children": [
           {
             "id": "ses",
-            "name": "coveredBy",
+            "name": "ses",
             "type": "radio",
             "label": "Senior Executive Service",
-            "value": "ses",
+            "value": "",
             "required": false,
             "formControlName": "coveredBy"
           },
@@ -221,7 +221,7 @@
             "name": "coveredBy",
             "type": "radio",
             "label": "General Workforce",
-            "value": "gw",
+            "value": "",
             "required": false,
             "formControlName": "coveredBy"
           }
@@ -239,7 +239,7 @@
             "name": "coveredBy",
             "type": "radio",
             "label": "Demonstration Project",
-            "value": "dp",
+            "value": "",
             "required": false,
             "formControlName": "coveredBy"
           },
@@ -248,7 +248,7 @@
             "name": "coveredBy",
             "type": "radio",
             "label": "Other",
-            "value": "oth",
+            "value": "",
             "required": false,
             "formControlName": "coveredBy"
           }
@@ -370,7 +370,7 @@
         "class": "col-md-2 k-pb-xs k-pt-xs k-textbox k-button k-space-right grid-border"
       },
       {
-        "id": "ia",
+        "id": "ia-second",
         "name": "",
         "type": "input",
         "label": "I/A:",
@@ -380,21 +380,21 @@
         "class": "col-md-2 k-pb-xs k-pt-xs k-textbox k-button k-space-right grid-border"
       },
       {
-        "id": "yes",
-        "name": "yes",
+        "id": "certYes",
+        "name": "certYes",
         "type": "radio-inline",
         "label": "YES",
-        "value": "Y",
+        "value": "",
         "required": false,
         "formControlName": "yesNo",
         "class": "col-md-1 k-textbox k-button k-space-right grid-border"
       },
       {
-        "id": "no",
-        "name": "yes",
+        "id": "certNo",
+        "name": "certNo",
         "type": "radio-inline",
         "label": "NO",
-        "value": "N",
+        "value": "",
         "required": false,
         "formControlName": "yesNo",
         "class": "col-md-1 k-textbox k-button k-space-right grid-border"
@@ -408,7 +408,7 @@
         "class": "col-md-12 grid-border"
       },
       {
-        "id": "name",
+        "id": "classifierName",
         "name": "",
         "type": "input",
         "label": "NAME & TITLE OF CLASSIFIER:",
@@ -522,13 +522,13 @@
         "class": "col-md-2 grid-border"
       },
       {
-        "id": "name",
+        "id": "employeeAcknowledgment",
         "name": "",
         "type": "paragraph",
         "label": "EMPLOYEE ACKNOWLEDGMENT - My signature acknowledges dicussion of the position description and receipt of the plan, and does notnecessarily signify agreement.",
         "value": "",
         "required": false,
-        "formControlName": "name",
+        "formControlName": "employeeAcknowledgment",
         "class": "col-md-5 grid-border"
       },
       {
@@ -552,7 +552,7 @@
         "class": "col-md-2 grid-border"
       },
       {
-        "id": "name",
+        "id": "",
         "name": "",
         "type": "paragraph",
         "label": "PRIVACY ACT STATEMENT - Disclosure of your social security number on this form is voluntary. The number is linked with your name in theofficial personnel records system to ensure unique identification of your records. The social security number will be used solely to ensureaccurate entry of your performance rating into the automated record system.",
@@ -560,6 +560,176 @@
         "required": false,
         "formControlName": "privacyStmt",
         "class": "col-md-12 grid-border"
+      }
+    ],
+    "formValues": [
+      {
+        "id": "new",
+        "value": "This is a new value"
+      },
+      {
+        "id": "ia",
+        "value": "This is IA field"
+      },
+      {
+        "id": "mr",
+        "value": "This is MR field"
+      },
+      {
+        "id": "ip",
+        "value": "This is IP field"
+      },
+      {
+        "id": "employeeName",
+        "value": "Employee name"
+      },
+      {
+        "id": "positionTitle",
+        "value": "Position title"
+      },
+      {
+        "id": "step",
+        "value": "Step"
+      },
+      {
+        "id": "dptComm",
+        "value": true
+      },
+      {
+        "id": "pto",
+        "value": true
+      },
+      {
+        "id": "dcp",
+        "value": true
+      },
+      {
+        "id": "peg",
+        "value": true
+      },
+      {
+        "id": "techCenter",
+        "value": true
+      },
+      {
+        "id": "artUnit",
+        "value": "Step"
+      },
+      {
+        "id": "period",
+        "value": "Period"
+      },
+      {
+        "id": "coveredBy",
+        "value": "Covered by"
+      },
+      {
+        "id": "ses",
+        "value": true
+      },
+      {
+        "id": "gw",
+        "value": true
+      },
+      {
+        "id": "dp",
+        "value": true
+      },
+      {
+        "id": "other",
+        "value": "Other"
+      },
+      {
+        "id": "suvSign",
+        "value": ""
+      },
+      {
+        "id": "suvDt",
+        "value": ""
+      },
+      {
+        "id": "sndsuvSign",
+        "value": ""
+      },
+      {
+        "id": "sndsuvDt",
+        "value": ""
+      },
+      {
+        "id": "offttl",
+        "value": "Official title"
+      },
+      {
+        "id": "pp",
+        "value": "PP"
+      },
+      {
+        "id": "series",
+        "value": "Series"
+      },
+      {
+        "id": "func",
+        "value": "FUNC"
+      },
+      {
+        "id": "grade",
+        "value": "Grade"
+      },
+      {
+        "id": "ia-second",
+        "value": "I/A"
+      },
+      {
+        "id": "certYes",
+        "value": true
+      },
+      {
+        "id": "certNo",
+        "value": false
+      },
+      {
+        "id": "classifierName",
+        "value": "Classifier Name"
+      },
+      {
+        "id": "classifierSign",
+        "value": "Classifier sign"
+      },
+      {
+        "id": "classifierDt",
+        "value": ""
+      },
+      {
+        "id": "speName",
+        "value": "SPE Name"
+      },
+      {
+        "id": "speSign",
+        "value": ""
+      },
+      {
+        "id": "speDt",
+        "value": ""
+      },
+      {
+        "id": "directorName",
+        "value": "Director name"
+      },
+      {
+        "id": "directorSign",
+        "value": ""
+      },
+      {
+        "id": "employeeAcknowledgment",
+        "value": ""
+      },
+      {
+        "id": "ackSign",
+        "value": ""
+      },
+      {
+        "id": "ackDt",
+        "value": ""
       }
     ],
     "listOfAction": [
@@ -2071,7 +2241,7 @@
             "id": "newStartDate",
             "name": "",
             "type": "date",
-            "class":"k-textbox k-button k-space-right removeDatesBorder",
+            "class": "k-textbox k-button k-space-right removeDatesBorder",
             "label": "Requested Start Date:",
             "value": "Wed April 15 2024 00:00:00 GMT-0400 (Eastern Daylight Time)",
             "section": "newMember",
