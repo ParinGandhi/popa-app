@@ -1,7 +1,4 @@
 <div class="container" style="margin-bottom: 10px" *ngIf="!loading">
-  <div class="d-flex justify-content-end my-3" *ngIf="entireForm?.currentState?.description">
-    <h5>Current state: {{entireForm?.currentState?.description}}</h5>
-  </div>
   <div class="row">
     <ng-container *ngFor="let field of entireForm?.formDataStructure">
       <div [ngClass]="field.class" *ngIf="field.type == 'h4'">
@@ -13,14 +10,16 @@
 
       <div [ngClass]="field.class" *ngIf="field.type == 'input'">
         <kendo-label [for]="field.id" [text]="field.label"></kendo-label>
+        <span *ngIf="field.required" style="color: red;">*</span>
         <kendo-textbox [(ngModel)]="field.value" [id]="field.id"></kendo-textbox>
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'phone-number'">
         <kendo-label [for]="field.id" [text]="field.label"></kendo-label>
-        <kendo-maskedtextbox [mask]="field.format" [value]="field.value">
-        </kendo-maskedtextbox>
-
+        <span *ngIf="field.required" style="color: red;">*</span>
+        <!-- <kendo-maskedtextbox [mask]="field.format" [value]="field.value">
+        </kendo-maskedtextbox> -->
+        <kendo-textbox [(ngModel)]="field.value" [id]="field.id"></kendo-textbox>
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'paragraph'">
@@ -39,12 +38,14 @@
 
       <div [ngClass]="field.class" *ngIf="field.type == 'signature'">
         <kendo-label class="k-checkbox-label" [for]="field.id" [text]="field.label"></kendo-label>
+        <span *ngIf="field.required" style="color: red;">*</span>
         <kendo-signature style="width: 100%" #signature [strokeWidth]="3" [smooth]="true" [maximizable]="false"
           [hideLine]="true" [(ngModel)]="field.value"></kendo-signature>
       </div>
 
       <div [ngClass]="field.class" *ngIf="field.type == 'date'">
         <kendo-label class="k-checkbox-label" [for]="field.id" [text]="field.label"></kendo-label>
+        <span *ngIf="field.required" style="color: red;">*</span>
         <kendo-datepicker [(ngModel)]="field.value" placeholder="Choose a date ..."></kendo-datepicker>
       </div>
 
@@ -63,6 +64,7 @@
           <div [ngClass]="field.class">
             <ng-container *ngFor="let child of field.children">
               <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+              <span *ngIf="child.required" style="color: red;">*</span>
               <kendo-textbox [(ngModel)]="child.value" [id]="child.id"></kendo-textbox>
             </ng-container>
           </div>
@@ -85,12 +87,14 @@
               <ng-container *ngIf="child.type == 'date'">
                 <div [ngClass]="child.class" *ngIf="child.type == 'date'">
                   <kendo-label class="k-checkbox-label" [for]="child.id" [text]="child.label"></kendo-label>
+                  <span *ngIf="child.required" style="color: red;">*</span>
                   <kendo-datepicker [(ngModel)]="child.value" placeholder="Choose a date ..."></kendo-datepicker>
                 </div>
               </ng-container>
               <ng-container *ngIf="child.type == 'input'">
                 <div [ngClass]="child.class">
                   <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+                  <span *ngIf="child.required" style="color: red;">*</span>
                   <kendo-textbox [(ngModel)]="child.value" [id]="child.id"></kendo-textbox>
                 </div>
               </ng-container>
@@ -116,6 +120,7 @@
               <tr>
                 <td *ngFor="let child of field.children; let i=index;">
                   <kendo-label [for]="child.id" [text]="child.label"></kendo-label>
+                  <span *ngIf="child.required" style="color: red;">*</span>
                   <kendo-textbox [(ngModel)]="child.value" [id]="child.id"></kendo-textbox>
                 </td>
               </tr>
