@@ -4,7 +4,7 @@
   </div>
   <div>
   <ng-container *ngFor="let actionItem of entireForm?.listOfAction">
-    <button style="margin-left: 10px;" [id]="actionItem.id" [ngClass]="actionItem.class" (click)="performAction(actionItem)">{{actionItem.label}}</button>
+    <button style="margin-left: 10px;" [disabled]="!checkValidations()" [id]="actionItem.id" [ngClass]="actionItem.class" (click)="performAction(actionItem)">{{actionItem.label}}</button>
     <!-- <button class="btn btn-primary">Save</button>
     <button class="btn btn-primary">Update</button>
     <button class="btn btn-primary">Delete</button> -->
