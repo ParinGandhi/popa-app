@@ -168,7 +168,7 @@ export class GenericFormTemplateComponent implements OnInit {
           }
         }
       }
-      this.mapValuesToForm();
+      // this.mapValuesToForm();
       this.loading = false;
       this.toastr.success('Initiate', 'New form loaded');
     }
