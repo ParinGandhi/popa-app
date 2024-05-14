@@ -225,7 +225,7 @@ export class ActionButtonsComponent implements OnInit {
     // });
   }
 
-  checkValidations() {
+    checkValidations() {
     let returnVal = true;
     for (var i = 0; i < this.entireForm.formDataStructure.length; i++) {
       if (
@@ -233,7 +233,7 @@ export class ActionButtonsComponent implements OnInit {
         !this.entireForm.formDataStructure[i].value
       ) {
         returnVal = false;
-        this.toastr.error(URLS.ERROR_MSG.REQUIRED, 'Error');
+        // this.toastr.error(URLS.ERROR_MSG.REQUIRED, 'Error');
         break;
       }
       if (
@@ -247,7 +247,7 @@ export class ActionButtonsComponent implements OnInit {
           this.entireForm.formDataStructure[i].value.match(/\d/g)?.length != 10
         ) {
           returnVal = false;
-          this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
+          // this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
           break;
         }
         if (
@@ -256,7 +256,7 @@ export class ActionButtonsComponent implements OnInit {
           )
         ) {
           returnVal = false;
-          this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
+          // this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
           break;
         }
       }
@@ -271,7 +271,7 @@ export class ActionButtonsComponent implements OnInit {
             !this.entireForm.formDataStructure[i].children[j].value
           ) {
             returnVal = false;
-            this.toastr.error(URLS.ERROR_MSG.REQUIRED, 'Error');
+            // this.toastr.error(URLS.ERROR_MSG.REQUIRED, 'Error');
             break;
           }
           if (
@@ -280,7 +280,7 @@ export class ActionButtonsComponent implements OnInit {
             this.entireForm.formDataStructure[i].children[j].value
           ) {
             returnVal = false;
-            this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
+            // this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
             break;
           }
         }
