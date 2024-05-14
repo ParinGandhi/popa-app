@@ -95,8 +95,13 @@ export class GenericFormTemplateComponent implements OnInit {
           this.entireForm.formDataStructure[j].id ==
           this.entireForm.formValues[i].id
         ) {
-          this.entireForm.formDataStructure[j].value =
-            this.entireForm.formValues[i].value;
+          if (this.entireForm.formDataStructure[j].type == 'radio-inline') {
+            this.entireForm.formDataStructure[j].selectedValue =
+              this.entireForm.formValues[i].value;
+          } else {
+            this.entireForm.formDataStructure[j].value =
+              this.entireForm.formValues[i].value;
+          }
         }
         if (this.entireForm.formDataStructure[j].children) {
           for (
@@ -108,8 +113,16 @@ export class GenericFormTemplateComponent implements OnInit {
               this.entireForm.formDataStructure[j].children[k].id ==
               this.entireForm.formValues[i].id
             ) {
-              this.entireForm.formDataStructure[j].children[k].value =
-                this.entireForm.formValues[i].value;
+              if (
+                this.entireForm.formDataStructure[j].children[k].type ==
+                'radio-inline'
+              ) {
+                this.entireForm.formDataStructure[j].children[k].selectedValue =
+                  this.entireForm.formValues[i].value;
+              } else {
+                this.entireForm.formDataStructure[j].children[k].value =
+                  this.entireForm.formValues[i].value;
+              }
             }
           }
         }
@@ -155,7 +168,7 @@ export class GenericFormTemplateComponent implements OnInit {
           }
         }
       }
-      // this.mapValuesToForm();
+      this.mapValuesToForm();
       this.loading = false;
       this.toastr.success('Initiate', 'New form loaded');
     }

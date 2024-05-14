@@ -49,21 +49,28 @@ export class ActionButtonsComponent implements OnInit {
   }
 
   initiateForm(actionItem: any) {
-    if(this.checkValidations()){    
-    this.formsService
-      .initiateForm(actionItem.value, this.entireForm)
-      .pipe(take(1))
-      .subscribe((formResponse: any) => {
-        window.sessionStorage.setItem(
-          'selectedForm',
-          JSON.stringify(formResponse)
+    this.mapToFormValues();
+    if (this.checkValidations()) {
+      this.formsService
+        .initiateForm(actionItem.value, this.entireForm.formValues)
+        .pipe(take(1))
+        .subscribe(
+          (formResponse: any) => {
+            window.sessionStorage.setItem(
+              'selectedForm',
+              JSON.stringify(formResponse)
+            );
+            this.router.navigate([
+              `generic-form-template/${formResponse.mapsFormsWorkflowStepId}`,
+            ]);
+          },
+          (formError) => {
+            this.toastr.error(
+              'Initiate error',
+              'There was an issue initiating the form'
+            );
+          }
         );
-        this.router.navigate([
-          `generic-form-template/${formResponse.mapsFormsWorkflowStepId}`,
-        ]);
-      }, (formError) => {
-        this.toastr.error('Initiate error', 'There was an issue initiating the form')
-      });
     }
     // .subscribe({
     //   complete: (formResponse: any) => {
@@ -83,8 +90,9 @@ export class ActionButtonsComponent implements OnInit {
   }
 
   saveForm(actionItem: any) {
+    this.mapToFormValues();
     this.formsService
-      .saveForm(actionItem.value, this.entireForm)
+      .saveForm(actionItem.value, this.entireForm.formValues)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -100,22 +108,23 @@ export class ActionButtonsComponent implements OnInit {
           this.toastr.error('Save error', `${formError.message}`);
         }
       );
-      // .subscribe({
-      //   complete: () => {
-      //     console.log('Complete');
-      //   }, // completeHandler
-      //   error: () => {
-      //     console.log('Error');
-      //   }, // errorHandler
-      //   next: () => {
-      //     console.log('Next');
-      //   }, // nextHandler
-      // });
+    // .subscribe({
+    //   complete: () => {
+    //     console.log('Complete');
+    //   }, // completeHandler
+    //   error: () => {
+    //     console.log('Error');
+    //   }, // errorHandler
+    //   next: () => {
+    //     console.log('Next');
+    //   }, // nextHandler
+    // });
   }
 
   updateForm(actionItem: any) {
+    this.mapToFormValues();
     this.formsService
-      .updateForm(actionItem.value, this.entireForm)
+      .updateForm(actionItem.value, this.entireForm.formValues)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -131,22 +140,23 @@ export class ActionButtonsComponent implements OnInit {
           this.toastr.error('Update error', `${formError.message}`);
         }
       );
-      // .subscribe({
-      //   complete: () => {
-      //     console.log('Complete');
-      //   }, // completeHandler
-      //   error: () => {
-      //     console.log('Error');
-      //   }, // errorHandler
-      //   next: () => {
-      //     console.log('Next');
-      //   }, // nextHandler
-      // });
+    // .subscribe({
+    //   complete: () => {
+    //     console.log('Complete');
+    //   }, // completeHandler
+    //   error: () => {
+    //     console.log('Error');
+    //   }, // errorHandler
+    //   next: () => {
+    //     console.log('Next');
+    //   }, // nextHandler
+    // });
   }
 
   submitApprovalForm(actionItem: any) {
+    this.mapToFormValues();
     this.formsService
-      .submitForApprovalForm(actionItem.value, this.entireForm)
+      .submitForApprovalForm(actionItem.value, this.entireForm.formValues)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -202,60 +212,129 @@ export class ActionButtonsComponent implements OnInit {
           this.toastr.error('Delete error', `${formError.message}`);
         }
       );
-      // .subscribe({
-      //   complete: () => {
-      //     console.log('Complete');
-      //   }, // completeHandler
-      //   error: () => {
-      //     console.log('Error');
-      //   }, // errorHandler
-      //   next: () => {
-      //     console.log('Next');
-      //   }, // nextHandler
-      // });
+    // .subscribe({
+    //   complete: () => {
+    //     console.log('Complete');
+    //   }, // completeHandler
+    //   error: () => {
+    //     console.log('Error');
+    //   }, // errorHandler
+    //   next: () => {
+    //     console.log('Next');
+    //   }, // nextHandler
+    // });
   }
 
-  checkValidations(){
+  checkValidations() {
     let returnVal = true;
-    for(var i=0;i<this.entireForm.formDataStructure.length;i++){
-      if(this.entireForm.formDataStructure[i].required && !this.entireForm.formDataStructure[i].value){
+    for (var i = 0; i < this.entireForm.formDataStructure.length; i++) {
+      if (
+        this.entireForm.formDataStructure[i].required &&
+        !this.entireForm.formDataStructure[i].value
+      ) {
         returnVal = false;
-        this.toastr.error(URLS.ERROR_MSG.REQUIRED,'Error');
+        this.toastr.error(URLS.ERROR_MSG.REQUIRED, 'Error');
         break;
       }
-      if(this.entireForm.formDataStructure[i].validation == "phone" && this.entireForm.formDataStructure[i].value){
-        console.log(this.entireForm.formDataStructure[i].value.match(/\d/g)?.length);
-        if(this.entireForm.formDataStructure[i].value.match(/\d/g)?.length != 10){
+      if (
+        this.entireForm.formDataStructure[i].validation == 'phone' &&
+        this.entireForm.formDataStructure[i].value
+      ) {
+        console.log(
+          this.entireForm.formDataStructure[i].value.match(/\d/g)?.length
+        );
+        if (
+          this.entireForm.formDataStructure[i].value.match(/\d/g)?.length != 10
+        ) {
           returnVal = false;
-          this.toastr.error(URLS.ERROR_MSG.PHONE,'Error');
+          this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
           break;
         }
-        if(!this.phoneNumberValidation(this.entireForm.formDataStructure[i].value)){
+        if (
+          !this.phoneNumberValidation(
+            this.entireForm.formDataStructure[i].value
+          )
+        ) {
           returnVal = false;
-          this.toastr.error(URLS.ERROR_MSG.PHONE,'Error');
+          this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
           break;
         }
       }
-      if(this.entireForm.formDataStructure[i].children){
-        for(var j=0;j<this.entireForm.formDataStructure[i].children.length;j++){
-          if(this.entireForm.formDataStructure[i].children[j].required && !this.entireForm.formDataStructure[i].children[j].value){
+      if (this.entireForm.formDataStructure[i].children) {
+        for (
+          var j = 0;
+          j < this.entireForm.formDataStructure[i].children.length;
+          j++
+        ) {
+          if (
+            this.entireForm.formDataStructure[i].children[j].required &&
+            !this.entireForm.formDataStructure[i].children[j].value
+          ) {
             returnVal = false;
-            this.toastr.error(URLS.ERROR_MSG.REQUIRED,'Error');
+            this.toastr.error(URLS.ERROR_MSG.REQUIRED, 'Error');
             break;
           }
-          if(this.entireForm.formDataStructure[i].children[j].validation == "phone" && this.entireForm.formDataStructure[i].children[j].value){
+          if (
+            this.entireForm.formDataStructure[i].children[j].validation ==
+              'phone' &&
+            this.entireForm.formDataStructure[i].children[j].value
+          ) {
             returnVal = false;
-            this.toastr.error(URLS.ERROR_MSG.PHONE,'Error');
+            this.toastr.error(URLS.ERROR_MSG.PHONE, 'Error');
             break;
           }
         }
       }
     }
-    return returnVal; 
+    return returnVal;
   }
 
-  phoneNumberValidation(phone:any){
-  var phoneRe = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
-  return phoneRe.test(phone);
+  phoneNumberValidation(phone: any) {
+    var phoneRe = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+    return phoneRe.test(phone);
+  }
+
+  mapToFormValues() {
+    for (var i = 0; i < this.entireForm?.formValues?.length; i++) {
+      for (var j = 0; j < this.entireForm?.formDataStructure?.length; j++) {
+        if (
+          this.entireForm.formDataStructure[j].id ==
+          this.entireForm.formValues[i].id
+        ) {
+          if (this.entireForm.formDataStructure[j].type == 'radio-inline') {
+            this.entireForm.formValues[i].value =
+              this.entireForm.formDataStructure[j].selectedValue;
+          } else {
+            this.entireForm.formValues[i].value =
+              this.entireForm.formDataStructure[j].value;
+          }
+        }
+        if (this.entireForm.formDataStructure[j].children) {
+          for (
+            var k = 0;
+            k < this.entireForm?.formDataStructure[j]?.children?.length;
+            k++
+          ) {
+            if (
+              this.entireForm.formDataStructure[j].children[k].id ==
+              this.entireForm.formValues[i].id
+            ) {
+              if (
+                this.entireForm.formDataStructure[j].children[k].type ==
+                'radio-inline'
+              ) {
+                this.entireForm.formValues[i].value =
+                  this.entireForm.formDataStructure[j].children[
+                    k
+                  ].selectedValue;
+              } else {
+                this.entireForm.formValues[i].value =
+                  this.entireForm.formDataStructure[j].children[k].value;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
