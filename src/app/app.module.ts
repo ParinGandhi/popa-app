@@ -23,8 +23,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

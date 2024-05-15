@@ -8,14 +8,14 @@ import {
   ButtonFillMode,
   ButtonThemeColor,
 } from '@progress/kendo-angular-buttons';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { FormsService } from 'src/app/services/forms.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
   title = 'popa-app';
@@ -38,6 +38,9 @@ export class NavbarComponent {
   papCoverData: any;
   formsMenu: any;
   formInstanceId: any = null;
+  loggedInUser: string | null = null;
+  data = [{ text: 'Log Out' }];
+  currentlyActiveForm: string | null = null;
 
   constructor(
     private supabaseService: SupabaseService,
@@ -56,77 +59,88 @@ export class NavbarComponent {
     this.getFormsMenu();
   }
 
-  getFormsMenu() {  
-  this.formsService.getFormsMenu().subscribe((formsMenuResponse) => {
-    this.formsMenu = formsMenuResponse;
-  });
-}
+  getFormsMenu() {
+    this.formsService.getFormsMenu().subscribe((formsMenuResponse) => {
+      this.formsMenu = formsMenuResponse;
+    });
+  }
 
-goToForm(selectedForm: any) {
-  console.log(selectedForm);
-  const selectedFormLower = selectedForm.name.toLowerCase();
-  window.sessionStorage.setItem("selectedForm", JSON.stringify(selectedForm));
-  this.router.navigate(['generic-form-template/initiate'])
-}
+  goToForm(selectedForm: any) {
+    console.log(selectedForm);
+    const selectedFormLower = selectedForm.name.toLowerCase();
+    window.sessionStorage.setItem('selectedForm', JSON.stringify(selectedForm));
+    this.router.navigate(['generic-form-template/initiate']);
+  }
 
-goToSavedForm() {
-  this.router.navigate([`generic-form-template/${this.formInstanceId}`]);
-}
+  goToSavedForm() {
+    this.router.navigate([`generic-form-template/${this.formInstanceId}`]);
+  }
 
-submitForm() {
-  let obj = {
-    empName: '',
-    empNumber: '',
-    oagUnit: '',
-    phoneNumb: '',
-    currentPTPP: false,
-    renewPP: false,
-    changeHours: false,
-    currentReqStartDt: '',
-    empSign: '',
-  };
-  obj.empName = (<HTMLInputElement>(
-    document.getElementById('empName')
-  )).value.toString();
-  obj.empNumber = (<HTMLInputElement>(
-    document.getElementById('empNum')
-  )).value.toString();
-  obj.oagUnit = (<HTMLInputElement>(
-    document.getElementById('oagArt')
-  )).value.toString();
-  obj.phoneNumb = (<HTMLInputElement>(
-    document.getElementById('phoneNum')
-  )).value.toString();
-  obj.currentPTPP = (<HTMLInputElement>(
-    document.getElementById('partProg')
-  )).checked;
-  obj.renewPP = (<HTMLInputElement>(
-    document.getElementById('renProg')
-  )).checked;
-  obj.changeHours = (<HTMLInputElement>(
-    document.getElementById('reqHours')
-  )).checked;
-  obj.currentReqStartDt = (<HTMLInputElement>(
-    document.getElementById('reqStartDt')
-  )).value.toString();
-  obj.empSign = this.value;
-}
+  submitForm() {
+    let obj = {
+      empName: '',
+      empNumber: '',
+      oagUnit: '',
+      phoneNumb: '',
+      currentPTPP: false,
+      renewPP: false,
+      changeHours: false,
+      currentReqStartDt: '',
+      empSign: '',
+    };
+    obj.empName = (<HTMLInputElement>(
+      document.getElementById('empName')
+    )).value.toString();
+    obj.empNumber = (<HTMLInputElement>(
+      document.getElementById('empNum')
+    )).value.toString();
+    obj.oagUnit = (<HTMLInputElement>(
+      document.getElementById('oagArt')
+    )).value.toString();
+    obj.phoneNumb = (<HTMLInputElement>(
+      document.getElementById('phoneNum')
+    )).value.toString();
+    obj.currentPTPP = (<HTMLInputElement>(
+      document.getElementById('partProg')
+    )).checked;
+    obj.renewPP = (<HTMLInputElement>(
+      document.getElementById('renProg')
+    )).checked;
+    obj.changeHours = (<HTMLInputElement>(
+      document.getElementById('reqHours')
+    )).checked;
+    obj.currentReqStartDt = (<HTMLInputElement>(
+      document.getElementById('reqStartDt')
+    )).value.toString();
+    obj.empSign = this.value;
+  }
 
-public onSave() {
-  console.log(this.value, 'signature.png');
-}
+  public onSave() {
+    console.log(this.value, 'signature.png');
+  }
 
-public onClear() {
-  this.value = '';
-  // this.cleanupImage();
-}
-onButtonClick(buttondata: any, index: any) {
-  buttondata.value = 'newValue';
-  console.log(buttondata);
-  console.log(index);
-}
+  public onClear() {
+    this.value = '';
+    // this.cleanupImage();
+  }
+  onButtonClick(buttondata: any, index: any) {
+    buttondata.value = 'newValue';
+    console.log(buttondata);
+    console.log(index);
+  }
 
+  userIsLoggedIn() {
+    this.loggedInUser = window.sessionStorage.getItem('loggedInUser');
+    if (this.loggedInUser) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-
-
+  onItemClick() {
+    console.log('Logout clicked');
+    window.sessionStorage.clear();
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,0 +1,122 @@
+.uspto-header-top {
+  background-color: #323232;
+}
+
+.uspto-header-top a.uspto-logo {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAcCAYAAAAOa8NNAAAACXBIWXMAAC4jAAAuIwF4pT92AAAFpElEQVRoge2ae4hVVRTGf/c6puOYTWY66vjWaMowemmaYhpFRQ+C7GEZlZU9hKAkoSgr0x6iUYmhFpX2sCIoMwLxgVJGD+ylJpqamZlUFzO1TOfrj3Vus+9xn33vHec6I/nBYdY+69trr7PvPnuvtc6kJAGMAO4FOmMQhyfSwLfA+VH7JGBhJDfEM6Wivz8CE4H3i+lcBlwCzGsAR5oKah25FdCpBGN0AuZjc1fwhKeBKSVwpjHxqyP/U+KxxhVDTgOVpfHjf4HyYshpYFeJHGksNHPkVCKrYfBXMeR0qbxoRLh79FGN5oUHZQHdPODdSL4auNTDWQdMwE763sAjHs7GyNYyYCv2A1cB/bCo4dwYfy3wcCSfDYwF3gTeAL4HWgKnAyOBQbG+44BVMf+ui/zrBDzl8W8+8DawGtvjewAXANcCbTz8+kPSBvlxoySi654EzkKH086jn+Xok64ektY7fT6M6UYF+j4QGy/fWC72SBoa4LaXtDzhubNYVsCY/12hld3BkdslcFo5cs+YbhFwi9PuBZyArbK12IoH+IPc1921udHhdcTeip8c/URgODA0ao/FVvbiqH0McB4WDnaJ+TcY+NxpHx/5kbW/PeKsAU6kIaDklT3e+VUmJ3A+cjhnxXTuqpng6fuBpLGSduRZLRWSFkjaK2mfpEWSqhz9oFj/7Y7uzAS/pzmclKS5knZL2h+Nf3LguUK+Bq9SHZC1wMpILgMe8nAuBJ4h/744E7gIaI5FGsOA2Y5+Jbnx9C+OnBRnv+TIz2H7fzn25gwGlgItIv2nwOY8PhaEUkYj2a2hFviknjYqsIMqjouBtpG8G9jg6PY7si9FzwDfOPbv8HDaRWNksaQQZ/OhVJOdBoZEcm0k3wxMAl4AFgBfF2CnOqCrceSfi/BtI3UpfZ8A7xRH3lSE/USEDsiDxWTsoMpgr/OLHk4f7JAbkWCjZcB+hSMXk5bvdOTQFuaO3SCJ38Gu7FCG1gf4DhgDdE0Yax1wFfDOQfpxWCA02e5+l5SJNc9jvz0wA3sNf8DKnx9jScoAh3cbuXttFqF0+M8C/PPhaEfeEeC5Y1cksopAaBvZ58hJr9HeAsdJYfuvuwdfiR1yGaxStwXoFuu3JWBzjSNXObJbYvU9Xw8sqtkPrA/Yd8+UuF/1Qmhlu0nNqwmc6Xnsry5ifN+WtAuY47n/HvYjAbTGEiYffIvkWKCvo3/aw9lGbp16eIL94qDkpOazWFB+q6RNTuIwKaZ3g/99kkZH9x+TtC5me6ujR1J1lFD4EoXWshS+NtIvldRRyUnN744uLWmOpJ2S/nY4U2NjzHH0yyXVOLoz/NPj9TV4hSZbsgzM7ZCS1FNSuXOvmQ6cbF9NpK+k4ZL6S2oR0y0o4AG6SOrqub/Y4/flMU6lpIExzqkxTpWkbh77qwLzE5rs/rIsujJ7L99kZyT1SzDWRtLtTtstRG2WNEa2skK/dmtJMwIPMEDSNYH+9yf4vU25KXf2crFL0rCA7c6SliRNjMfX7HWOpOmSRkq6QtIUSXdJ4UIU2FecL4HnsXLrJuw0HwKMxzKtHdSVWLPogkUh44G3sAhkCxbjtgS6Y8WjkSQXuYi4rwGXAXOxA60cOA24CRiY0K8DFvnMAlYAezgwQWqFFcvmY+XbVdiB3wsrsY4mHOf70Bu4EysxVGNn0hNYMnd3StIG7IRuKlhOXfZZQ/5DtjHh+grwJFa7zwDTsDyjIzAKmNvUv9SUMsMtBdoCX5H7LyG/RfIXaYr8aHkEOWgRa6exOL8Wm/gbsC9UAM3T2H52BPVDPOvNYJlxBngZi8+vxya+Jg08eEjdy4/jHLmpbyPPxtozgfuwAOAV7Lx5FCvCrSjDTvlKrGBUeYicTEIK+2SWxR5yP4M1FWSAqcDrsftrgcexcnI2+umOZaOz/wUQAOJ7ZZRIAQAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: transparent;
+  background-size: contain;
+  width: 5.688rem;
+  height: 1.75rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.uspto-header-top .btn-group {
+  font-size: 0.875rem;
+}
+.uspto-header-top .btn-group {
+  color: #f2a900;
+}
+
+.ptacts-title-section {
+  font-size: 2rem;
+  background-color: #ebebeb;
+  position: relative;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.case-viewer-item {
+  background-color: #e2e2e2;
+  a {
+    color: black !important;
+  }
+}
+
+.case-viewer-nav-link {
+  font-size: 0.875rem;
+  line-height: 1;
+  outline-offset: 0;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.uspto-header-bottom {
+  background-color: #005ea2;
+}
+
+.uspto-header-bottom
+  .navbar
+  .dropdown-item:hover
+  header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item:hover
+  header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item.page-link:focus
+  header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item.page-link:focus
+  header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item:hover
+  header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item:hover
+  header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .navbar
+  .dropdown-item.page-link:focus
+  header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item:focus,
+header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item.page-link:focus
+  header
+  .uspto-header-bottom
+  .uspto-header-middle
+  .dropdown-item:focus {
+  color: #262626;
+  background-color: #eee;
+}
+
+.activeForm {
+  color: white !important;
+}

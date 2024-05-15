@@ -8,8 +8,11 @@ import { GenericFormTemplateComponent } from './components/forms/generic-form-te
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 
-
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component:
+  // }
   {
     path: 'part-time',
     component: PartTimeComponent,
