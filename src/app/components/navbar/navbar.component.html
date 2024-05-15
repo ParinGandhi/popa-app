@@ -1,0 +1,50 @@
+<header id="global-header" class="navbar-fixed-top" role="banner">
+<div class="uspto-header-top">
+    <nav class="nav navbar">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+            <div>
+                <a href="http://www.uspto.gov" target="_blank" tabindex="10" class="uspto-logo" id="navBarUspto" title="Test USPTO">
+                    <span class="sr-only">USPTO</span>
+                </a>
+                <h5 class="hidden-xs" style="display: inline;color: white;margin-top: 0px;margin-left: 15px; position: absolute; top:13px;">Management Awards and Performance System (MAPS)</h5>
+            </div>
+            <div>
+                <span>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span style="color: #F2A900;" id="userId">RRamani
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li role="menuitem">
+                                <a><i class="fas fa-sign-out-alt"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </nav>    
+</div>
+<div class="uspto-header-bottom">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Forms: </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item" *ngFor="let menuItem of formsMenu" style="cursor: pointer;">
+                <a class="nav-link" aria-current="page" (click)="goToForm(menuItem)">{{ menuItem.name }}</a>
+              </li>
+              <li class="nav-item" style="cursor: pointer;">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</div>
+</header>

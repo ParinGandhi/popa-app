@@ -5,6 +5,8 @@ import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.compon
 import { RatingComponent } from './components/forms/rating/rating.component';
 import { NewRatingComponent } from './components/forms/new-rating/new-rating.component';
 import { GenericFormTemplateComponent } from './components/forms/generic-form-template/generic-form-template.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,14 @@ const routes: Routes = [
   {
     path: 'ratings',
     component: RatingComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'navbar',
+    component: NavbarComponent,
   },
   {
     path: 'new-ratings/:id',

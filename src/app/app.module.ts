@@ -20,6 +20,8 @@ import { GenericFormTemplateComponent } from './components/forms/generic-form-te
 // import { NavigationModule } from '@progress/kendo-angular-navigation';
 // import { IconsModule } from "@progress/kendo-angular-icons";
 import { ToastrModule } from 'ngx-toastr';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -33,6 +35,8 @@ import { ToastrModule } from 'ngx-toastr';
     NewRatingComponent,
     ActionButtonsComponent,
     GenericFormTemplateComponent,
+    LoginComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
