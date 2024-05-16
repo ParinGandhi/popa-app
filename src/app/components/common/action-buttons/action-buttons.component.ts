@@ -51,8 +51,9 @@ export class ActionButtonsComponent implements OnInit {
   initiateForm(actionItem: any) {
     this.mapToFormValues();
     if (this.checkValidations()) {
+      let strippedForm = this.removeFormDataStructure();
       this.formsService
-        .initiateForm(actionItem.value, this.entireForm)
+        .initiateForm(actionItem.value, strippedForm)
         .pipe(take(1))
         .subscribe(
           (formResponse: any) => {
@@ -91,8 +92,9 @@ export class ActionButtonsComponent implements OnInit {
 
   saveForm(actionItem: any) {
     this.mapToFormValues();
+    let strippedForm = this.removeFormDataStructure();
     this.formsService
-      .saveForm(actionItem.value, this.entireForm)
+      .saveForm(actionItem.value, strippedForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -123,8 +125,9 @@ export class ActionButtonsComponent implements OnInit {
 
   updateForm(actionItem: any) {
     this.mapToFormValues();
+    let strippedForm = this.removeFormDataStructure();
     this.formsService
-      .updateForm(actionItem.value, this.entireForm)
+      .updateForm(actionItem.value, strippedForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -155,8 +158,9 @@ export class ActionButtonsComponent implements OnInit {
 
   submitApprovalForm(actionItem: any) {
     this.mapToFormValues();
+    let strippedForm = this.removeFormDataStructure();
     this.formsService
-      .submitForApprovalForm(actionItem.value, this.entireForm)
+      .submitForApprovalForm(actionItem.value, strippedForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -175,8 +179,9 @@ export class ActionButtonsComponent implements OnInit {
   }
 
   returnForm(actionItem: any) {
+    let strippedForm = this.removeFormDataStructure();
     this.formsService
-      .returnForm(actionItem.value, this.entireForm)
+      .returnForm(actionItem.value, strippedForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -195,8 +200,9 @@ export class ActionButtonsComponent implements OnInit {
   }
 
   deleteForm(actionItem: any) {
+    let strippedForm = this.removeFormDataStructure();
     this.formsService
-      .deleteForm(actionItem.value, this.entireForm)
+      .deleteForm(actionItem.value, strippedForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -336,5 +342,11 @@ export class ActionButtonsComponent implements OnInit {
         }
       }
     }
+  }
+
+  removeFormDataStructure() {
+    const strippedForm = JSON.parse(JSON.stringify(this.entireForm));
+    delete strippedForm.formDataStructure;
+    return strippedForm;
   }
 }
