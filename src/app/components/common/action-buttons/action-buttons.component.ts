@@ -46,6 +46,9 @@ export class ActionButtonsComponent implements OnInit {
       default:
         break;
     }
+    // TODO Add option and function for complete
+
+    // TODO Eventually replace above with common CRUD functions. Services will give CRUD type (POST, PUT, GET, DELETE)
   }
 
   initiateForm(actionItem: any) {
@@ -307,7 +310,10 @@ export class ActionButtonsComponent implements OnInit {
           this.entireForm.formDataStructure[j].id ==
           this.entireForm.formDataValue[i].id
         ) {
-          if (this.entireForm.formDataStructure[j].type == 'radio-inline') {
+          if (
+            this.entireForm.formDataStructure[j].type == 'radio-inline' ||
+            this.entireForm.formDataStructure[j].type == 'radio'
+          ) {
             this.entireForm.formDataValue[i].value =
               this.entireForm.formDataStructure[j].selectedValue;
           } else {
@@ -327,7 +333,8 @@ export class ActionButtonsComponent implements OnInit {
             ) {
               if (
                 this.entireForm.formDataStructure[j].children[k].type ==
-                'radio-inline'
+                  'radio-inline' ||
+                this.entireForm.formDataStructure[j].children[k].type == 'radio'
               ) {
                 this.entireForm.formDataValue[i].value =
                   this.entireForm.formDataStructure[j].children[
@@ -346,7 +353,7 @@ export class ActionButtonsComponent implements OnInit {
 
   removeFormDataStructure() {
     const strippedForm = JSON.parse(JSON.stringify(this.entireForm));
-    delete strippedForm.formDataStructure;
+    // delete strippedForm.formDataStructure;
     return strippedForm;
   }
 }

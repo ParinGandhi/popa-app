@@ -9,6 +9,7 @@ import { URLS } from '../constants/URLS.constants';
 export class FormsService {
   constructor(private http: HttpClient) {}
 
+  // TODO Add interceptor to pass name with every call
   getFormsMenu() {
     const url = `${URLS.BASE_URL}${URLS.GET_FORMS_MENU}`;
     return this.http.get(`${URLS.BASE_URL}${URLS.GET_FORMS_MENU}`);

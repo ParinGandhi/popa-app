@@ -209,10 +209,10 @@
         "children": [
           {
             "id": "ses",
-            "name": "ses",
+            "name": "coveredBy",
             "type": "radio",
             "label": "Senior Executive Service",
-            "value": "",
+            "value": "ses",
             "required": false,
             "formControlName": "coveredBy"
           },
@@ -221,7 +221,7 @@
             "name": "coveredBy",
             "type": "radio",
             "label": "General Workforce",
-            "value": "",
+            "value": "gw",
             "required": false,
             "formControlName": "coveredBy"
           }
@@ -239,7 +239,7 @@
             "name": "coveredBy",
             "type": "radio",
             "label": "Demonstration Project",
-            "value": "",
+            "value": "dp",
             "required": false,
             "formControlName": "coveredBy"
           },
@@ -248,7 +248,7 @@
             "name": "coveredBy",
             "type": "radio",
             "label": "Other",
-            "value": "",
+            "value": "oth",
             "required": false,
             "formControlName": "coveredBy"
           }

@@ -95,12 +95,24 @@ export class GenericFormTemplateComponent implements OnInit {
           this.entireForm.formDataStructure[j].id ==
           this.entireForm.formDataValue[i].id
         ) {
-          if (this.entireForm.formDataStructure[j].type == 'radio-inline') {
+          if (
+            this.entireForm.formDataStructure[j].type == 'radio-inline' ||
+            this.entireForm.formDataStructure[j].type == 'radio'
+          ) {
             this.entireForm.formDataStructure[j].selectedValue =
               this.entireForm.formDataValue[i].value;
           } else {
             this.entireForm.formDataStructure[j].value =
               this.entireForm.formDataValue[i].value;
+          }
+
+          if (
+            this.entireForm.formDataStructure[j].type == 'date' &&
+            this.entireForm.formDataStructure[j].value
+          ) {
+            this.entireForm.formDataStructure[j].value = new Date(
+              this.entireForm.formDataValue[i].value
+            );
           }
         }
         if (this.entireForm.formDataStructure[j].children) {
@@ -115,13 +127,23 @@ export class GenericFormTemplateComponent implements OnInit {
             ) {
               if (
                 this.entireForm.formDataStructure[j].children[k].type ==
-                'radio-inline'
+                  'radio-inline' ||
+                this.entireForm.formDataStructure[j].children[k].type == 'radio'
               ) {
                 this.entireForm.formDataStructure[j].children[k].selectedValue =
                   this.entireForm.formDataValue[i].value;
               } else {
                 this.entireForm.formDataStructure[j].children[k].value =
                   this.entireForm.formDataValue[i].value;
+              }
+
+              if (
+                this.entireForm.formDataStructure[j].children[k].type ==
+                  'date' &&
+                this.entireForm.formDataStructure[j].children[k].value
+              ) {
+                this.entireForm.formDataStructure[j].children[k].value =
+                  new Date(this.entireForm.formDataValue[i].value);
               }
             }
           }
