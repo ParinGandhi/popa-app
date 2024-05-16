@@ -562,7 +562,7 @@
         "class": "col-md-12 grid-border"
       }
     ],
-    "formValues": [
+    "formDataValue": [
       {
         "id": "new",
         "value": "This is a new value"
@@ -1926,7 +1926,7 @@
         "formControlName": ""
       }
     ],
-    "formValues": [
+    "formDataValue": [
       {
         "id": "name",
         "value": ""
@@ -3074,7 +3074,7 @@
         "formControlName": "adminNote"
       }
     ],
-    "formValues": [
+    "formDataValue": [
       {
         "id": "employeeName",
         "value": ""

@@ -89,18 +89,18 @@ export class GenericFormTemplateComponent implements OnInit {
   }
 
   mapValuesToForm() {
-    for (var i = 0; i < this.entireForm?.formValues?.length; i++) {
+    for (var i = 0; i < this.entireForm?.formDataValue?.length; i++) {
       for (var j = 0; j < this.entireForm?.formDataStructure?.length; j++) {
         if (
           this.entireForm.formDataStructure[j].id ==
-          this.entireForm.formValues[i].id
+          this.entireForm.formDataValue[i].id
         ) {
           if (this.entireForm.formDataStructure[j].type == 'radio-inline') {
             this.entireForm.formDataStructure[j].selectedValue =
-              this.entireForm.formValues[i].value;
+              this.entireForm.formDataValue[i].value;
           } else {
             this.entireForm.formDataStructure[j].value =
-              this.entireForm.formValues[i].value;
+              this.entireForm.formDataValue[i].value;
           }
         }
         if (this.entireForm.formDataStructure[j].children) {
@@ -111,17 +111,17 @@ export class GenericFormTemplateComponent implements OnInit {
           ) {
             if (
               this.entireForm.formDataStructure[j].children[k].id ==
-              this.entireForm.formValues[i].id
+              this.entireForm.formDataValue[i].id
             ) {
               if (
                 this.entireForm.formDataStructure[j].children[k].type ==
                 'radio-inline'
               ) {
                 this.entireForm.formDataStructure[j].children[k].selectedValue =
-                  this.entireForm.formValues[i].value;
+                  this.entireForm.formDataValue[i].value;
               } else {
                 this.entireForm.formDataStructure[j].children[k].value =
-                  this.entireForm.formValues[i].value;
+                  this.entireForm.formDataValue[i].value;
               }
             }
           }

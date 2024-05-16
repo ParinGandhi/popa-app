@@ -52,7 +52,7 @@ export class ActionButtonsComponent implements OnInit {
     this.mapToFormValues();
     if (this.checkValidations()) {
       this.formsService
-        .initiateForm(actionItem.value, this.entireForm.formValues)
+        .initiateForm(actionItem.value, this.entireForm)
         .pipe(take(1))
         .subscribe(
           (formResponse: any) => {
@@ -92,7 +92,7 @@ export class ActionButtonsComponent implements OnInit {
   saveForm(actionItem: any) {
     this.mapToFormValues();
     this.formsService
-      .saveForm(actionItem.value, this.entireForm.formValues)
+      .saveForm(actionItem.value, this.entireForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -124,7 +124,7 @@ export class ActionButtonsComponent implements OnInit {
   updateForm(actionItem: any) {
     this.mapToFormValues();
     this.formsService
-      .updateForm(actionItem.value, this.entireForm.formValues)
+      .updateForm(actionItem.value, this.entireForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -156,7 +156,7 @@ export class ActionButtonsComponent implements OnInit {
   submitApprovalForm(actionItem: any) {
     this.mapToFormValues();
     this.formsService
-      .submitForApprovalForm(actionItem.value, this.entireForm.formValues)
+      .submitForApprovalForm(actionItem.value, this.entireForm)
       .pipe(take(1))
       .subscribe(
         (formResponse: any) => {
@@ -225,7 +225,7 @@ export class ActionButtonsComponent implements OnInit {
     // });
   }
 
-    checkValidations() {
+  checkValidations() {
     let returnVal = true;
     for (var i = 0; i < this.entireForm.formDataStructure.length; i++) {
       if (
@@ -295,17 +295,17 @@ export class ActionButtonsComponent implements OnInit {
   }
 
   mapToFormValues() {
-    for (var i = 0; i < this.entireForm?.formValues?.length; i++) {
+    for (var i = 0; i < this.entireForm?.formDataValue?.length; i++) {
       for (var j = 0; j < this.entireForm?.formDataStructure?.length; j++) {
         if (
           this.entireForm.formDataStructure[j].id ==
-          this.entireForm.formValues[i].id
+          this.entireForm.formDataValue[i].id
         ) {
           if (this.entireForm.formDataStructure[j].type == 'radio-inline') {
-            this.entireForm.formValues[i].value =
+            this.entireForm.formDataValue[i].value =
               this.entireForm.formDataStructure[j].selectedValue;
           } else {
-            this.entireForm.formValues[i].value =
+            this.entireForm.formDataValue[i].value =
               this.entireForm.formDataStructure[j].value;
           }
         }
@@ -317,18 +317,18 @@ export class ActionButtonsComponent implements OnInit {
           ) {
             if (
               this.entireForm.formDataStructure[j].children[k].id ==
-              this.entireForm.formValues[i].id
+              this.entireForm.formDataValue[i].id
             ) {
               if (
                 this.entireForm.formDataStructure[j].children[k].type ==
                 'radio-inline'
               ) {
-                this.entireForm.formValues[i].value =
+                this.entireForm.formDataValue[i].value =
                   this.entireForm.formDataStructure[j].children[
                     k
                   ].selectedValue;
               } else {
-                this.entireForm.formValues[i].value =
+                this.entireForm.formDataValue[i].value =
                   this.entireForm.formDataStructure[j].children[k].value;
               }
             }
