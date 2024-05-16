@@ -4,6 +4,11 @@
   *ngIf="!loading"
 >
   <div class="row">
+    <h4 style="display: flex; justify-content: end">
+      Current state: {{ entireForm?.currentState?.description }}
+    </h4>
+  </div>
+  <div class="row">
     <ng-container *ngFor="let field of entireForm?.formDataStructure">
       <div [ngClass]="field.class" *ngIf="field.type == 'h4'">
         <h4>{{ field.label }}</h4>
