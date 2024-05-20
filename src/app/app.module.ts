@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NewFormComponent } from './components/new-form/new-form.component';
 import { PartTimeComponent } from './components/forms/part-time/part-time.component';
 import { PapCoverComponent } from './components/forms/pap-cover/pap-cover.component';
@@ -22,6 +22,7 @@ import { GenericFormTemplateComponent } from './components/forms/generic-form-te
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     // NavigationModule,
     // IconsModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
