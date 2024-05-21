@@ -381,20 +381,20 @@
       },
       {
         "id": "certYes",
-        "name": "certYes",
+        "name": "certYesNo",
         "type": "radio-inline",
         "label": "YES",
-        "value": "",
+        "value": "certYes",
         "required": false,
         "formControlName": "yesNo",
         "class": "col-md-1 k-textbox k-button k-space-right grid-border"
       },
       {
         "id": "certNo",
-        "name": "certNo",
+        "name": "certYesNo",
         "type": "radio-inline",
         "label": "NO",
-        "value": "",
+        "value": "certNo",
         "required": false,
         "formControlName": "yesNo",
         "class": "col-md-1 k-textbox k-button k-space-right grid-border"
@@ -721,7 +721,7 @@
       },
       {
         "id": "directorDt",
-        "value":""
+        "value": ""
       },
       {
         "id": "employeeAcknowledgment",
