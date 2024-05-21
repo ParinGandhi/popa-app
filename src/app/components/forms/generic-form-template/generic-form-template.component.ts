@@ -195,4 +195,51 @@ export class GenericFormTemplateComponent implements OnInit {
       this.toastr.success('Initiate', 'New form loaded');
     }
   }
+
+  setRadioSelection(selectedOption: string) {
+    const listOfRadioItems = this.getRadioButtonList();
+    for (let i = 0; i < listOfRadioItems.length; i++) {
+      listOfRadioItems[i].selectedValue = selectedOption;
+    }
+
+    // console.log(radioClassName);
+    // console.log(selectedOption);
+    // const radioButtons = document.getElementsByClassName(radioClassName);
+    // console.log(radioButtons);
+    // for (let i = 0; i < radioButtons.length; i++) {
+    //   if (radioButtons[i].id == selectedOption) {
+    //     radioButtons[i].id
+    //   }
+    // }
+  }
+
+  getRadioButtonList() {
+    const listOfRadioItems = [];
+    for (let i = 0; i < this.entireForm.formDataStructure.length; i++) {
+      if (
+        this.entireForm.formDataStructure[i].type == 'radio' ||
+        this.entireForm.formDataStructure[i].type == 'radio-inline'
+      ) {
+        listOfRadioItems.push(this.entireForm.formDataStructure[i]);
+      }
+      if (this.entireForm.formDataStructure[i].children) {
+        for (
+          let j = 0;
+          j < this.entireForm.formDataStructure[i].children.length;
+          j++
+        ) {
+          if (
+            this.entireForm.formDataStructure[i].children[j].type == 'radio' ||
+            this.entireForm.formDataStructure[i].children[j].type ==
+              'radio-inline'
+          ) {
+            listOfRadioItems.push(
+              this.entireForm.formDataStructure[i].children[j]
+            );
+          }
+        }
+      }
+    }
+    return listOfRadioItems;
+  }
 }
