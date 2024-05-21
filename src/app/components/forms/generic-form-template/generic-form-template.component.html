@@ -53,7 +53,7 @@
           [name]="field.name"
           [(ngModel)]="field.selectedValue"
           kendoRadioButton
-          (click)="setRadioSelection(field.value)"
+          (click)="setRadioSelection(field.name, field.value)"
         />
         <kendo-label
           style="display: block"
@@ -184,7 +184,7 @@
                 [name]="child.name"
                 [(ngModel)]="child.selectedValue"
                 kendoRadioButton
-                (click)="setRadioSelection(child.value)"
+                (click)="setRadioSelection(child.name, child.value)"
               />
               <kendo-label
                 class="k-radio-label"

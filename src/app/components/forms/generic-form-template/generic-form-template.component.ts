@@ -196,11 +196,45 @@ export class GenericFormTemplateComponent implements OnInit {
     }
   }
 
-  setRadioSelection(selectedOption: string) {
-    const listOfRadioItems = this.getRadioButtonList();
-    for (let i = 0; i < listOfRadioItems.length; i++) {
-      listOfRadioItems[i].selectedValue = selectedOption;
+  setRadioSelection(selectedName: string, selectedOption: string) {
+    for (let i = 0; i < this.entireForm.formDataStructure.length; i++) {
+      if (
+        this.entireForm.formDataStructure[i].type == 'radio' ||
+        this.entireForm.formDataStructure[i].type == 'radio-inline'
+      ) {
+        if (this.entireForm.formDataStructure[i].name == selectedName) {
+          this.entireForm.formDataStructure[i].selectedValue = selectedOption;
+        }
+      }
+      if (this.entireForm.formDataStructure[i].children) {
+        for (
+          let j = 0;
+          j < this.entireForm.formDataStructure[i].children.length;
+          j++
+        ) {
+          if (
+            this.entireForm.formDataStructure[i].children[j].type == 'radio' ||
+            this.entireForm.formDataStructure[i].children[j].type ==
+              'radio-inline'
+          ) {
+            if (
+              this.entireForm.formDataStructure[i].children[j].name ==
+              selectedName
+            ) {
+              this.entireForm.formDataStructure[i].children[j].selectedValue =
+                selectedOption;
+            }
+          }
+        }
+      }
     }
+
+    // const listOfRadioItems = this.getRadioButtonList();
+    // for (let i = 0; i < listOfRadioItems.length; i++) {
+    //   if (listOfRadioItems[i].name == selectedName) {
+    //     listOfRadioItems[i].selectedValue = selectedOption;
+    //   }
+    // }
 
     // console.log(radioClassName);
     // console.log(selectedOption);
@@ -240,6 +274,7 @@ export class GenericFormTemplateComponent implements OnInit {
         }
       }
     }
+    console.table(listOfRadioItems);
     return listOfRadioItems;
   }
 }
